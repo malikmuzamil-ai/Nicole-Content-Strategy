@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicole Brandes · LinkedIn Content Strategy · Final</title>
+<style>
+  :root{
+    --red:#e90d41; --redDeep:#c70a38; --redSoft:#fce8ed; --redWhisper:#fdf2f5;
+    --cream:#faf8f4; --dark:#0f0f10; --ink:#1a1a1a; --ink2:#6b6b6b; --line:#e8e2d8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'Inter', Arial, sans-serif; line-height:1.65;}
+  h1,h2,h3,h4{font-family:'Rethink Sans', Arial, sans-serif; font-weight:800; color:var(--dark);}
+  .wrap{max-width:980px; margin:0 auto; padding:44px 26px 100px;}
+  .kicker{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--red); font-weight:700;}
+  h1.title{font-size:36px; line-height:1.15; margin:10px 0 10px;}
+  .sub{color:var(--ink2); font-size:15px; max-width:720px; margin:0 0 26px;}
+  .meta{font-size:11.5px; color:var(--ink2); display:flex; gap:14px; flex-wrap:wrap; padding-bottom:22px; border-bottom:1px solid var(--line); margin-bottom:8px;}
+
+  .tabbar{display:flex; flex-wrap:wrap; gap:4px; margin:22px 0 30px; padding:5px; background:#fff; border:1px solid var(--line); border-radius:10px; position:sticky; top:10px; z-index:10;}
+  .tabbtn{font-size:12px; font-weight:600; color:var(--ink2); background:transparent; border:none; padding:9px 12px; border-radius:7px; cursor:pointer; transition:.15s;}
+  .tabbtn:hover{color:var(--ink);}
+  .tabbtn.active{background:var(--red); color:#fff;}
+  .panel{display:none;}
+  .panel.active{display:block; animation:fade .2s ease;}
+  @keyframes fade{from{opacity:0;} to{opacity:1;}}
+
+  h2{font-size:25px; margin:0 0 6px;}
+  h2 + .lead{color:var(--ink2); font-size:14.5px; margin:0 0 22px; max-width:680px;}
+  h3{font-size:17px; margin:26px 0 6px;}
+  h4{font-size:13.5px; margin:16px 0 4px;}
+  p{margin:10px 0; font-size:15px;}
+  strong{color:var(--dark); font-weight:700;}
+  ul{padding-left:19px; margin:8px 0;}
+  li{margin:5px 0; font-size:14.5px;}
+
+  .north{background:var(--dark); color:#fff; border-radius:12px; padding:22px 24px; margin:18px 0 26px;}
+  .north .kicker{color:var(--red);}
+  .north p{color:#f1efe9; font-size:16px; margin:6px 0 0;}
+
+  blockquote{border-left:3px solid var(--red); margin:18px 0; padding:4px 0 4px 18px; font-style:italic; color:var(--ink); font-size:15.5px;}
+  blockquote cite{display:block; margin-top:6px; font-style:normal; font-size:11.5px; color:var(--ink2);}
+
+  .stat-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0 24px;}
+  @media (max-width:760px){.stat-strip{grid-template-columns:1fr 1fr;}}
+  .stat{background:#fff; border:1px solid var(--line); border-radius:9px; padding:13px 14px;}
+  .stat .n{font-size:18px; font-weight:800; color:var(--red); font-family:'Rethink Sans',sans-serif;}
+  .stat .l{font-size:10.5px; color:var(--ink2); margin-top:2px;}
+
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:16px 0;}
+  .card h3{margin-top:0;}
+  .pct{display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; color:var(--red); background:var(--redSoft); border-radius:999px; padding:4px 12px; margin-right:8px; font-family:'Rethink Sans',sans-serif;}
+  .rowline{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:6px;}
+  .taglabel{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700;}
+  .chiprow{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+  .chip{font-size:11px; font-weight:600; background:var(--redWhisper); border:1px solid var(--redSoft); color:var(--redDeep); padding:3px 10px; border-radius:999px;}
+
+  .pill-yes, .pill-no{display:inline-block; font-size:12px; padding:3px 11px; border-radius:999px; margin:3px 6px 3px 0;}
+  .pill-yes{background:var(--redSoft); color:var(--redDeep); border:1px solid var(--red); font-weight:600;}
+  .pill-no{background:#f4f2ee; color:var(--ink2); border:1px solid var(--line); text-decoration:line-through;}
+
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:13px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--redWhisper); color:var(--dark); font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  tr:nth-child(even) td{background:#fdfcfa;}
+
+  .callout{background:var(--redWhisper); border:1px solid var(--redSoft); border-left:4px solid var(--red); border-radius:6px; padding:14px 18px; margin:16px 0; font-size:14.5px;}
+
+  .examplebox{background:#fff; border:1px dashed var(--line); border-radius:8px; padding:12px 16px; margin:12px 0; font-size:14px;}
+  .examplebox .lbl{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700; margin-bottom:6px;}
+  .examplebox li{font-style:italic;}
+
+  .weekblock{margin:14px 0; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .weekblock .wk{background:var(--dark); color:#fff; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:9px 16px;}
+  .weekblock table{margin:0; border:none;}
+  .weekblock th, .weekblock td{border:none; border-bottom:1px solid var(--line);}
+  .weekblock tr:last-child td{border-bottom:none;}
+
+  .num-badge{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; background:var(--red); color:#fff; border-radius:50%; font-size:11px; font-weight:800; margin-right:8px; font-family:'Rethink Sans',sans-serif;}
+
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line); font-size:11.5px; color:var(--ink2); line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Purely Personal · Content Strategy · Final</div>
+  <h1 class="title">Nicole Brandes: The LinkedIn Content Strategy</h1>
+  <p class="sub">One document, checked line by line against her own words: what she asked for, what she already built herself, and where the plan should follow her lead instead of a template.</p>
+  <div class="meta"><span>Private</span><span>7 sections</span><span>Final</span></div>
+
+  <div class="tabbar" id="tabbar">
+    <button class="tabbtn active" data-tab="t1">Why Now</button>
+    <button class="tabbtn" data-tab="t2">Who &amp; The Pillars</button>
+    <button class="tabbtn" data-tab="t3">The Field</button>
+    <button class="tabbtn" data-tab="t4">What We Give Up</button>
+    <button class="tabbtn" data-tab="t5">Funnel &amp; The Math</button>
+    <button class="tabbtn" data-tab="t6">90 Days &amp; Calendar</button>
+    <button class="tabbtn" data-tab="t7">Watchpoints</button>
+  </div>
+
+  <!-- TAB 1 -->
+  <section class="panel active" id="t1">
+    <h2>Content is the cheapest way to reach the right person</h2>
+    <p class="lead">At a CHF 4,500 front door and a CHF 24,000 core engagement, content is the only channel that does not charge per lead. It is also the one part of this plan Nicole has already started building herself.</p>
+
+    <div class="north">
+      <div class="kicker">Strategic North Star</div>
+      <p>Every post positions Nicole as the advisor who tells the truth the room has filtered out. Every post fits one of four pillars she named herself, built around what it does to the reader, not the topic underneath it. Content is not the goal. It is the unpaid channel that turns a stranger into a Decision Room application.</p>
+    </div>
+
+    <h3>Core Positioning Statement</h3>
+    <p>For accomplished founders and owner-CEOs carrying a consequential decision alone, Nicole Brandes is the private strategic advisor who names the truth the room has filtered out, not the wellness coach the market keeps offering them, but the heart surgeon the decision actually requires.</p>
+
+    <blockquote>"I don't want to go out there and create noise. I can't behave as a coach. I'm an advisor. I'm a figure of authority."<cite>Nicole</cite></blockquote>
+    <blockquote>"I'm constantly told by AI that I'm not expensive enough."<cite>Nicole</cite></blockquote>
+
+    <h3>Two reasons this works right now</h3>
+    <div class="stat-strip">
+      <div class="stat"><div class="n">168,000</div><div class="l">Swiss SMEs changing hands by 2030</div></div>
+      <div class="stat"><div class="n">&lt;1 in 3</div><div class="l">owners with a real succession plan</div></div>
+      <div class="stat"><div class="n">7.0%</div><div class="l">avg. engagement, native LinkedIn documents</div></div>
+      <div class="stat"><div class="n">1 in 100</div><div class="l">LinkedIn professionals posting weekly</div></div>
+    </div>
+    <p><strong>The market is on a deadline.</strong> A third of Swiss companies change hands this decade. Fewer than one in three owners has decided who they become on the other side of it. That is a real, checkable fact, and it turns a private insight into a public problem worth writing about.</p>
+    <p><strong>The platform rewards exactly this kind of writing.</strong> LinkedIn now favours how long someone actually stays on a post, saves, and real comments, over quick reactions. Roughly one professional in a hundred posts weekly. Nicole is one of the few people in this category willing to write like this, at the exact moment the platform started rewarding it.</p>
+
+    <div class="callout">Everything downstream, the book, the keynotes, the Academy being quietly built behind the scenes, draws on the same twenty five years. Content is simply the first place people get to see it.</div>
+  </section>
+
+  <!-- TAB 2 -->
+  <section class="panel" id="t2">
+    <h2>Who this is for, and the four pillars she already named</h2>
+    <p class="lead">These are not our pillars. They are Nicole's own words, kept exactly as she said them, given a weight and a job.</p>
+
+    <blockquote>"Your target group is the person you were before transformation. So that's me. Totally me."<cite>Nicole</cite></blockquote>
+
+    <h3>Three things that matter more than age</h3>
+    <h4><span class="num-badge">01</span>Mostly women</h4>
+    <p>Changes the pictures, the examples, and the kind of story a post is built around. Most of this category is a man talking to men. Almost nobody has written for this reader specifically.</p>
+    <h4><span class="num-badge">02</span>Founders, not executives</h4>
+    <p>Owner operators. Either she built the company, or she took it over from someone who did. Never language that suggests someone else's org chart put her here.</p>
+    <h4><span class="num-badge">03</span>Two to fifty people</h4>
+    <p>Never enterprise language, never a story that reads like a Fortune 500 boardroom. This is also what keeps the content out of the crowded corporate-coaching space.</p>
+
+    <h3>What she means by state, not age</h3>
+    <p>A founder of 38, a few years past a good exit, is exactly the reader. A person of 58 who never built anything is not. Content is written mid-decision, in the present, never as though the hard part is already behind her.</p>
+
+    <h3>How she organizes her own material</h3>
+    <p>Nicole already has a working library, sorted by question, not by story. She named several of them herself: <strong>Vision and Goals</strong>, <strong>Identity, who am I</strong>, and <strong>What shall I do</strong>, with room for a few more. That structure carries into the topic threads below.</p>
+    <div class="callout">"I rather be very reserved about my own stories." Content stays organised around these questions, not around her personal history. The two approved stories are the only personal material used, and only where already cleared.<cite>Nicole</cite></div>
+
+    <h3>The four pillars</h3>
+    <p>Every post fits exactly one pillar. Each carries a weight, a job in the funnel, and its own mix of Education, Trust, Authority and Selling, the same four Purely Personal already uses.</p>
+
+    <div class="card">
+      <div class="rowline"><span class="pct">25%</span><h3 style="margin:0;">Make Me Think</h3></div>
+      <p><strong>Positioning:</strong> One sentence, no caption underneath, built to stop the scroll and provoke a reaction before the reader has decided what they think.</p>
+      <div class="examplebox">
+        <div class="lbl">Her own examples</div>
+        <ul>
+          <li>The house I love belongs to my ex-wife now.</li>
+          <li>The kids I never wanted are the best thing that ever happened to me.</li>
+          <li>Everyone worth knowing knows nothing about me.</li>
+          <li>I have fans around the world, and I am lonely.</li>
+        </ul>
+      </div>
+      <h4>Sub-theme topics</h4>
+      <ul>
+        <li>The proficiency prison: being brilliant at a life she no longer wants</li>
+        <li>Self-abandonment dressed as reliability, why the one everyone leans on is the last one asked how she's doing</li>
+        <li>VP of everything: what gets delegated, and what quietly never does</li>
+        <li>Filtered truth at altitude: why the higher you rise, the fewer people tell you what's actually true</li>
+        <li>Identity is built, not found, a direct challenge to "just be yourself" advice</li>
+        <li>The succession numbers as a provocation: 168,000 Swiss businesses changing hands, fewer than one in three owners know who they become after</li>
+        <li>Judgement versus information: why answers are cheap and discernment is not, in the age of AI</li>
+        <li>We are not dead yet: rejecting the idea that the second half of life is a wind-down</li>
+      </ul>
+      <div class="chiprow"><span class="chip">Post</span><span class="chip">Image</span></div>
+      <p><span class="taglabel">Mix</span> Authority 35% · Education 25% · Selling 20% · Trust 20%</p>
+      <p style="font-size:12.5px; color:var(--ink2);">Cadence: twice a month at most. Her own words: "a punch in the belly." More often than that and it stops working.</p>
+    </div>
+
+    <div class="card">
+      <div class="rowline"><span class="pct">25%</span><h3 style="margin:0;">Understand Me</h3></div>
+      <p><strong>Positioning:</strong> Names what the reader feels before she has the words for it. Nicole's own definition: not making them understand something, but showing them she is understood first, because she is never seen, never heard, and never understood.</p>
+      <h4>Sub-theme topics</h4>
+      <ul>
+        <li>The specific loneliness of always being the one with the answer</li>
+        <li>Discontent as information, not ingratitude</li>
+        <li>What's expected of a leader versus what's actually felt underneath the role</li>
+        <li>The gap between a life that looks complete and a life that feels complete</li>
+        <li>Vision and goals: what she actually wants, asked properly for the first time in years</li>
+        <li>Identity, who am I, underneath the performance</li>
+        <li>What shall I do: the real question, not the version she performs for the board</li>
+        <li>The fear of saying "I don't have this one" when she's supposed to always have the answer</li>
+      </ul>
+      <div class="chiprow"><span class="chip">Post</span><span class="chip">Cheatsheet</span></div>
+      <p><span class="taglabel">Mix</span> Trust 40% · Education 20% · Selling 25% · Authority 15%</p>
+    </div>
+
+    <div class="card">
+      <div class="rowline"><span class="pct">30%</span><h3 style="margin:0;">Teach Me</h3></div>
+      <p><strong>Positioning:</strong> Leaves the reader smarter and able to use it this week. The pillar built to be saved and reopened, so it carries the heaviest share of the method itself.</p>
+      <h4>Sub-theme topics</h4>
+      <ul>
+        <li>Assess, Attune, Aspire, Align, Ascend: the five-stage method, walked through on one real decision</li>
+        <li>The 48-hour resonance protocol: how to test a decision before you make it, not after</li>
+        <li>What must be protected versus what has simply expired, a working filter, not a feeling</li>
+        <li>The succession numbers, taught properly: why a plan for who you become matters as much as a plan for the company</li>
+        <li>What AI makes abundant, and what judgement still has to do alone</li>
+        <li>The three governing questions: what is true, what is mine, what is the right next thing</li>
+        <li>Why solving the visible problem fast usually solves the wrong one, a pricing problem is sometimes a self-worth problem</li>
+        <li>The difference between a framework that protects the advisor and one that actually serves the client</li>
+      </ul>
+      <div class="chiprow"><span class="chip">Carousel</span><span class="chip">Cheatsheet</span><span class="chip">Post</span></div>
+      <p><span class="taglabel">Mix</span> Education 45% · Authority 25% · Selling 20% · Trust 10%</p>
+    </div>
+
+    <div class="card">
+      <div class="rowline"><span class="pct">20%</span><h3 style="margin:0;">Entertain Me</h3></div>
+      <p><strong>Positioning:</strong> Nicole's own mechanic: a detail from somewhere she has actually stood, paired with the exact strategy a reader is running right now that does not work. Her example: the physical burn nobody can put out with water, next to the emotional burn people try to numb the same losing way.</p>
+      <h4>Sub-theme topics</h4>
+      <ul>
+        <li>A detail from the field, paired with a strategy that quietly doesn't work</li>
+        <li>What surprised her most about advising people who already have everything</li>
+        <li>A moment nothing in twenty five years prepared her for</li>
+        <li>What repeats, across decades, inside rooms most people never see</li>
+        <li>What a real crisis looks like once the adrenaline settles and the cameras leave</li>
+        <li>Small true stories from a life spent moving between very different rooms</li>
+        <li>What stayed true whether the room was a boardroom or somewhere far humbler, used sparingly and only from approved material</li>
+        <li>Why nothing shocks her anymore, and what that actually costs</li>
+      </ul>
+      <div class="chiprow"><span class="chip">Post</span><span class="chip">Image</span><span class="chip">Video, from month three</span></div>
+      <p><span class="taglabel">Mix</span> Trust 45% · Education 20% · Selling 20% · Authority 15%</p>
+    </div>
+  </section>
+
+  <!-- TAB 3 -->
+  <section class="panel" id="t3">
+    <h2>What's already out there, and where the open space is</h2>
+    <p class="lead">Nicole named the closest comparison herself, unprompted, and drew the line correctly before anyone else did.</p>
+
+    <blockquote>He's more about retirement. My philosophy is what Carl Jung said. You cannot create the second half of life with the inner setup of the first. What got you to this success will not take you any further. We are not dead yet.<cite>Nicole, on Chip Conley and the Modern Elder Academy</cite></blockquote>
+
+    <h3>The Modern Elder Academy, in its own words</h3>
+    <blockquote>"You've spent years building a career, a business, a reputation. The milestones are behind you. The balance sheet looks good. But here's what they don't see: the persistent question that keeps rising. Now what?"<cite>meawisdom.com</cite></blockquote>
+    <p>Past tense. The work already done, the question only now surfacing. Nicole's content does the opposite: present tense, still inside the decision, the question already named.</p>
+
+    <h3>Why they cannot follow into this content</h3>
+    <ul>
+      <li><strong>Their audience has already stepped away.</strong> Retired, exited, done with the chapter. A brand built on that cannot suddenly publish urgent, still-in-the-role content without confusing everyone who already paid for the calmer version.</li>
+      <li><strong>Their base is American, campus-first.</strong> Nobody is writing this way into the German-speaking market at all.</li>
+      <li><strong>Their authority is hospitality and scholarship.</strong> Nicole's content can go straight at the stakes of a real crisis or a boardroom, because the credibility behind it, Halifax and a private-bank turnaround, actually sits there.</li>
+    </ul>
+
+    <h3>The wider coaching-technology tier</h3>
+    <p>Platforms selling coaching seats to HR budgets cannot write this way either. Their content has to survive a purchasing committee, not move one person. Generic and safe by design. Their presence in the market only confirms there is nothing here worth borrowing from them.</p>
+
+    <h3>Why this is hard to copy</h3>
+    <p>Not because of a clever angle. Twenty five years of real decisions, watched from inside the room. What was said, what was actually true, what was chosen, what it cost. Every post draws on that same material. Someone without it can copy the format in an afternoon and still never write the same post twice, because there is nothing underneath it to draw from.</p>
+    <div class="callout">Content is not separate from that twenty five years. It is that material, shared one piece at a time. The gap it creates is not about style. It is twenty five years wide, and it only gets wider the longer this runs.</div>
+  </section>
+
+  <!-- TAB 4 -->
+  <section class="panel" id="t4">
+    <h2>What this account will never do, on purpose</h2>
+    <p class="lead">Fewer, better, quieter. Not a limitation. It is exactly what a louder competitor cannot copy without losing the audience that made them loud in the first place.</p>
+
+    <blockquote>"It has to be classy. But of course, it has to sell."<cite>Nicole</cite></blockquote>
+    <blockquote>"We can't just be a content machine, just to put something out there for the sake of it. It has to be of substance, because these people are up to here with superficial content."<cite>Nicole</cite></blockquote>
+
+    <h4>Hers. Keep them.</h4>
+    <div>
+      <span class="pill-yes">what's next, done right</span>
+      <span class="pill-yes">the right next thing</span>
+      <span class="pill-yes">rooms of real power</span>
+      <span class="pill-yes">unfiltered truth</span>
+      <span class="pill-yes">a heart surgeon, not a wellness coach</span>
+      <span class="pill-yes">nothing shocks me</span>
+      <span class="pill-yes">we are not dead yet</span>
+    </div>
+    <h4>Never</h4>
+    <div>
+      <span class="pill-no">hustle</span>
+      <span class="pill-no">scale</span>
+      <span class="pill-no">crush it</span>
+      <span class="pill-no">unlock your potential</span>
+      <span class="pill-no">game changer</span>
+      <span class="pill-no">10x</span>
+      <span class="pill-no">guru</span>
+      <span class="pill-no">life coach</span>
+      <span class="pill-no">calendar wisdom</span>
+      <span class="pill-no">holding space</span>
+      <span class="pill-no">journey</span>
+    </div>
+
+    <h3>Given up on purpose</h3>
+    <ul>
+      <li><strong>Bait and engagement pods.</strong> LinkedIn actively pushes both down anyway, and they would cheapen the account even if it didn't.</li>
+      <li><strong>Reacting to whatever is trending.</strong> Every post comes from her own material, not the news cycle.</li>
+      <li><strong>Writing that sounds AI-generated.</strong> Every draft gets read aloud in her own cadence before it goes up, and the platform can tell the difference anyway.</li>
+      <li><strong>The standard case-study format.</strong> Before, after, logo, quote. The exact category she is leaving behind.</li>
+      <li><strong>Any credential not already confirmed.</strong> Nothing beyond Halifax, the private bank turnaround, the twenty five and seventeen year timeline, and the years studying Taoism goes into a post until she confirms it directly.</li>
+      <li><strong>Heavy personal storytelling.</strong> She said it herself, she is reserved about her own stories. Content stays built on the questions, not on mining her life for material.</li>
+    </ul>
+
+    <h3>What this is really up against</h3>
+    <p>Not a competitor. A belief worth naming out loud: that being visible online makes someone at this level look less exclusive, not more. The opposite is true at this price. Nobody applies to something they have never heard of. At CHF 4,500 a session, staying quiet is the actual risk, not the writing.</p>
+  </section>
+
+  <!-- TAB 5 -->
+  <section class="panel" id="t5">
+    <h2>Where the offer shows up, and the numbers underneath it</h2>
+    <p class="lead">Almost none of the content sells directly. The offer shows up in a few earned places, and the whole system gets judged against one number.</p>
+
+    <h3>Why the funnel below stops at private advisory</h3>
+    <p>The Academy is being built quietly in the background right now, its own modules, its own pricing, its own portal. It is not being written about yet, on purpose. The plan agreed on the strategy call is to close a handful of private clients first, then shift what content points to once the Academy is actually ready to be shown. Nothing about that has to be explained in a post. It just means every post right now points to one place.</p>
+
+    <div class="callout">A Selling post never runs without two Authority or Education posts directly ahead of it. The Decision Room is always earned, never a cold ask.</div>
+
+    <h3>The funnel</h3>
+    <table>
+      <tr><th>Step</th><th>What happens</th></tr>
+      <tr><td>1 · Post</td><td>Fits one pillar, no outside links, hook in the first two lines.</td></tr>
+      <tr><td>2 · Signal</td><td>Comments and saves show who is ready to go further.</td></tr>
+      <tr><td>3 · Application</td><td>The Decision Room link lives in the Featured section and bio, never inside the post itself.</td></tr>
+      <tr><td>4 · Resolution</td><td>The Room answers the immediate question and shows whether deeper work makes sense.</td></tr>
+      <tr><td>5 · Private Advisory</td><td>The right clients move into the six-month private engagement. That is where this whole funnel is aimed.</td></tr>
+    </table>
+
+    <h3>The numbers, worked backward</h3>
+    <p>The ninety day target already exists: four private advisory clients at CHF 24,000, CHF 96,000 total. That is the bar content has to clear, not the other way round.</p>
+    <div class="stat-strip">
+      <div class="stat"><div class="n">4</div><div class="l">private advisory clients, first 90 days</div></div>
+      <div class="stat"><div class="n">CHF 96,000</div><div class="l">the actual target</div></div>
+      <div class="stat"><div class="n">~12</div><div class="l">Decision Rooms likely needed to get there</div></div>
+      <div class="stat"><div class="n">36</div><div class="l">posts published across the same window</div></div>
+    </div>
+    <p style="font-size:13px; color:var(--ink2);">The Decision Room figure assumes roughly one in three converts into a private advisory client. That is a working guess, not a researched fact, and it should be corrected the moment real numbers come in. What it gives content is a real target to aim at: a handful of the right applications, not a pile of impressions.</p>
+
+    <h3>The CTA by intent</h3>
+    <table>
+      <tr><th>Intent</th><th>Style</th><th>Example</th></tr>
+      <tr><td>Education</td><td>No sale. A question or a line that extends the thought.</td><td>"What's the last hard truth someone told you, unprompted?"</td></tr>
+      <tr><td>Trust</td><td>Invite reflection, not action.</td><td>No call to action at all. Being understood is the value.</td></tr>
+      <tr><td>Authority</td><td>None, or a genuine either or.</td><td>"Burn it down, or build from what's already true. Which one, and why?"</td></tr>
+      <tr><td>Selling</td><td>Name the next step, without asking for anything yet.</td><td>"This is the exact question a Decision Room exists for."</td></tr>
+    </table>
+
+    <h3>The minimum bars</h3>
+    <table>
+      <tr><th>Signal</th><th>Bar</th></tr>
+      <tr><td>Save rate</td><td>Saves at least half of likes on Carousel and Cheatsheet posts</td></tr>
+      <tr><td>Comment depth</td><td>8 or more real comments per Teach Me post</td></tr>
+      <tr><td>Consistency</td><td>3 times a week, no weeks skipped</td></tr>
+      <tr><td>Decision Room applications</td><td>Tracked weekly from day one. The only number that actually matters.</td></tr>
+    </table>
+  </section>
+
+  <!-- TAB 6 -->
+  <section class="panel" id="t6">
+    <h2>The first ninety days</h2>
+    <p class="lead">One job at a time, matched to the pace the offer plan already runs on.</p>
+
+    <h3>Days 1 to 30: get the voice right</h3>
+    <ul>
+      <li>All four pillars in rotation, no Selling posts yet</li>
+      <li>Every draft checked against her voice before it goes up, no exceptions</li>
+      <li>The Decision Room link lives in the Featured section and bio, never in a post</li>
+    </ul>
+
+    <h3>Days 31 to 60: let the pattern run</h3>
+    <ul>
+      <li>The weekly rhythm fully running: her brain dump, our draft, her approval</li>
+      <li>First Carousel and Cheatsheet posts tested</li>
+      <li>The succession numbers go up as a carousel, under Teach Me</li>
+    </ul>
+
+    <h3>Days 61 to 90: let it pull</h3>
+    <ul>
+      <li>Selling lines become a normal, expected part of the week</li>
+      <li>First video test, inside Entertain Me</li>
+      <li>Decision Room applications tracked weekly against the twelve-engagement target</li>
+    </ul>
+
+    <h3>Weeks 1 to 4, post by post</h3>
+    <div class="weekblock">
+      <div class="wk">Week 1</div>
+      <table>
+        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
+        <tr><td>Understand Me</td><td>Post</td><td>The specific loneliness of always having the answer. No resolution yet.</td></tr>
+        <tr><td>Entertain Me</td><td>Post</td><td>One field detail, bridged lightly. No call to action.</td></tr>
+        <tr><td>Teach Me</td><td>Post</td><td>The gap between a life that looks complete and one that feels complete.</td></tr>
+      </table>
+    </div>
+    <div class="weekblock">
+      <div class="wk">Week 2</div>
+      <table>
+        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
+        <tr><td>Make Me Think</td><td>Post</td><td>One line from her own bank, unexplained. "The house I love belongs to my ex-wife now," or one in the same shape.</td></tr>
+        <tr><td>Teach Me</td><td>Carousel</td><td>The 48-hour resonance protocol as a tool the reader can try on her own decision this week.</td></tr>
+        <tr><td>Understand Me</td><td>Post</td><td>The filtered-truth pattern, named plainly.</td></tr>
+      </table>
+    </div>
+    <div class="weekblock">
+      <div class="wk">Week 3</div>
+      <table>
+        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
+        <tr><td>Make Me Think</td><td>Carousel</td><td>The succession numbers, told as a provocation. Closes with one Selling line.</td></tr>
+        <tr><td>Entertain Me</td><td>Post</td><td>Story-led, entertaining first, insight second.</td></tr>
+        <tr><td>Understand Me</td><td>Post</td><td>The false choice between protecting what's built and finally telling the truth.</td></tr>
+      </table>
+    </div>
+    <div class="weekblock">
+      <div class="wk">Week 4</div>
+      <table>
+        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
+        <tr><td>Make Me Think</td><td>Image</td><td>Second and last paradox line of the month, as a single visual card.</td></tr>
+        <tr><td>Teach Me</td><td>Carousel</td><td>The full five-stage method, walked through slide by slide.</td></tr>
+        <tr><td>Entertain Me</td><td>Post</td><td>Closes the month on story, with one Selling line toward the Decision Room.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- TAB 7 -->
+  <section class="panel" id="t7">
+    <h2>What we are watching</h2>
+    <p class="lead">Written the way we would want it written for ourselves. Nothing here is fatal. All of it is cheaper to fix now than in month four.</p>
+
+    <h4><span class="num-badge">01</span>Too much volume, not enough substance</h4>
+    <p>Three posts a week is the ceiling, not a floor to defend by cutting corners. A quiet week with two strong posts beats three that read like noise. Her own words, not just a good rule: "we can't just be a content machine."</p>
+
+    <h4><span class="num-badge">02</span>The paradox line stops landing</h4>
+    <p>It works because it is rare. Weekly instead of twice a month, it stops feeling like a punch in the belly and starts feeling like a habit.</p>
+
+    <h4><span class="num-badge">03</span>A credential slips in early</h4>
+    <p>Every unconfirmed detail stays out until Nicole clears it herself, even on a day a post would clearly be stronger with it.</p>
+
+    <h4><span class="num-badge">04</span>Someone else claims this ground first</h4>
+    <p>The Modern Elder Academy has a real audience and a proven playbook. If a European or campus-based competitor starts writing this way before this account has, the open space closes fast. Showing up consistently now is what keeps that ground.</p>
+
+    <h4><span class="num-badge">05</span>Staying classy against needing reach</h4>
+    <p>Not loud, not cheap, never screaming, set against the volume needed to reach twelve Decision Room conversations. A real trade, not fully solvable. Choosing depth over reach at this price is the right call, but it should stay a choice, not an accident.</p>
+
+    <h4><span class="num-badge">06</span>Advisor, coach, and the line between</h4>
+    <p>Settled as how she is described publicly, not as who she is privately. The word coach never appears in public, because in a buyer's head it prices her against people she has nothing in common with.</p>
+
+    <h4><span class="num-badge">07</span>Content gets ahead of the offer</h4>
+    <p>If a post starts hinting at cohorts or group programs before that side of the business is actually ready, it describes a business that does not exist yet. Content follows the confirmed private offer. It never runs ahead of it.</p>
+
+    <h3>The one that matters most</h3>
+    <div class="callout">There is no content plan here without Nicole in the room after it. Every application still has to be met by one person, showing up. The job of content is to bring in the right four clients, not the most applicants.</div>
+  </section>
+
+  <footer>
+    Purely Personal · Prepared for Nicole Brandes · Private.<br>
+    Checked directly against her own words from the strategy calls, not built from a template. Credentials referenced throughout are limited to what is already confirmed: the Halifax crisis response, the Head of Marketing role at an unnamed Swiss private bank, the twenty five and seventeen year timeline, and the years studying Taoism.
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('.tabbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tabbtn').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      window.scrollTo({top:0, behavior:'instant'});
+    });
+  });
+</script>
+</body>
+</html>
