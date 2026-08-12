@@ -4,80 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nicole Brandes · LinkedIn Content Strategy · Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --red:#e90d41; --redDeep:#c70a38; --redSoft:#fce8ed; --redWhisper:#fdf2f5;
-    --cream:#faf8f4; --dark:#0f0f10; --ink:#1a1a1a; --ink2:#6b6b6b; --line:#e8e2d8;
+    --ink:#0B0B0B; --terracotta:#8C5442; --terracottaSoft:#F1E3DA; --terracottaWhisper:#F8EFE9;
+    --gold:#D4A370; --paper:#F6EFE8; --card:#FCF9F4; --charcoal:#2B2521; --ink2:#7A6F63; --line:#E4D6C4;
   }
   *{box-sizing:border-box}
-  body{margin:0; background:var(--cream); color:var(--ink); font-family:'Inter', Arial, sans-serif; line-height:1.65;}
-  h1,h2,h3,h4{font-family:'Rethink Sans', Arial, sans-serif; font-weight:800; color:var(--dark);}
+  body{margin:0; background:var(--paper); color:var(--charcoal); font-family:'Open Sauce Sans','Söhne',Arial, sans-serif; line-height:1.65;}
+  h1,h2,h3,h4{font-family:'Instrument Serif', Georgia, serif; font-weight:400; color:var(--ink);}
+  em, .accent-italic{font-style:italic; color:var(--terracotta);}
   .wrap{max-width:980px; margin:0 auto; padding:44px 26px 100px;}
-  .kicker{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--red); font-weight:700;}
-  h1.title{font-size:36px; line-height:1.15; margin:10px 0 10px;}
+  .kicker{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracotta); font-weight:600; font-family:'Open Sauce Sans',Arial,sans-serif;}
+  h1.title{font-size:40px; line-height:1.15; margin:10px 0 10px;}
   .sub{color:var(--ink2); font-size:15px; max-width:720px; margin:0 0 26px;}
   .meta{font-size:11.5px; color:var(--ink2); display:flex; gap:14px; flex-wrap:wrap; padding-bottom:22px; border-bottom:1px solid var(--line); margin-bottom:8px;}
 
-  .tabbar{display:flex; flex-wrap:wrap; gap:4px; margin:22px 0 30px; padding:5px; background:#fff; border:1px solid var(--line); border-radius:10px; position:sticky; top:10px; z-index:10;}
-  .tabbtn{font-size:12px; font-weight:600; color:var(--ink2); background:transparent; border:none; padding:9px 12px; border-radius:7px; cursor:pointer; transition:.15s;}
+  .tabbar{display:flex; flex-wrap:wrap; gap:4px; margin:22px 0 30px; padding:5px; background:var(--card); border:1px solid var(--line); border-radius:10px; position:sticky; top:10px; z-index:10;}
+  .tabbtn{font-size:12px; font-weight:600; color:var(--ink2); background:transparent; border:none; padding:9px 12px; border-radius:7px; cursor:pointer; transition:.15s; font-family:'Open Sauce Sans',Arial,sans-serif;}
   .tabbtn:hover{color:var(--ink);}
-  .tabbtn.active{background:var(--red); color:#fff;}
+  .tabbtn.active{background:var(--terracotta); color:#fff;}
   .panel{display:none;}
   .panel.active{display:block; animation:fade .2s ease;}
   @keyframes fade{from{opacity:0;} to{opacity:1;}}
 
-  h2{font-size:25px; margin:0 0 6px;}
-  h2 + .lead{color:var(--ink2); font-size:14.5px; margin:0 0 22px; max-width:680px;}
-  h3{font-size:17px; margin:26px 0 6px;}
-  h4{font-size:13.5px; margin:16px 0 4px;}
+  h2{font-size:27px; margin:0 0 6px; font-weight:400;}
+  h2 + .lead{color:var(--ink2); font-size:14.5px; margin:0 0 22px; max-width:680px; font-style:italic;}
+  h3{font-size:19px; margin:26px 0 6px; font-weight:400;}
+  h4{font-size:13.5px; margin:16px 0 4px; font-family:'Open Sauce Sans',Arial,sans-serif; font-weight:700; color:var(--ink);}
   p{margin:10px 0; font-size:15px;}
-  strong{color:var(--dark); font-weight:700;}
+  strong{color:var(--ink); font-weight:700;}
   ul{padding-left:19px; margin:8px 0;}
   li{margin:5px 0; font-size:14.5px;}
 
-  .north{background:var(--dark); color:#fff; border-radius:12px; padding:22px 24px; margin:18px 0 26px;}
-  .north .kicker{color:var(--red);}
-  .north p{color:#f1efe9; font-size:16px; margin:6px 0 0;}
+  .north{background:var(--ink); color:#fff; border-radius:12px; padding:24px 26px; margin:18px 0 26px;}
+  .north .kicker{color:var(--gold);}
+  .north p{color:#F0E8DD; font-size:16px; margin:6px 0 0;}
 
-  blockquote{border-left:3px solid var(--red); margin:18px 0; padding:4px 0 4px 18px; font-style:italic; color:var(--ink); font-size:15.5px;}
-  blockquote cite{display:block; margin-top:6px; font-style:normal; font-size:11.5px; color:var(--ink2);}
+  blockquote{border-left:3px solid var(--terracotta); margin:18px 0; padding:4px 0 4px 18px; font-style:italic; color:var(--charcoal); font-size:15.5px;}
+  blockquote cite{display:block; margin-top:6px; font-style:normal; font-size:11.5px; color:var(--ink2); font-family:'Open Sauce Sans',Arial,sans-serif;}
 
   .stat-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0 24px;}
   @media (max-width:760px){.stat-strip{grid-template-columns:1fr 1fr;}}
-  .stat{background:#fff; border:1px solid var(--line); border-radius:9px; padding:13px 14px;}
-  .stat .n{font-size:18px; font-weight:800; color:var(--red); font-family:'Rethink Sans',sans-serif;}
-  .stat .l{font-size:10.5px; color:var(--ink2); margin-top:2px;}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:9px; padding:13px 14px;}
+  .stat .n{font-size:20px; font-weight:400; color:var(--terracotta); font-family:'Instrument Serif',serif;}
+  .stat .l{font-size:10.5px; color:var(--ink2); margin-top:2px; font-family:'Open Sauce Sans',Arial,sans-serif;}
 
-  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:16px 0;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:16px 0;}
   .card h3{margin-top:0;}
-  .pct{display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; color:var(--red); background:var(--redSoft); border-radius:999px; padding:4px 12px; margin-right:8px; font-family:'Rethink Sans',sans-serif;}
+  .pct{display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; color:var(--terracotta); background:var(--terracottaSoft); border-radius:999px; padding:4px 12px; margin-right:8px; font-family:'Open Sauce Sans',Arial,sans-serif;}
   .rowline{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:6px;}
-  .taglabel{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700;}
+  .taglabel{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700; font-family:'Open Sauce Sans',Arial,sans-serif;}
   .chiprow{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
-  .chip{font-size:11px; font-weight:600; background:var(--redWhisper); border:1px solid var(--redSoft); color:var(--redDeep); padding:3px 10px; border-radius:999px;}
+  .chip{font-size:11px; font-weight:600; background:var(--terracottaWhisper); border:1px solid var(--terracottaSoft); color:var(--terracotta); padding:3px 10px; border-radius:999px; font-family:'Open Sauce Sans',Arial,sans-serif;}
+  .chip.format{background:#EFEAE1; border-color:var(--line); color:var(--charcoal);}
 
-  .pill-yes, .pill-no{display:inline-block; font-size:12px; padding:3px 11px; border-radius:999px; margin:3px 6px 3px 0;}
-  .pill-yes{background:var(--redSoft); color:var(--redDeep); border:1px solid var(--red); font-weight:600;}
-  .pill-no{background:#f4f2ee; color:var(--ink2); border:1px solid var(--line); text-decoration:line-through;}
+  .pill-yes, .pill-no{display:inline-block; font-size:12px; padding:3px 11px; border-radius:999px; margin:3px 6px 3px 0; font-family:'Open Sauce Sans',Arial,sans-serif;}
+  .pill-yes{background:var(--terracottaSoft); color:var(--terracotta); border:1px solid var(--terracotta); font-weight:600;}
+  .pill-no{background:#EFEAE1; color:var(--ink2); border:1px solid var(--line); text-decoration:line-through;}
 
   table{width:100%; border-collapse:collapse; margin:14px 0; font-size:13px;}
   th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
-  th{background:var(--redWhisper); color:var(--dark); font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
-  tr:nth-child(even) td{background:#fdfcfa;}
+  th{background:var(--terracottaWhisper); color:var(--ink); font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.03em; font-family:'Open Sauce Sans',Arial,sans-serif;}
+  tr:nth-child(even) td{background:#FBF6EF;}
 
-  .callout{background:var(--redWhisper); border:1px solid var(--redSoft); border-left:4px solid var(--red); border-radius:6px; padding:14px 18px; margin:16px 0; font-size:14.5px;}
+  .callout{background:var(--terracottaWhisper); border:1px solid var(--terracottaSoft); border-left:4px solid var(--terracotta); border-radius:6px; padding:14px 18px; margin:16px 0; font-size:14.5px;}
 
-  .examplebox{background:#fff; border:1px dashed var(--line); border-radius:8px; padding:12px 16px; margin:12px 0; font-size:14px;}
-  .examplebox .lbl{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700; margin-bottom:6px;}
+  .examplebox{background:var(--card); border:1px dashed var(--line); border-radius:8px; padding:12px 16px; margin:12px 0; font-size:14px;}
+  .examplebox .lbl{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink2); font-weight:700; margin-bottom:6px; font-family:'Open Sauce Sans',Arial,sans-serif;}
   .examplebox li{font-style:italic;}
 
-  .weekblock{margin:14px 0; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-  .weekblock .wk{background:var(--dark); color:#fff; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:9px 16px;}
-  .weekblock table{margin:0; border:none;}
-  .weekblock th, .weekblock td{border:none; border-bottom:1px solid var(--line);}
-  .weekblock tr:last-child td{border-bottom:none;}
+  .weekblock{margin:18px 0; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--card);}
+  .weekblock .wk{background:var(--ink); color:#fff; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:11px 18px; font-family:'Open Sauce Sans',Arial,sans-serif;}
+  .weekblock .wk .gold{color:var(--gold); font-weight:400; text-transform:none; letter-spacing:0; font-style:italic; margin-left:6px;}
 
-  .num-badge{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; background:var(--red); color:#fff; border-radius:50%; font-size:11px; font-weight:800; margin-right:8px; font-family:'Rethink Sans',sans-serif;}
+  .topiccard{padding:16px 20px; border-bottom:1px solid var(--line);}
+  .topiccard:last-child{border-bottom:none;}
+  .topiccard h4{font-family:'Instrument Serif', Georgia, serif; font-size:17px; font-weight:400; color:var(--ink); margin:8px 0 8px;}
+  .topiccard .tc-row{font-size:13px; margin:5px 0; color:var(--charcoal);}
+  .topiccard .tc-row .lab{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--terracotta); font-weight:700; margin-right:6px; font-family:'Open Sauce Sans',Arial,sans-serif;}
+
+  .num-badge{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; background:var(--terracotta); color:#fff; border-radius:50%; font-size:11px; font-weight:700; margin-right:8px; font-family:'Open Sauce Sans',Arial,sans-serif;}
 
   footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line); font-size:11.5px; color:var(--ink2); line-height:1.8;}
 </style>
@@ -87,22 +95,21 @@
 
   <div class="kicker">Purely Personal · Content Strategy · Final</div>
   <h1 class="title">Nicole Brandes: The LinkedIn Content Strategy</h1>
-  <p class="sub">Rebuilt against the confirmed positioning: the method, the buyer, the proof, and the offer, all in her own words. Every pillar now carries the topics that actually belong to it, nothing else.</p>
-  <div class="meta"><span>Private</span><span>7 sections</span><span>Final</span></div>
+  <p class="sub">Rebuilt against the confirmed positioning, in her own visual identity. Every pillar carries the topics that actually belong to it, and the first thirty days are planned post by post.</p>
+  <div class="meta"><span>Private</span><span>6 sections</span><span>Final</span></div>
 
   <div class="tabbar" id="tabbar">
     <button class="tabbtn active" data-tab="t1">Positioning</button>
     <button class="tabbtn" data-tab="t2">Who &amp; The Pillars</button>
-    <button class="tabbtn" data-tab="t3">The Field</button>
     <button class="tabbtn" data-tab="t4">What We Give Up</button>
     <button class="tabbtn" data-tab="t5">Funnel &amp; The Math</button>
-    <button class="tabbtn" data-tab="t6">90 Days &amp; Calendar</button>
+    <button class="tabbtn" data-tab="t6">The First 30 Days</button>
     <button class="tabbtn" data-tab="t7">Watchpoints</button>
   </div>
 
   <!-- TAB 1 -->
   <section class="panel active" id="t1">
-    <h2>They have achieved everything. They have not achieved themselves.</h2>
+    <h2>They have achieved everything. They have not achieved <em>themselves.</em></h2>
     <p class="lead">That sentence is the whole thesis. Content exists to say it in a hundred different ways until the right reader recognises herself in it.</p>
 
     <div class="north">
@@ -193,14 +200,14 @@
       <h4>Sub-theme topics</h4>
       <ul>
         <li><strong>They have achieved everything. They have not achieved themselves.</strong> The single sentence that is the entire thesis, said plainly.</li>
-        <li><strong>He held up the trophy for the most prestigious prize in his sport, and asked his dead father: is this finally enough.</strong> A true story about a famous, driven man, and the question every reader is quietly asking too.</li>
+        <li><strong>He won the oldest trophy in professional sport, and never got the one verdict he actually wanted.</strong> A true story about a famous, driven man, and the question every reader is quietly asking too.</li>
         <li><strong>Most people play not to lose, rather than playing to win.</strong> The difference between defending a life and building one.</li>
         <li><strong>A vision anyone can produce in a workshop. Almost nobody survives the first real pressure test after.</strong></li>
         <li><strong>Positive psychology is a good attitude. She was trained in the four last things.</strong> The line that separates her from the entire wellbeing category in one breath.</li>
         <li><strong>Still, quietly, the tiny person being scolded by a parent who has been gone for twenty years.</strong> What actually keeps performing long after the audience left.</li>
         <li><strong>We are not dead yet.</strong> Against an entire industry that treats the second half of life as a wind-down.</li>
       </ul>
-      <div class="chiprow"><span class="chip">Post</span><span class="chip">Image</span></div>
+      <div class="chiprow"><span class="chip format">Text Post</span><span class="chip format">Image Post</span></div>
       <p><span class="taglabel">Mix</span> Authority 35% · Education 25% · Selling 20% · Trust 20%</p>
       <p style="font-size:12.5px; color:var(--ink2);">Cadence: twice a month at most. Her own words: "a punch in the belly." More often than that and it stops working.</p>
     </div>
@@ -218,7 +225,7 @@
         <li><strong>No complaint and no inspiration.</strong> The specific flatness that never gets taken seriously because it does not look like a crisis.</li>
         <li><strong>People need permission for that. They have no access to their own abundance.</strong> Named directly, as the thing everyone in this position is quietly waiting for.</li>
       </ul>
-      <div class="chiprow"><span class="chip">Post</span><span class="chip">Cheatsheet</span></div>
+      <div class="chiprow"><span class="chip format">Text Post</span><span class="chip format">Cheatsheet</span></div>
       <p><span class="taglabel">Mix</span> Trust 40% · Education 20% · Selling 25% · Authority 15%</p>
     </div>
 
@@ -231,11 +238,11 @@
         <li><strong>Why a life operating system survives what a vision statement doesn't.</strong> The practical difference, not the poetic one.</li>
         <li><strong>Separate the gravel from the gold.</strong> What still genuinely belongs to you, and what you have only ever carried out of habit.</li>
         <li><strong>The 48-hour resonance protocol, taught once and kept for life.</strong> Built so the next decision does not need her in the room.</li>
-        <li><strong>Not a coach, not a consultant, not a therapist.</strong> What each one actually does with the same hard truth, and why the difference is not just branding.</li>
-        <li><strong>Score the gap at the start. Score it again at month six.</strong> What changes when "I don't feel alive" becomes a number instead of a feeling nobody can act on.</li>
-        <li><strong>Creating a philosophy you can actually operate by.</strong> For the reader who would never buy "meaning" but will buy a system with a name.</li>
+        <li><strong>A founder once told her she had already seen a coach, a consultant, and a therapist before she called.</strong> Three different rooms, three different vocabularies, and the one question that mattered never got asked in any of them.</li>
+        <li><strong>The skill that built the company is usually the exact one now quietly running it into a wall.</strong> Almost nobody tells the person still using it, because it is the same skill everyone still praises them for.</li>
+        <li><strong>Two years from now, could you actually explain why you decided this?</strong> The record almost nobody keeps, and the reason a decision made under pressure gets re-litigated in hindsight.</li>
       </ul>
-      <div class="chiprow"><span class="chip">Carousel</span><span class="chip">Cheatsheet</span><span class="chip">Post</span></div>
+      <div class="chiprow"><span class="chip format">Carousel</span><span class="chip format">Cheatsheet</span><span class="chip format">Text Post</span></div>
       <p><span class="taglabel">Mix</span> Education 45% · Authority 25% · Selling 20% · Trust 10%</p>
     </div>
 
@@ -252,34 +259,10 @@
         <li><strong>Field notes from rooms most people only ever see from the outside.</strong> The pattern that repeats, no matter which room it is.</li>
         <li><strong>What surprised her most about advising people who already have everything, and then finding out everything was never actually the target.</strong></li>
       </ul>
-      <div class="chiprow"><span class="chip">Post</span><span class="chip">Image</span><span class="chip">Video, from month three</span></div>
+      <div class="chiprow"><span class="chip format">Text Post</span><span class="chip format">Image Post</span><span class="chip format">Video, from month three</span></div>
       <p><span class="taglabel">Mix</span> Trust 45% · Education 20% · Selling 20% · Authority 15%</p>
       <p style="font-size:12.5px; color:var(--ink2);">Every client detail here stays anonymised and composite. No name, company, or identifying combination of facts appears in any post without her direct sign-off first.</p>
     </div>
-  </section>
-
-  <!-- TAB 3 -->
-  <section class="panel" id="t3">
-    <h2>What's already out there, and where the open space is</h2>
-    <p class="lead">Three names came up when she mapped the closest comparisons herself. None of them can follow into this content, each for a different reason.</p>
-
-    <table>
-      <tr><th>Who</th><th>Their territory</th><th>Where they stop</th></tr>
-      <tr><td>Reboot</td><td>Work that does not destroy you</td><td>Corporate leaders, not owners</td></tr>
-      <tr><td>The Entrepreneurial Council</td><td>A bigger business through systems</td><td>Her own line: "I do not do that"</td></tr>
-      <tr><td>Chip Conley, Modern Elder Academy</td><td>The bigger questions in life</td><td>No business consequence attached</td></tr>
-    </table>
-    <p>She sits where all three meet, and that is the sharpest boundary in the whole positioning: business consequence, ownership rather than employment, and the identity work all three others treat as optional.</p>
-
-    <blockquote>He's more about retirement. My philosophy is what Carl Jung said. You cannot create the second half of life with the inner setup of the first. What got you to this success will not take you any further. We are not dead yet.<cite>Nicole, on Chip Conley and the Modern Elder Academy</cite></blockquote>
-
-    <h3>The Modern Elder Academy, in its own words</h3>
-    <blockquote>"You've spent years building a career, a business, a reputation. The milestones are behind you. But here's what they don't see: the persistent question that keeps rising. Now what?"<cite>meawisdom.com</cite></blockquote>
-    <p>Past tense. The work already done, the question only now surfacing. Nicole's content does the opposite: present tense, still inside the decision, the question already named.</p>
-
-    <h3>Why this is hard to copy</h3>
-    <p>Not because of a clever angle. Twenty five years of real decisions, watched from inside the room, joined to a training in existential psychology none of the three names above have. Someone without both can copy the format in an afternoon and still never write the same post twice.</p>
-    <div class="callout">Content is not separate from that material. It is that material, shared one piece at a time. The gap it creates only gets wider the longer this runs.</div>
   </section>
 
   <!-- TAB 4 -->
@@ -319,7 +302,7 @@
       <li><strong>Bait and engagement pods.</strong> The platform pushes both down anyway, and they would cheapen the account even if it didn't.</li>
       <li><strong>Writing that sounds AI-generated.</strong> Every draft is read aloud in her own cadence before it goes up.</li>
       <li><strong>The standard case-study format.</strong> Before, after, logo, quote. The category she is leaving behind.</li>
-      <li><strong>Any client detail that could identify someone, even indirectly.</strong> Composite and anonymised only, and only with her sign-off, every time, no exceptions for a stronger story.</li>
+      <li><strong>Any client detail that could identify someone, even indirectly.</strong> Composite and anonymised only, and only with her sign-off, every time, no exceptions for a stronger story. The same Confidentiality Charter that governs the private engagement governs what content can borrow from it.</li>
       <li><strong>Any credential not already confirmed directly by her.</strong> Halifax, the private bank turnaround, the twenty five and seventeen year timeline, the years of Taoist study, and the training in existential psychology. Nothing beyond that.</li>
       <li><strong>Heavy personal storytelling.</strong> She said it herself, she is reserved about her own stories. Content stays built on the questions, not on mining her life for material.</li>
     </ul>
@@ -375,65 +358,129 @@
 
   <!-- TAB 6 -->
   <section class="panel" id="t6">
-    <h2>The first ninety days</h2>
-    <p class="lead">One job at a time, matched to the pace the offer plan already runs on.</p>
+    <h2>The first thirty days, post by post</h2>
+    <p class="lead">Twelve posts, three a week, all image-led. No text posts anywhere this month. One cheatsheet opens week one, one carousel closes every week after that, two image posts fill out the rest of each week. No selling anywhere in this window, the job is voice first.</p>
 
-    <h3>Days 1 to 30: get the voice right</h3>
-    <ul>
-      <li>All four pillars in rotation, no Selling posts yet</li>
-      <li>Every draft checked against her voice before it goes up, no exceptions</li>
-      <li>The Assess link lives in the Featured section and bio, never in a post</li>
-    </ul>
-    <h3>Days 31 to 60: let the pattern run</h3>
-    <ul>
-      <li>The weekly rhythm fully running: her brain dump, our draft, her approval</li>
-      <li>First Carousel and Cheatsheet posts tested</li>
-      <li>The five gaps go up as a scored, saveable carousel, under Teach Me</li>
-    </ul>
-    <h3>Days 61 to 90: let it pull</h3>
-    <ul>
-      <li>Selling lines become a normal, expected part of the week</li>
-      <li>First video test, inside Entertain Me</li>
-      <li>Assess applications tracked weekly against the twelve-session target</li>
-    </ul>
+    <div class="callout">Zero Selling-intent posts in the first thirty days. Every post here is Education, Trust, or Authority. The first application-facing line does not appear until month two.</div>
 
-    <h3>Weeks 1 to 4, post by post</h3>
     <div class="weekblock">
-      <div class="wk">Week 1</div>
-      <table>
-        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
-        <tr><td>Make Me Think</td><td>Post</td><td>They have achieved everything. They have not achieved themselves. No resolution yet.</td></tr>
-        <tr><td>Entertain Me</td><td>Post</td><td>One field detail, bridged lightly. No call to action.</td></tr>
-        <tr><td>Understand Me</td><td>Post</td><td>Surrounded by people, and lonely anyway.</td></tr>
-      </table>
+      <div class="wk">Week 1 <span class="gold">Image Post, Image Post, Cheatsheet: establish the voice</span></div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Make Me Think</span><span class="chip format">Image Post</span></div>
+        <h4>Delegation is an act of ego.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Six words. Deliberately the shortest, hardest card in the set, no elaboration underneath it, the reader supplies her own examples.</div>
+        <div class="tc-row"><span class="lab">Context</span>Reframes over-control as self-importance rather than competence, which lands precisely because it contradicts how the reader has been praised her whole career: for being the one who can do it all.</div>
+        <div class="tc-row"><span class="lab">Source</span>Founder essay on delegation and ego (Food for Founders).</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Understand Me</span><span class="chip format">Image Post</span></div>
+        <h4>Rich, but unknown. Or worse: unknown, and unnecessary.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Two short fragments, a hard pause between them, built to be read twice.</div>
+        <div class="tc-row"><span class="lab">Context</span>Describes precisely what founders report feeling once they are financially secure but no longer central to anything, the exact isolation her own gap table names as people all around them, and no one who actually knows them.</div>
+        <div class="tc-row"><span class="lab">Source</span>"The Post-Exit Void," founder-identity essay.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Teach Me</span><span class="chip format">Cheatsheet</span></div>
+        <h4>The question that made him go quiet.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Open on the scene, not the framework. A client once listed everything he had out loud: the business, the money, the marriage, the health. She asked what he had of himself. He did not answer for a long time. That pause becomes the cheatsheet.</div>
+        <div class="tc-row"><span class="lab">Context</span>Five rows, one honest answer each: success against fulfilment, performance against feeling alive, a role against real identity, hustle and safety against calling, people around them against anyone who actually knows them. Opens the month on the single most saveable asset in the plan, built from an actual moment rather than a listicle.</div>
+        <div class="tc-row"><span class="lab">Source</span>Nicole's own five-gap structure, 11 August positioning brief, reframed narratively.</div>
+      </div>
     </div>
+
     <div class="weekblock">
-      <div class="wk">Week 2</div>
-      <table>
-        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
-        <tr><td>Make Me Think</td><td>Post</td><td>One line from her own bank, unexplained.</td></tr>
-        <tr><td>Teach Me</td><td>Carousel</td><td>The 48-hour resonance protocol as a tool the reader can try this week.</td></tr>
-        <tr><td>Understand Me</td><td>Post</td><td>People need permission for that. They have no access to their own abundance.</td></tr>
-      </table>
+      <div class="wk">Week 2 <span class="gold">Image Post, Image Post, Carousel: hold the register</span></div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Make Me Think</span><span class="chip format">Image Post</span></div>
+        <h4>"I was introduced as someone's daughter. I was not myself."</h4>
+        <div class="tc-row"><span class="lab">Angle</span>A direct quote, attributed generally to a leader who inherited a family business. The card carries the line alone, no annotation.</div>
+        <div class="tc-row"><span class="lab">Context</span>Says in eight words what an entire pillar of this positioning is built to address: the founder who built or inherited something and still hasn't been asked who she is underneath it.</div>
+        <div class="tc-row"><span class="lab">Source</span>South China Morning Post interview, a third-generation leader of a jewellery company. Public figure, publicly reported, used here as general pattern rather than a named case.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Entertain Me</span><span class="chip format">Image Post</span></div>
+        <h4>In some cultures, the cure for a burn is more heat, not water. It works.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Her own bridging mechanism exactly as she described it: a physical, sensory detail from somewhere she's actually been, paired with the emotional pattern it mirrors.</div>
+        <div class="tc-row"><span class="lab">Context</span>Grief runs on the same logic, and almost nobody tests it before reaching for the water anyway. Reconstructs the mechanic she described herself, without inventing a specific unverified country or spice detail.</div>
+        <div class="tc-row"><span class="lab">Source</span>Nicole's own description of the Entertain Me format, 5 August session.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Teach Me</span><span class="chip format">Carousel</span></div>
+        <h4>Trust factors named most often at this altitude.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>A short, specific list rather than a provocation, useful as a save-worthy "what to look for" post: someone who has actually been in the room, discretion under real stakes, a presence that doesn't flinch at what surfaces.</div>
+        <div class="tc-row"><span class="lab">Context</span>Synthesises the trust factors already documented in her own client profile with what founder-coaching research independently identifies as the actual criteria accomplished people use when choosing an advisor, distinct from credentials or price.</div>
+        <div class="tc-row"><span class="lab">Source</span>Her own Ideal Customer Profile document, cross-checked against executive-coaching trust research.</div>
+      </div>
     </div>
+
     <div class="weekblock">
-      <div class="wk">Week 3</div>
-      <table>
-        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
-        <tr><td>Teach Me</td><td>Cheatsheet</td><td>Not a coach, not a consultant, not a therapist. Closes with one Selling line.</td></tr>
-        <tr><td>Entertain Me</td><td>Post</td><td>Story-led, entertaining first, insight second.</td></tr>
-        <tr><td>Understand Me</td><td>Post</td><td>Success and fulfilment are not the same purchase.</td></tr>
-      </table>
+      <div class="wk">Week 3 <span class="gold">Image Post, Image Post, Carousel: widen the proof</span></div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Understand Me</span><span class="chip format">Image Post</span></div>
+        <h4>The calendars that were packed now lie eerily blank. And so does the sense of who you are.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>A quiet, visual image, the empty calendar, rather than a direct emotional statement. Let the reader supply the feeling.</div>
+        <div class="tc-row"><span class="lab">Context</span>Almost verbatim from post-exit founder writing describing the days right after a sale or handover: the external structure disappears overnight, and the identity that depended on it disappears with it.</div>
+        <div class="tc-row"><span class="lab">Source</span>"The Post-Exit Void," founder-identity essay.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Entertain Me</span><span class="chip format">Image Post</span></div>
+        <h4>One founder sold his company for half a billion dollars and, months later, asked out loud: how much golf can I play?</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Story first, punchline last. The absurdity of the question is the point, it makes an abstract feeling concrete, and a little funny, before it turns serious.</div>
+        <div class="tc-row"><span class="lab">Context</span>A real, publicly reported case, a founder's own words after a major exit. One of the strongest available story hooks: it disarms with humour before it lands the actual point.</div>
+        <div class="tc-row"><span class="lab">Source</span>Widely reported founder interview following a major acquisition.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Teach Me</span><span class="chip format">Carousel</span></div>
+        <h4>The most fundamental part of succession is replacing yourself. Almost nobody plans for that.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>States a hard truth about planning most owners genuinely haven't confronted, framed as an omission rather than a failure.</div>
+        <div class="tc-row"><span class="lab">Context</span>Grounded in succession-planning writing that treats replacing yourself as the real, usually skipped task, distinct from the legal and financial planning most owners assume is the whole job. Only 30 percent of family businesses survive to the second generation, and this is the reason most often missed.</div>
+        <div class="tc-row"><span class="lab">Source</span>Family Business Institute succession research, widely cited across succession-planning publications.</div>
+      </div>
     </div>
+
     <div class="weekblock">
-      <div class="wk">Week 4</div>
-      <table>
-        <tr><th>Pillar</th><th>Format</th><th>Direction</th></tr>
-        <tr><td>Make Me Think</td><td>Image</td><td>Second and last paradox line of the month, as a single visual card.</td></tr>
-        <tr><td>Teach Me</td><td>Carousel</td><td>Assess, Attune, Aspire, Align, Ascend, walked through slide by slide.</td></tr>
-        <tr><td>Entertain Me</td><td>Post</td><td>Closes the month on story, with one Selling line toward the Assess.</td></tr>
-      </table>
+      <div class="wk">Week 4 <span class="gold">Image Post, Image Post, Carousel: closes the month</span></div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Make Me Think</span><span class="chip format">Image Post</span></div>
+        <h4>Insecure leaders avoid delegating, not because others can't do the job, but because they fear being overshadowed and rendered obsolete.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>A single, uncomfortable diagnostic sentence. No softening, no "but that's okay" underneath it.</div>
+        <div class="tc-row"><span class="lab">Context</span>Reframes a founder's white-knuckle grip on the business as fear dressed up as diligence, exactly the register this positioning calls for: naming the thing nobody else will say.</div>
+        <div class="tc-row"><span class="lab">Source</span>Leadership psychology research on delegation avoidance.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Understand Me</span><span class="chip format">Image Post</span></div>
+        <h4>You believe a different future is available to other people. Just not to you.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Second person, direct, no softening. The gap between what she'd tell a friend and what she believes about herself.</div>
+        <div class="tc-row"><span class="lab">Context</span>This is the belief test from her own offer document, restated as recognition rather than as a screening question. The person she turns away doesn't believe change is available at all; the person she's for believes it, but only for other people, not herself yet.</div>
+        <div class="tc-row"><span class="lab">Source</span>Nicole's own positioning brief, 11 August.</div>
+      </div>
+
+      <div class="topiccard">
+        <div class="chiprow"><span class="chip">Teach Me</span><span class="chip format">Carousel</span></div>
+        <h4>Executives who delegate effectively generate roughly a third more revenue than those who can't let go.</h4>
+        <div class="tc-row"><span class="lab">Angle</span>Opens on a number, which earns its place specifically because it's genuinely useful, citable information, not just an emotional hook.</div>
+        <div class="tc-row"><span class="lab">Context</span>The rare purely educational card in the month, the kind a reader saves because it's simply a fact she didn't have. Closes the month on hard evidence rather than a feeling, and sets up month two without selling anything yet.</div>
+        <div class="tc-row"><span class="lab">Source</span>Harvard Business Review research on delegation and firm performance.</div>
+      </div>
     </div>
+
+    <h3>Months two and three, in brief</h3>
+    <table>
+      <tr><th>Phase</th><th>Days</th><th>What changes</th></tr>
+      <tr><td>Month 2</td><td>31 to 60</td><td>The weekly rhythm runs on its own: her brain dump, the draft, her approval. First Selling-intent lines appear, always after two Authority or Education posts.</td></tr>
+      <tr><td>Month 3</td><td>61 to 90</td><td>First video test, inside Entertain Me. Assess applications tracked weekly against the twelve-session target for the quarter.</td></tr>
+    </table>
   </section>
 
   <!-- TAB 7 -->
