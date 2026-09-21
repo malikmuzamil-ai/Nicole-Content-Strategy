@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/plan", "destination": "/nicole-brandes-90-day-plan" },
     { "source": "/funnel", "destination": "/ninety-day-build" },
     { "source": "/build", "destination": "/ninety-day-build" },
     { "source": "/strategy", "destination": "/" }
