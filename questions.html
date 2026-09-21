@@ -27,21 +27,29 @@ h3.sub{font-size:23px;margin:44px 0 4px;padding-top:26px;border-top:1px solid va
 .def b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);display:block;margin-bottom:3px;font-weight:500;}
 .src{font-size:13.5px;margin:12px 0 0;padding:10px 14px;background:var(--twhisper);border-left:2px solid var(--terracotta);border-radius:0 8px 8px 0;}
 .src b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta);display:block;margin-bottom:3px;font-weight:500;}
-.ans{margin-top:14px;border:1px dashed var(--line);border-radius:8px;height:60px;position:relative;}
-.ans:before{content:"Answer";position:absolute;top:8px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:#C6BAAA;}
+.answ{margin-top:14px;}
+.answ label{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:#A89A88;margin-bottom:6px;}
+.answ textarea{width:100%;min-height:74px;resize:vertical;background:#fff;border:1px dashed var(--line);border-radius:8px;padding:11px 13px;font-family:'Inter',system-ui,Arial,sans-serif;font-size:14.5px;line-height:1.55;color:var(--charcoal);}
+.answ textarea:focus{outline:none;border:1px solid var(--terracotta);box-shadow:0 0 0 3px rgba(140,84,66,.09);}
+.answ textarea::placeholder{color:#C6BAAA;}
+.bar{position:sticky;bottom:0;z-index:20;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--ink);color:#EDE7DF;border-radius:var(--radius);padding:14px 18px;margin-top:34px;}
+.bar span{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9E9488;margin-right:auto;}
+.bar button{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--ink);background:var(--tsoft);border:none;border-radius:100px;padding:9px 16px;cursor:pointer;}
+.bar button.ghost{background:transparent;color:#EDE7DF;border:1px solid #4A423B;}
+.bar button:hover{opacity:.88;}
 .box{background:var(--ink);color:#EDE7DF;border-radius:var(--radius);padding:24px 26px;margin:26px 0 8px;}
 .box h3{color:#fff;font-size:21px;} .box p{font-size:14px;margin:10px 0 0;color:#CFC6BB;}
 .foot{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink2);}
 .foot a{color:var(--terracotta);}
-@media print{body{background:#fff;} .q{break-inside:avoid;} .wrap{padding:16px;} .box{background:#fff;color:#000;border:1px solid #ccc;} .box h3,.box p{color:#000;}}
+@media print{body{background:#fff;} .q{break-inside:avoid;} .wrap{padding:16px;} .box{background:#fff;color:#000;border:1px solid #ccc;} .box h3,.box p{color:#000;} .bar{display:none;} .answ textarea{border:1px solid #bbb;min-height:64px;}}
 </style></head><body><div class="wrap">
 
 <span class="kicker">Purely Personal &middot; 21 September 2026</span>
 <h1>Nicole, the questions that are <em class="t">actually</em> still open.</h1>
-<p class="lede">Seventeen questions, checked first against your own documents. Six of the thirteen we were going to send you are already answered in writing, so they are at the bottom as confirmations rather than questions. Eleven that were missing are now in. Under each one is what we do if you say nothing.</p>
+<p class="lede">Sixteen questions, checked first against your own documents so that nothing is put to you twice. Two that were on the earlier sheet are already settled in writing and sit at the bottom as confirmations. Under every question is what we do if you say nothing, which means silence costs a default rather than a delay. You can type straight into this page.</p>
 
 <div class="box"><h3>Four of them change what happens this week</h3>
-<p>They are marked. The rest can wait without anything stopping. One of them has been open since week one and it is holding the whole funnel.</p></div>
+<p>They are marked in the warmer colour. The rest can wait without anything stopping. The first has been open since week one and it is holding the whole funnel.</p></div>
 
 <h3 class="sub">The four</h3>
 <p class="qintro">Each of these is currently stopping work that is otherwise finished and waiting.</p>
@@ -50,165 +58,243 @@ h3.sub{font-size:23px;margin:44px 0 4px;padding-top:26px;border-top:1px solid va
   <div class="qh"><span class="qid">01</span><span class="qt">The profile rewrite. Sign it off, or mark what you want changed.</span></div>
   <p class="why">Every post drives to your profile and asks for nothing else. Three of the four ways a reader can reach the page sit on it. The rewrite is drafted and has been waiting since week one, which means the posts that have gone out are pointing at the old version.</p>
   <p class="def"><b>If you say nothing</b>The rewrite stays in the drawer and readers keep landing on the current profile.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a01">Your answer</label><textarea id="a01" data-q="01" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q key">
   <div class="qh"><span class="qid">02</span><span class="qt">What may go out under your name from today. Likes. Approved comment lines. Nothing at all.</span></div>
   <p class="why">Everything is drafted and held, which is the safe version and the slow one. Until this is settled the half hour around each post runs at a fraction of its speed.</p>
   <p class="def"><b>If you say nothing</b>Nothing goes out. We keep drafting and holding.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a02">Your answer</label><textarea id="a02" data-q="02" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q key">
   <div class="qh"><span class="qid">03</span><span class="qt">Is there a paid room at all, as a tier below the Assess?</span></div>
   <p class="why">Your offer document settles two tiers and this would be a third. That is a change to a settled document, so it is yours to make and not ours. Everything from week three onward assumes it exists.</p>
   <p class="def"><b>If you say nothing</b>No room. The funnel ends at the diagnostic and the November date goes.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a03">Your answer</label><textarea id="a03" data-q="03" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q key">
   <div class="qh"><span class="qid">04</span><span class="qt">If it exists: the date, the cap, the price, the language, and whether it is a room in Zurich or online.</span></div>
   <p class="why">Five settings, and the registration page, the payment product and every letter in the campaign hang on them. The cap is the number you can defend out loud, set by your own capacity rather than by a revenue target.</p>
   <p class="def"><b>If you say nothing</b>Nothing is built and Thursday 5 November is released.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a04">Your answer</label><textarea id="a04" data-q="04" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <h3 class="sub">Open, and each one holds something up</h3>
 <p class="qintro">None of these stops the build outright. Each one costs speed, or costs us a slot.</p>
 
 <div class="q">
-  <div class="qh"><span class="qid">05</span><span class="qt">Twenty names you want engaged with, and any you want left alone.</span></div>
-  <p class="why">Of seventy accounts on the first list, ten or twelve post more than once a week. Your buyers are owners and owners do not post. At one or two comments a month per person, the window needs sixty to a hundred names who actually write something.</p>
-  <p class="def"><b>If you say nothing</b>We keep building from sector and title, and the window runs under capacity.</p>
-  <div class="ans"></div>
+  <div class="qh"><span class="qid">05</span><span class="qt">Who should we be engaging with? Names if you have them, and anyone you want left alone.</span></div>
+  <p class="why">Four lists have been built and they are thinner than they should be. Of seventy accounts on the first, ten or twelve post more than once a week. Your buyers are owners, and owners do not post much. Twenty names from you are worth more than four hundred from a search. A list of the rooms or the sectors you want watched works just as well if names are easier to give later.</p>
+  <p class="def"><b>If you say nothing</b>We keep building from sector and title, and the list stays thinner than it should be.</p>
+  <div class="answ"><label for="a05">Your answer</label><textarea id="a05" data-q="05" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
   <div class="qh"><span class="qid">06</span><span class="qt">The diagnostic needs a title. Three of your own lines are coming to you. Choose one.</span></div>
   <p class="why">Your own standard is that a title is a scene or a question and never a promise. We would rather hand you three things you have already said than name it ourselves.</p>
   <p class="def"><b>If you say nothing</b>The page is built and sits unpublished until it has a name.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a06">Your answer</label><textarea id="a06" data-q="06" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
   <div class="qh"><span class="qid">07</span><span class="qt">Three or four of your own physical objects, for the image bank.</span></div>
   <p class="why">The proficiency prison, gravel and gold, the rectangular sky. You produce these in conversation in seconds and we are not going to invent one.</p>
   <p class="def"><b>If you say nothing</b>Any post that needs an object moves down the calendar rather than going out with a borrowed one.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a07">Your answer</label><textarea id="a07" data-q="07" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
   <div class="qh"><span class="qid">08</span><span class="qt">A post about a death, an illness or a loss. What do we do underneath it?</span></div>
   <p class="why">This is one of the likeliest live situations and the one where craft is the wrong instinct. It will arrive on a day nobody planned for it.</p>
   <p class="def"><b>If you say nothing</b>Under fifteen words, no frame and no turn, flagged to you before it goes.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a08">Your answer</label><textarea id="a08" data-q="08" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
   <div class="qh"><span class="qid">09</span><span class="qt">A comment arrives in German. Reply in German, or send it to you?</span></div>
   <p class="why">We can draft in either. What we cannot do is guess at your tone in the second one, and tone in a second language is exactly where a voice slips.</p>
   <p class="def"><b>If you say nothing</b>We draft the German reply and send it to you first. Nothing in German goes out unread.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a09">Your answer</label><textarea id="a09" data-q="09" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">10</span><span class="qt">Someone asks you something personal or commercial in a comment. Who answers?</span></div>
-  <p class="why">This is already happening on your live posts, and the desk needs a standing instruction rather than a judgement call each time.</p>
-  <p class="def"><b>If you say nothing</b>Daniel, the same day. Nothing under your name, not even a holding line.</p>
-  <div class="ans"></div>
-</div>
-
-<div class="q">
-  <div class="qh"><span class="qid">11</span><span class="qt">The advisers around your buyer. Lawyers, fiduciaries, bankers. In or out?</span></div>
+  <div class="qh"><span class="qid">10</span><span class="qt">The advisers around your buyer. Lawyers, fiduciaries, bankers. In or out?</span></div>
   <p class="why">They post far more than owners do and they refer. They are also not the buyer, and engaging them dilutes what the list is for.</p>
   <p class="def"><b>If you say nothing</b>A separate, smaller list. Engaged less often, counted apart, so we can see what it is worth.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a10">Your answer</label><textarea id="a10" data-q="10" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">12</span><span class="qt">Some sentence shapes repeat across your posts. Flagged with one alternative beside your own version, or left alone?</span></div>
+  <div class="qh"><span class="qid">11</span><span class="qt">Some sentence shapes repeat across your posts. Flagged with one alternative beside your own version, or left alone?</span></div>
   <p class="why">We change nothing either way. The repetition is load bearing and anyone who edits it out removes the thing that makes it yours. You would simply see what a sharp reader sees.</p>
   <p class="def"><b>If you say nothing</b>We flag on the first post of each week. You ignore us as often as you like.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a11">Your answer</label><textarea id="a11" data-q="11" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">13</span><span class="qt">Two succession numbers came off your proof floor this week. May the replacements go on?</span></div>
+  <div class="qh"><span class="qid">12</span><span class="qt">Two succession numbers came off your proof floor this week. May the replacements go on?</span></div>
   <p class="why">The thirty percent survival figure cannot be traced to a real study, and the claim that fewer than one in three owners has a plan is contradicted by Deloitte, who found that almost all of them do. What replaces them is named and dated, and the argument gets better: the gap is not between having a plan and not having one, it is between a plan and a plan that works.</p>
   <p class="def"><b>If you say nothing</b>Succession posts run without a number, and week three of the calendar publishes without one.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a12">Your answer</label><textarea id="a12" data-q="12" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">14</span><span class="qt">May your monthly letter carry a link?</span></div>
+  <div class="qh"><span class="qid">13</span><span class="qt">May your monthly letter carry a link?</span></div>
   <p class="why">Your funnel document settles three places the offer may appear and the letter is not one of them. The reference we want to put there points at the diagnostic rather than at the Assess, which is arguably outside that rule, but reading a settled rule generously is not something we should do on our own.</p>
   <p class="def"><b>If you say nothing</b>The first issue goes out with no link in it.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a13">Your answer</label><textarea id="a13" data-q="13" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">15</span><span class="qt">Anyone you would never be seen near, beyond the three you have already named?</span></div>
+  <div class="qh"><span class="qid">14</span><span class="qt">Anyone you would never be seen near, beyond the three you have already named?</span></div>
   <p class="why">A comment in the wrong place cannot be taken back, and no approval process catches it after the fact.</p>
   <p class="def"><b>If you say nothing</b>The three from your own positioning work, and anyone whose writing reads as adjacent to them.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a14">Your answer</label><textarea id="a14" data-q="14" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">16</span><span class="qt">The Academy. May it be referenced publicly yet?</span></div>
+  <div class="qh"><span class="qid">15</span><span class="qt">The Academy. May it be referenced publicly yet?</span></div>
   <p class="why">This blocks nothing, which is exactly why it is the likeliest thing to go wrong. It takes one enthusiastic sentence on a registration page to describe a business that does not exist yet.</p>
   <p class="def"><b>If you say nothing</b>No. Every draft is read for an accidental mention before anything else.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a15">Your answer</label><textarea id="a15" data-q="15" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <div class="q">
-  <div class="qh"><span class="qid">17</span><span class="qt">The six month engagement. Hold at CHF 18,000, or move toward CHF 24,000?</span></div>
+  <div class="qh"><span class="qid">16</span><span class="qt">The six month engagement. Hold at CHF 18,000, or move toward CHF 24,000?</span></div>
   <p class="why">Nothing this quarter depends on it, because no page states that number. It does change the proposal language the moment it moves.</p>
   <p class="def"><b>If you say nothing</b>CHF 18,000 stands, on the payment schedule in your offer document.</p>
-  <div class="ans"></div>
+  <div class="answ"><label for="a16">Your answer</label><textarea id="a16" data-q="16" rows="3" placeholder="Type here. It saves as you write."></textarea></div>
 </div>
 
 <h3 class="sub">Already answered, in your own documents</h3>
-<p class="qintro">These six were on the sheet. Each one is already settled in writing, so they are here to be confirmed or corrected rather than answered. If any of them is wrong, that is more useful to us than a new answer.</p>
+<p class="qintro">Both of these were on the earlier sheet and both are already settled in your own documents. They are here to be confirmed or corrected rather than answered. If either one is wrong, that is more useful to us than a new answer.</p>
 
 <div class="q done">
-  <div class="qh"><span class="qid">A</span><span class="qt">Which countries?</span></div>
+  <div class="qh"><span class="qid">Settled</span><span class="qt">Which countries?</span></div>
   <p class="src"><b>Settled, ideal client profile</b>Swiss and German speaking Europe first, though the content does not geo-restrict itself. Australia already came off.</p>
 </div>
 
 <div class="q done">
-  <div class="qh"><span class="qid">B</span><span class="qt">What makes someone worth our time?</span></div>
-  <p class="src"><b>Settled, ideal client profile and the engagement workflow</b>Owners and owner operators, mostly women. Successors and second generation owners. Anyone writing seriously about succession, governance or the transfer of a family business. Plus your four tests: she owns it, something consequential is in front of her, she will say the true thing out loud, and she believes a different future is available to her.</p>
+    <p class="src"><b>Settled, ideal client profile and the engagement workflow</b>Owners and owner operators, mostly women. Successors and second generation owners. Anyone writing seriously about succession, governance or the transfer of a family business. Plus your four tests: she owns it, something consequential is in front of her, she will say the true thing out loud, and she believes a different future is available to her.</p>
 </div>
 
 <div class="q done">
-  <div class="qh"><span class="qid">C</span><span class="qt">How much engagement a day?</span></div>
-  <p class="src"><b>Settled, the engagement workflow</b>Thirty minutes before each post and thirty after, on Monday, Tuesday and Thursday. Not a daily hour. Five to seven comments outward before, three to five between replies after.</p>
+    <p class="src"><b>Settled, the engagement workflow</b>Thirty minutes before each post and thirty after, on Monday, Tuesday and Thursday. Not a daily hour. Five to seven comments outward before, three to five between replies after.</p>
 </div>
 
 <div class="q done">
-  <div class="qh"><span class="qid">D</span><span class="qt">Anyone we should never comment under?</span></div>
+  <div class="qh"><span class="qid">Settled</span><span class="qt">Anyone we should never comment under?</span></div>
   <p class="src"><b>Settled, the charter and your competitive position</b>Reboot, The Entrepreneurial Council, and Chip Conley's Modern Elder Academy, in either direction, positively or negatively. Plus anything political, national, religious or a live controversy, and any post about a named person's private life. Question 15 above asks only for names beyond those.</p>
 </div>
 
 <div class="q done">
-  <div class="qh"><span class="qid">E</span><span class="qt">Connection requests and follows under your name?</span></div>
-  <p class="src"><b>Settled, the inbound playbook</b>Outgoing requests are rare and only ever to somebody you have actually met or worked with, with no note that mentions what you do. Nothing is moved to a message by us, in any situation.</p>
+    <p class="src"><b>Settled, the inbound playbook</b>Outgoing requests are rare and only ever to somebody you have actually met or worked with, with no note that mentions what you do. Nothing is moved to a message by us, in any situation.</p>
 </div>
 
 <div class="q done">
-  <div class="qh"><span class="qid">F</span><span class="qt">When outreach begins, what is off limits?</span></div>
-  <p class="src"><b>Settled, the inbound playbook</b>There is no cold outreach in this system and there will not be. Two things have to be true before it is even discussed: the profile rewrite live and signed off, and enough application numbers to know whether reach is actually the problem. Most requests for outreach are a response to a slow month.</p>
+    <p class="src"><b>Settled, the inbound playbook</b>There is no cold outreach in this system and there will not be. Two things have to be true before it is even discussed: the profile rewrite live and signed off, and enough application numbers to know whether reach is actually the problem. Most requests for outreach are a response to a slow month.</p>
 </div>
 
-<h3 class="sub">One thing to settle before this reaches her</h3>
-<p class="qintro">Not a question for Nicole. A contradiction between two of our own documents, and she should not be asked to rule on a number that disagrees with something already settled.</p>
 
 <div class="q">
-  <div class="qh"><span class="qid">!</span><span class="qt">How many comments a week under her name, at most?</span></div>
-  <p class="why">The sheet proposed fifteen a week. The engagement workflow settles five to seven before each post and three to five after, across three publishing days, which is roughly twenty five to thirty five. One of the two numbers is wrong. Our reading is that the workflow number stands as volume and that one or two a month per person is the ceiling on any single name, which is what makes the list size in question 05 the real constraint.</p>
+    <p class="why">The sheet proposed fifteen a week. The engagement workflow settles five to seven before each post and three to five after, across three publishing days, which is roughly twenty five to thirty five. One of the two numbers is wrong. Our reading is that the workflow number stands as volume and that one or two a month per person is the ceiling on any single name, which is what makes the list size in question 05 the real constraint.</p>
   <p class="def"><b>What we propose</b>The question comes off the sheet. The volume is already settled, and what we actually need from her is the names in question 05.</p>
 </div>
+
+
+<div class="bar">
+  <span id="status">Nothing typed yet</span>
+  <button type="button" id="copy">Copy answers</button>
+  <button type="button" id="download" class="ghost">Download</button>
+  <button type="button" id="print" class="ghost">Print</button>
+  <button type="button" id="clear" class="ghost">Clear</button>
+</div>
+
+<script>
+(function(){
+  var KEY = "nicole-questions-2026-09-21";
+  var fields = Array.prototype.slice.call(document.querySelectorAll("textarea[data-q]"));
+  var status = document.getElementById("status");
+
+  function label(t){
+    var card = t.closest(".q");
+    var q = card ? card.querySelector(".qt") : null;
+    return (t.dataset.q || "") + ". " + (q ? q.textContent.trim() : "");
+  }
+  function load(){
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+      fields.forEach(function(t){ if (saved[t.dataset.q]) t.value = saved[t.dataset.q]; });
+    } catch (e) {}
+  }
+  function save(){
+    var out = {};
+    fields.forEach(function(t){ if (t.value.trim()) out[t.dataset.q] = t.value; });
+    try { localStorage.setItem(KEY, JSON.stringify(out)); } catch (e) {}
+    count();
+  }
+  function count(){
+    var done = fields.filter(function(t){ return t.value.trim(); }).length;
+    status.textContent = done === 0 ? "Nothing typed yet"
+      : done + " of " + fields.length + " answered, saved in this browser";
+  }
+  function text(){
+    var lines = ["Nicole Brandes, answers", "21 September 2026", ""];
+    fields.forEach(function(t){
+      if (!t.value.trim()) return;
+      lines.push(label(t));
+      lines.push(t.value.trim());
+      lines.push("");
+    });
+    return lines.length > 3 ? lines.join("\n") : "";
+  }
+  function grow(t){ t.style.height = "auto"; t.style.height = Math.max(74, t.scrollHeight) + "px"; }
+
+  fields.forEach(function(t){
+    t.addEventListener("input", function(){ grow(t); save(); });
+  });
+  load();
+  fields.forEach(grow);
+  count();
+
+  document.getElementById("copy").addEventListener("click", function(){
+    var body = text();
+    if (!body) { status.textContent = "Type an answer first"; return; }
+    var done = function(){ status.textContent = "Copied. Paste it into a message or an email"; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(body).then(done, function(){ status.textContent = "Copy was blocked. Use Download instead"; });
+    } else {
+      var a = document.createElement("textarea");
+      a.value = body; document.body.appendChild(a); a.select();
+      try { document.execCommand("copy"); done(); } catch (e) { status.textContent = "Copy was blocked. Use Download instead"; }
+      document.body.removeChild(a);
+    }
+  });
+
+  document.getElementById("download").addEventListener("click", function(){
+    var body = text();
+    if (!body) { status.textContent = "Type an answer first"; return; }
+    var url = URL.createObjectURL(new Blob([body], {type:"text/plain;charset=utf-8"}));
+    var a = document.createElement("a");
+    a.href = url; a.download = "nicole-answers.txt";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    status.textContent = "Downloaded as nicole-answers.txt";
+  });
+
+  document.getElementById("print").addEventListener("click", function(){ window.print(); });
+
+  document.getElementById("clear").addEventListener("click", function(){
+    if (!window.confirm("Clear every answer on this page?")) return;
+    fields.forEach(function(t){ t.value = ""; grow(t); });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    count();
+  });
+})();
+</script>
 
 <div class="foot">Purely Personal &middot; Companion to the ninety day plan &middot; 21 September 2026 &middot; <a href="/plan">The plan</a></div>
 </div></body></html>
