@@ -2,8 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/funnel", "destination": "/ninety-day-build.html" },
-    { "source": "/build", "destination": "/ninety-day-build.html" },
-    { "source": "/strategy", "destination": "/index.html" }
+    { "source": "/funnel", "destination": "/ninety-day-build" },
+    { "source": "/build", "destination": "/ninety-day-build" },
+    { "source": "/strategy", "destination": "/" }
   ]
 }
