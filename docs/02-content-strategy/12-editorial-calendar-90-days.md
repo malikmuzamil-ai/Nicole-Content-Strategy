@@ -152,11 +152,16 @@ an omission rather than a failure.
 
 **Context.** Grounded in succession planning writing that treats replacing yourself as the real,
 usually skipped task, distinct from the legal and financial planning most owners assume is the
-whole job. Only 30 percent of family businesses survive to the second generation, and this is the
-reason most often missed.
+whole job.
 
-**Source.** Family Business Institute succession research, widely cited across succession planning
-publications.
+**Source.** **Amber, struck 21 September.** This card originally carried "only 30 percent of family
+businesses survive to the second generation", attributed to Family Business Institute research. The
+trail does not resolve and it fails doc 07 rule three, so it came off the proof floor in doc 03 and
+no post is drafted against it. The candidate replacement is McKinsey, February 2026: total
+shareholder return down an average 5.7 points in the five years after a family CEO transition,
+across 200 listed family businesses in forty plus countries. **It needs her written yes first.**
+Until she rules, the slot holds and the line publishes without a number or not at all. A missed
+slot costs one day.
 
 ---
 
@@ -202,7 +207,10 @@ citable information, not just an emotional hook.
 simply a fact she did not have. Closes the month on hard evidence rather than a feeling, and sets
 up month two without selling anything yet.
 
-**Source.** Harvard Business Review research on delegation and firm performance.
+**Source.** **Amber, flagged 21 September.** The roughly one third figure is carried everywhere as
+Harvard Business Review research and the trail we hold does not reach a Harvard Business Review
+study. Doc 07 rule three wants the institution that actually ran it. Held until the primary study is
+named, and the card does not open on a number until then.
 
 ---
 

@@ -103,6 +103,22 @@ about the Academy.
 
 ---
 
+## 08 · A number goes out that cannot be traced
+
+**The risk.** A statistic that everybody in the category repeats turns out to rest on nothing. It
+goes into a post, a reader who checks finds the trail ends at a consultancy page, and the position
+that costs the most to lose is the anti hype one.
+
+**Early signal.** A source line that names a category rather than a study. "Succession research."
+"Industry data." "Widely cited." Any figure we hold that we have never personally traced.
+**The fix.** Doc 07 rule three, applied before the brief rather than after. Every number traces to a
+named study with a date, or it does not go. The fence rule states what the source actually proves
+first. Two figures came off the proof floor on 21 September this way, and the 30 percent
+second generation survival number was one of them. Not using it is itself a differentiator.
+**Owner.** The desk, before anything is drafted. Additions to the proof floor are hers, in writing.
+
+---
+
 ## The one that matters most
 
 **There is no content plan here without Nicole in the room after it.** Every application still has
@@ -116,7 +132,7 @@ produced none, because it spends her time and it teaches us the wrong thing abou
 
 ## Review
 
-First Monday of each month, alongside doc 20. For each of the seven: has the early signal
+First Monday of each month, alongside doc 20. For each of the eight: has the early signal
 appeared, has the owner changed, is the fix still the right fix.
 
 A risk that has not moved in three months is not necessarily safe. It may just be unobserved.

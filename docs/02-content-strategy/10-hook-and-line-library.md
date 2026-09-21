@@ -85,7 +85,12 @@ A number earns its place here and nowhere else, and only when it is genuinely ci
 `DESK` The skill that built the company is usually the exact one now running it into a wall.
 `DESK` Separate the gravel from the gold.
 `DESK` She had already seen a coach, a consultant and a therapist before she called.
-`DESK` Only 30 percent of family businesses survive to the second generation. This is the reason most often missed.
+
+**Struck 21 September.** "Only 30 percent of family businesses survive to the second generation"
+was on this list. The citation trail does not resolve, it fails doc 07 rule three, and for an
+advisor whose whole position is anti hype it is the fastest way to be caught out by a reader who
+checks. Not using it is itself a differentiator. See doc 03 for the candidate replacements and
+their status.
 
 **The source goes in her own first comment.** Never in the body. See doc 07.
 

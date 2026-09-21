@@ -94,8 +94,32 @@ Everything the house is allowed to stand on. Nothing else. See doc 07 for the fu
 | Twenty five years, and the seventeen year timeline | The witness line |
 | Years studying Taoism | The register, not a belief system |
 | Training in existential psychology | The line that separates her from the wellbeing category |
-| 168,000 Swiss SMEs by 2030, fewer than one in three with a plan | Market urgency |
-| Only 30 percent of family businesses survive to the second generation | Succession posts |
+| 90,667 Swiss SMEs needing a succession arrangement | Market urgency. Dun & Bradstreet Switzerland, March 2025 |
+| Roughly one Swiss SME in three disappears for want of a purchaser | Market urgency. KMU Next, carried on the federal SME portal |
+
+### Struck on 21 September, and why
+
+Two rows came off this floor in the evidence check. Neither may be used again in any asset.
+
+| Struck | Why |
+|---|---|
+| Only 30 percent of family businesses survive to the second generation | The citation trail ends at a consultancy page that no longer resolves. The underlying 1987 study looked at 200 Illinois manufacturers and found 13 percent lasting *through* three generations, a claim repetition turned into *to*. Survival was defined as staying independent under the same name, so a good sale counted as a failure. It cannot meet doc 07 rule three |
+| 168,000 Swiss SMEs by 2030, fewer than one in three with a plan | No named source. The Swiss figure that does have one is 90,667, above. The "fewer than one in three" half is worse than unsourced, it is probably wrong: Deloitte Private found 89 percent of families report having a plan |
+
+### Candidate, and it needs her written yes before it stands on anything
+
+The Deloitte finding reframes the whole argument and it is the better one. **The gap is not between
+having a plan and not having one. Almost everyone has a plan. The gap is between a plan and a plan
+that works.** 89 percent report having one, roughly half of those are thorough, 1,587 family firms,
+Deloitte Private, July 2026. It is the same shape as the trap table in doc 02: everything on the
+left, nothing on the right, and nobody has asked about the right hand column.
+
+Also held for her ruling: McKinsey, February 2026, 200 listed family businesses across forty plus
+countries, total shareholder return down an average 5.7 points in the five years after a family CEO
+transition, with only about a third of transitions creating value.
+
+Until she says yes in writing, logged in doc 02, neither enters the floor and no post is drafted
+against either.
 
 > Positive psychology is a good attitude. She was trained in the four last things.
 

@@ -31,6 +31,11 @@ Never edit a past entry. If a decision is reversed, add a new row that reverses 
 | 12 Aug | The boundary: business consequence, ownership rather than employment, and identity work treated as the work | Doc 22 |
 | Aug | Her philosophy, via Jung: you cannot create the second half of life with the inner setup of the first | Doc 22. Why **retirement** is banned |
 | Sep | British spelling throughout. No em dashes, emoji, hashtags or exclamation marks anywhere | Doc 04 |
+| 21 Sep | **Evidence re-checked against primary sources.** Two claims struck from the proof floor: the 30 percent second generation survival figure, and 168,000 Swiss SMEs by 2030 with fewer than one in three holding a plan | Doc 03, doc 10, doc 11, doc 12, doc 01, the deck |
+| 21 Sep | The Swiss market figures that survive the check: 90,667 SMEs needing a succession arrangement, Dun & Bradstreet March 2025, and one in three disappearing for want of a purchaser, KMU Next via the federal SME portal | Doc 01, doc 03 |
+| 21 Sep | The delegation revenue figure is held. It is attributed to Harvard Business Review everywhere and the trail does not reach one | Doc 10, doc 11, doc 12 week 4 |
+| 21 Sep | **The ninety day build is written.** One capped paid room on Thursday 5 November, the diagnostic as the only lead magnet, an owned list in Go High Level, and her own platform behind both | `ninety-day-build.html` |
+| 21 Sep | Doc 18 sets comment volume, the Extrovert finding sets a per person ceiling of one or two a month. The two multiply: the target list needs roughly sixty to one hundred names who post, and forty does not fill the window | Doc 18, the build section 01 |
 
 ---
 
@@ -46,6 +51,21 @@ Never edit a past entry. If a decision is reversed, add a new row that reverses 
 | O6 | Whether the Academy may be referenced publicly yet | Doc 21 watchpoint 07. Until settled, no post hints at cohorts or group work | Nicole | Month two |
 | O7 | Which anonymised client moments she will clear for use | Doc 08 Entertain Me, doc 11. Composite only until she rules | Nicole | Rolling |
 | O8 | Video: does she want it at all, and on camera or voice over | Doc 09, month three test | Nicole | Month two |
+
+### Raised 21 September by the ninety day build
+
+Each of these is a change to a settled document, which means it is hers and not ours. None of it is
+built until she rules in writing and the ruling is logged here.
+
+| # | Open decision | Blocks | Owner | Ask by |
+|---|---|---|---|---|
+| R1 | That a paid room exists at all, as a third tier below the Assess. Doc 06 settles two | Sections 06, 07 and 09 of the build. Without it the funnel terminates at the diagnostic | Nicole | Week one |
+| R2 | Whether **workshop** is even the right word, given doc 06 separates her method from a workshop weekend | The registration page, every campaign letter, the Featured item | Nicole | Week one, with R1 |
+| R3 | The cap, the price, the duration and the format of the room. No number is proposed, because none exists in her documents | The registration page, the funnel maths, the payment product | Nicole | Week two |
+| R4 | The title of the diagnostic. Three of her own lines are brought to her. We do not name it | The page, the Featured item, the letter | Nicole | Week two |
+| R5 | Whether the room may be described on its own page as leading to the Assess | Section nine of the registration page | Nicole | Week three |
+| R6 | Whether the monthly letter may carry a link at all. Doc 13 settles three placements and the letter is not one of them | The whole of doc 04's newsletter architecture. Until it is ruled, the letter carries no link | Nicole | Week two, before the first issue |
+| R7 | Whether the McKinsey and Deloitte figures may enter the proof floor in place of what was struck | Any succession post that wants a number, including week three | Nicole | Week two |
 
 ---
 

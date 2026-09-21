@@ -76,6 +76,7 @@ All thirty one documents, what each one settles, and who it is for.
 |---|---|
 | `source/original-strategy-deck.html` | The settled strategy, presented. Canonical for positioning, pillars, the 30 day plan and the funnel maths |
 | `index.html` | The same deck, published at the repo root |
+| `ninety-day-build.html` | The ninety day build, version 2, 21 September 2026. The funnel, the room on 5 November, the lead magnet, the list, and the register of what she has to rule on |
 | Nicole Comment Desk skill | Canonical for voice, comment craft, the banned list and the 30/30 window |
 
 Where a document here and the deck disagree, the deck wins on strategy and the skill wins on

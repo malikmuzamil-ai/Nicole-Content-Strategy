@@ -67,9 +67,9 @@ An idea with no source does not go in the bank. It goes in the brain dump questi
 | TM-07 | Two years from now, could you explain why you decided this | Cheatsheet | Hers | bank |
 | TM-08 | The question that made him go quiet. The five gap table | Cheatsheet | Her five gap structure | **published, W1** |
 | TM-09 | Trust factors named most often at this altitude | Carousel | Her ICP, cross checked | **published, W2** |
-| TM-10 | The most fundamental part of succession is replacing yourself | Carousel | Family Business Institute | **published, W3** |
-| TM-11 | Executives who delegate effectively generate roughly a third more revenue | Carousel | Harvard Business Review | **published, W4** |
-| TM-12 | 168,000 Swiss SMEs change hands by 2030. Fewer than one in three have a plan | Carousel | Swiss SME succession research | bank |
+| TM-10 | The most fundamental part of succession is replacing yourself | Carousel | **Source struck 21 Sep. McKinsey Feb 2026 offered as replacement, pending her yes** | **W3, amber** |
+| TM-11 | Executives who delegate effectively generate roughly a third more revenue | Carousel | **Attribution unverified. Held until the primary study is named** | **W4, amber** |
+| TM-12 | 90,667 Swiss SMEs need a succession arrangement. Almost all of them have a plan, and about half of those plans are thorough | Carousel | Dun & Bradstreet Mar 2025, Deloitte Private Jul 2026. **Pending her yes** | amber |
 | TM-13 | Succession is a renegotiation of authority, identity and relationship at once | Carousel | Hers | bank |
 
 ## Entertain Me

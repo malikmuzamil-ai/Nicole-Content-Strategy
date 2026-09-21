@@ -92,14 +92,20 @@ that works names the thing she already suspected and then quietly makes it allow
 
 | | |
 |---|---|
-| **168,000** | Swiss SMEs changing hands by 2030 |
-| **fewer than 1 in 3** | owners with a real succession plan |
-| **7.0%** | average engagement, native LinkedIn documents |
-| **1 in 100** | LinkedIn professionals posting weekly |
+| **90,667** | Swiss SMEs needing a succession arrangement. Dun & Bradstreet, March 2025 |
+| **1 in 3** | Swiss SMEs that disappear for want of a purchaser. KMU Next, federal SME portal |
+| **7.0%** | average engagement, native LinkedIn documents. Socialinsider, 1.3m posts |
+| **4.9%** | of profiles that post documents regularly |
 
-**The market is on a deadline.** A third of Swiss companies change hands this decade. Fewer than
-one in three owners has decided who they become on the other side of it. That is not a marketing
-angle, it is a dated, finite window.
+**The market is on a deadline.** Just over ninety thousand Swiss SMEs need a succession arrangement
+in the coming years, and roughly one in three disappears because it never finds a purchaser. That is
+not a marketing angle, it is a dated, finite window.
+
+**And the argument underneath it changed on 21 September.** It is not that they have no plan. Almost
+all of them do. The gap is between a plan and a plan that works, which is the same shape as the trap
+table in doc 02 and a far better thing to say to somebody who has already done the legal work. The
+sourcing for that reframe, and its status, sits in doc 03. The two figures this table used to carry,
+168,000 by 2030 and fewer than one in three with a plan, were struck in the same check.
 
 **The platform rewards exactly this kind of writing.** LinkedIn now favours how long somebody
 actually stays on a post, saves, and real comments, over quick reactions. Nicole is one of very

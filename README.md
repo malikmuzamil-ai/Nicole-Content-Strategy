@@ -73,3 +73,21 @@ These are open. Each one blocks something downstream and each is tracked in
 - Her ruling on comments under posts about a death, an illness or a loss
 - Sign off on the profile rewrite in document 14
 - Three or four of her own physical objects for the image bank
+
+Seven more were raised by the ninety day build on 21 September and logged as R1 to R7. Each one is
+a change to a settled document, which makes it hers: that a paid room exists at all, what it is
+called, its cap and price, the title of the diagnostic, whether the room may be described as
+leading to the Assess, whether the monthly letter may carry a link, and whether the replacement
+succession figures may enter the proof floor.
+
+---
+
+## The two published documents
+
+| File | What it is |
+|---|---|
+| `index.html` | The settled strategy. Positioning, the four pillars, the first thirty days post by post, the funnel maths |
+| `ninety-day-build.html` | The ninety day build, version 2, 21 September 2026. The funnel end to end, the room on Thursday 5 November, the lead magnet, the owned list, the platform, and the register of what she has to rule on |
+
+The build cites the documents in this folder by number throughout. Where it proposes something a
+settled document does not permit, it says so and stops, rather than proposing it quietly.
