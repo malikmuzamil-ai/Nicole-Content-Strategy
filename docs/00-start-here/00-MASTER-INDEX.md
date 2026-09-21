@@ -1,6 +1,6 @@
 # 00 · Master Index
 
-All thirty documents, what each one settles, and who it is for.
+All thirty one documents, what each one settles, and who it is for.
 
 **Legend**
 `SETTLED` confirmed with Nicole · `DRAFT` written, awaiting her sign off · `LIVE` updated weekly
@@ -26,6 +26,7 @@ All thirty documents, what each one settles, and who it is for.
 | [05 · Brand and Visual Identity](../01-foundation/05-brand-visual-identity.md) | SETTLED | Palette, type, card grammar, what a Nicole asset looks like at a glance |
 | [06 · Offer Architecture](../01-foundation/06-offer-architecture.md) | SETTLED | The Assess, What's Next Done Right, pricing, the open price decision |
 | [07 · Claims and Confidentiality Charter](../01-foundation/07-claims-and-confidentiality-charter.md) | SETTLED | Exactly which credentials may appear, and the anonymisation rules |
+| [22 · Competitive Position](../01-foundation/22-competitive-position.md) | SETTLED | The three comparisons she named, the three-condition boundary, and the tense test. **Internal only** |
 
 ## 02 · Content strategy
 

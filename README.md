@@ -14,7 +14,7 @@ workflow that keeps both moving. One folder, one source of truth, nothing kept i
 The strategy was settled in `source/original-strategy-deck.html`. That deck answers *what* we are
 doing. This folder answers *how it gets done, every week, by whoever is at the desk.*
 
-Twenty four documents across five layers, plus six templates. Each one is written to be picked up cold by somebody who
+Twenty five documents across five layers, plus six templates. Each one is written to be picked up cold by somebody who
 has never seen the account and still produce work that sounds like her.
 
 ```
@@ -47,7 +47,7 @@ Nothing publishes without passing it.
 ## Full index
 
 See [docs/00-start-here/00-MASTER-INDEX.md](docs/00-start-here/00-MASTER-INDEX.md) for all
-thirty documents with a one line summary of each.
+thirty one documents with a one line summary of each.
 
 ---
 

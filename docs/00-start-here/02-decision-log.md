@@ -27,6 +27,9 @@ Never edit a past entry. If a decision is reversed, add a new row that reverses 
 | 15 Sep | **No DM goes out under her name before her approval.** Not covered by any standing approval | Doc 16 |
 | Sep | Ninety day target: four private clients, roughly twelve Assess sessions, thirty six posts | Doc 13, doc 20 |
 | Sep | She advises high performers against displaying vulnerability at work. Content never praises vulnerability | Doc 04 |
+| 12 Aug | Deck cut from seven sections to six. "The Field" dropped for space, positioning not reversed | **Recovered as doc 22** |
+| 12 Aug | The boundary: business consequence, ownership rather than employment, and identity work treated as the work | Doc 22 |
+| Aug | Her philosophy, via Jung: you cannot create the second half of life with the inner setup of the first | Doc 22. Why **retirement** is banned |
 | Sep | British spelling throughout. No em dashes, emoji, hashtags or exclamation marks anywhere | Doc 04 |
 
 ---
