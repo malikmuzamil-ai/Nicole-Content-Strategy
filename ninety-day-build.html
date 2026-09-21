@@ -26,7 +26,7 @@
   /* masthead */
   .masthead{padding:56px 7vw 34px; background:var(--card); border-bottom:1px solid var(--line);}
   .mh-top{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:26px;}
-  .brandmark{display:flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2);}
+  .brandmark{display:flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; color:var(--ink2);}
   .brandmark .dot{width:9px; height:9px; border-radius:50%; background:var(--terracotta);}
   .doc-meta{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink2); text-align:right;}
   h1.title{font-size:clamp(34px,5vw,58px); max-width:22ch;}
@@ -119,24 +119,44 @@
   .srcs{font-size:11.5px; color:var(--ink2);}
   .srcs a{color:var(--terracotta); text-decoration:none;}
   .srcs a:hover{text-decoration:underline;}
+
+  /* questionnaire */
+  .qintro{color:var(--ink2); max-width:78ch; margin:0 0 16px;}
+  .q{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; margin-bottom:12px;}
+  .q.key{background:var(--twhisper); border-color:var(--terracotta);}
+  .qh{display:flex; gap:12px; align-items:baseline;}
+  .qid{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; color:#fff; background:var(--terracotta); border-radius:100px; padding:3px 10px; flex-shrink:0;}
+  .qt{font-size:15.5px; font-weight:600; color:var(--ink); line-height:1.45;}
+  .why{font-size:13.5px; color:var(--ink2); margin:10px 0 0;}
+  .def{font-size:13.5px; margin:12px 0 0; padding:10px 14px; background:var(--paper); border-left:2px solid var(--gold); border-radius:0 8px 8px 0;}
+  .def b{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px; font-weight:500;}
+  .ans{margin-top:14px; border:1px dashed var(--line); border-radius:8px; height:58px; position:relative;}
+  .ans:before{content:"Answer"; position:absolute; top:8px; left:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; color:#C6BAAA;}
+  @media print{
+    body{background:#fff;}
+    .tabs{display:none;}
+    .section{display:block !important; page-break-before:always; padding:0;}
+    .q{break-inside:avoid;}
+  }
+
 </style>
 </head>
 <body>
 
 <div class="masthead">
   <div class="mh-top">
-    <div class="brandmark"><div class="dot"></div><span>Purely Personal &middot; prepared by Malik</span><span style="opacity:.55;">&middot;</span><a href="index.html" style="color:inherit; text-decoration:underline; letter-spacing:.1em;">The settled strategy</a></div>
+    <div class="brandmark"><div class="dot"></div><span>Purely Personal &middot; prepared by Malik</span></div>
     <div class="doc-meta">Nicole Brandes &middot; Account funnel, platform and the ninety days<br>Version 2 &middot; 21 September 2026</div>
   </div>
   <span class="kicker">The ninety day build</span>
   <h1 class="title">One room, <em class="t">capped</em>, and everything that has to exist before it opens.</h1>
-  <p class="subhead">The complete funnel from a stranger reading a Monday post to a seat in the workshop on Thursday 5 November, from that seat to the Assess, and from there to a platform that belongs to her. Ninety days, five dated deliverables, and thirty two questions with our answer attached to each one. Built entirely on the settled account documents and re-checked against primary sources on 21 September. Nothing invented, every open decision named.</p>
+  <p class="subhead">The complete funnel from a stranger reading a Monday post to a seat in the workshop on Thursday 5 November, from that seat to the Assess, and from there to a platform that belongs to her. Ninety days, five dated deliverables, and a thirteen question sheet with our answer attached to each one. Built entirely on the settled account documents and re-checked against primary sources on 21 September. Nothing invented, every open decision named.</p>
   <div class="mh-stats">
     <div class="stat"><b>90</b><span>Days planned, 45 to the room</span></div>
     <div class="stat"><b>5 Nov</b><span>Thursday, one of her publishing days</span></div>
     <div class="stat"><b>3&times;</b><span>Posts a week, Mon Tue Thu</span></div>
     <div class="stat"><b>CHF 4,500</b><span>The Assess, the tier above</span></div>
-    <div class="stat"><b>32</b><span>Questions, each with a default</span></div>
+    <div class="stat"><b>13</b><span>Questions, each with a default</span></div>
   </div>
 </div>
 
@@ -154,10 +174,11 @@
   <button data-t="s14">10 &middot; The 90 days</button>
   <button data-t="s10">11 &middot; Phase one, day by day</button>
   <button data-t="s11">12 &middot; Numbers</button>
-  <button data-t="s15">13 &middot; What we need from her</button>
+  <button data-t="s15">13 &middot; The questionnaire</button>
   <button data-t="s12">14 &middot; Red items</button>
 </div>
 <!-- ================= 00 THE SPINE ================= -->
+<!-- section 00 -->
 <div class="section active" id="s1">
   <div class="sec-head">
     <span class="kicker">Section 00</span>
@@ -319,7 +340,7 @@
     <p>Doc 01 says this about posts. It is truer about a room. Twelve of the right people and four empty chairs is a better outcome than sixteen seats filled by anyone who could pay. Every design decision in this document follows from that, including the ones that will look like they are leaving conversion on the table.</p>
   </div>
 </div>
-<!-- ================= 01 INBOUND ENGINE ================= -->
+<!-- section 01 -->
 <div class="section" id="s2">
   <div class="sec-head">
     <span class="kicker">Section 01</span>
@@ -336,7 +357,7 @@
       <tr><th>Her rule</th><th>Why it exists in her documents</th><th>What the platform now does with it</th></tr>
       <tr><td>No hashtags</td><td>Doc 04 formatting law</td><td>Posts without hashtags outperform posts with them by roughly 5 to 10 percent. Over five hashtags triggers spam filtering.</td></tr>
       <tr><td>No engagement bait</td><td>Doc 01, no bait, no pods</td><td>The March 2026 authenticity update explicitly targets bait patterns and deprioritises pods and automation.</td></tr>
-      <tr><td>Nothing on the card that instructs the reader to save it</td><td>Doc 05 cheatsheet grammar</td><td>Saves are the single strongest ranking signal, worth roughly five times a like and twice a comment, and earned content outranks prompted content.</td></tr>
+      <tr><td>Nothing on the card that instructs the reader to save it</td><td>Doc 05 cheatsheet grammar</td><td>Saves are the single strongest ranking signal, worth roughly five times a like and twice a comment, and earned content outranks prompted content. Source, Hootsuite, September 2026, drawing on LinkedIn’s own engineering posts on dwell time and semantic ranking.</td></tr>
       <tr><td>Image and document led, first thirty days</td><td>Doc 12</td><td>Native documents are the top performing format in both large datasets, at roughly 1.39&times; median reach, and only around 4.9 percent of profiles post them regularly.</td></tr>
       <tr><td>Links only in her own first comment</td><td>Doc 13, doc 06</td><td>A link in the body costs roughly 18.8 percent of median reach. Her configuration is already the risk minimising one.</td></tr>
       <tr><td>Long, considered writing</td><td>Doc 04, the two beat shape</td><td>Dwell time is a first class ranking input. A post that takes thirty seconds to read outranks one that takes five.</td></tr>
@@ -479,7 +500,7 @@
       <h4 class="mini" style="margin-top:10px;">The target list</h4>
       <p style="font-size:13px;">Doc 18 sets the volume and it is settled: five to seven outward comments in the half hour before her post, three to five more between replies in the half hour after. Across twelve publishing days that is roughly one hundred to one hundred and forty comments a month, at 150 to 300 characters each.</p>
       <p style="font-size:13px;">The Extrovert finding does not change that number. It sets a ceiling per person: one or two substantive comments a month to any single principal, because four or more reads as pursuit. The two rules multiply rather than compete, and what they produce together is a list requirement.</p>
-      <p style="font-size:13px; color:var(--ink2);">At doc 18 volume and a ceiling of one or two each, the list has to carry roughly sixty to one hundred names who actually post. Forty does not fill the window. That is question B3, and it is the binding constraint on this section.</p>
+      <p style="font-size:13px; color:var(--ink2);">At doc 18 volume and a ceiling of one or two each, the list has to carry roughly sixty to one hundred names who actually post. Forty does not fill the window, which is why question 02 on the sheet is the binding constraint on this section.</p>
     </div>
     <div class="card">
       <span class="tag ink">The comment itself</span>
@@ -495,7 +516,7 @@
   </div>
 </div>
 
-<!-- ================= 02 THE PROFILE ================= -->
+<!-- section 02 -->
 <div class="section" id="s3">
   <div class="sec-head">
     <span class="kicker">Section 02</span>
@@ -578,7 +599,7 @@
     <span class="kicker gold">A correction to the drawing above, before anybody builds it</span>
     <h4 style="margin-top:8px; font-size:22px;">Doc 13 settles three placements. The fourth door is a change to a settled document.</h4>
     <p>Doors one to three are the ones doc 13 already permits: the Featured section, the bio link, and her own first comment on a Selling intent post that has earned it. The letter is not on that list. The defensible reading is that the in body reference in her own monthly article points at the diagnostic, which is a lead magnet rather than the offer, and so sits outside the rule entirely.</p>
-    <p>That reading may well be right. It is still not ours to make. Doc 13 is settled, the rule is the one most likely to erode quietly, and a fourth placement written into a diagram is exactly how erosion starts. It goes to her as R6 in section 14, and until she rules in writing the letter carries no link at all.</p>
+    <p>That reading may well be right. It is still not ours to make. Doc 13 is settled, the rule is the one most likely to erode quietly, and a fourth placement written into a diagram is exactly how erosion starts. It goes to her as R6 in the register, and until she rules in writing the letter carries no link at all.</p>
   </div>
 
 
@@ -616,7 +637,7 @@
     <p>There is no published benchmark for LinkedIn profile view to email opt in. None exists, because LinkedIn does not expose outbound click attribution from Featured or Contact Info, so nobody is in a position to measure it. Claims of a Featured section conversion rate are invented. We instrument her own page with a separate UTM per door and build her private benchmark over the first two quarters. She will be generating the number, not matching one.</p>
   </div>
 </div>
-<!-- ================= 03 LEAD MAGNETS ================= -->
+<!-- section 03 -->
 <div class="section" id="s4">
   <div class="sec-head">
     <span class="kicker">Section 03</span>
@@ -730,7 +751,7 @@
     <table>
       <tr><th style="width:5%">#</th><th style="width:26%">The asset</th><th style="width:18%">Where it already exists</th><th style="width:29%">Why it works on this buyer</th><th style="width:22%">Status</th></tr>
       <tr><td><strong>1</strong></td><td><strong>The five gap diagnostic.</strong> Her own trap table turned into a scored self assessment: fulfilment, feeling alive, identity, calling, being known.</td><td>Doc 02, named there as the single most saveable asset in the whole plan</td><td>It asks her the questions instead of telling her things. Five dimensions, scored separately, no aggregate. A dimension score invites her to concede the weak one. A single number invites her to argue with it.</td><td><span class="tag ink">Build this first</span></td></tr>
-      <tr><td><strong>2</strong></td><td><strong>The question nobody asked.</strong> A short written piece built on the founder who had already seen a coach, a consultant and a therapist before she called.</td><td>Doc 02, what she has already tried</td><td>Doc 02 calls this one of the strongest Teach Me topics held. It performs the category refusal without ever naming a competitor, which doc 07 rule seven requires.</td><td><span class="tag">The interpretation document, delivered after the diagnostic</span></td></tr>
+      <tr><td><strong>2</strong></td><td><strong>The question nobody asked.</strong> A short written piece built on the founder who had already been to three different rooms before she called. The three category nouns never appear in it, because the word coach never appears publicly at all.</td><td>Doc 02, what she has already tried</td><td>Doc 02 calls this one of the strongest Teach Me topics held. It performs the category refusal without ever naming a competitor, which doc 07 rule seven requires.</td><td><span class="tag">The interpretation document, delivered after the diagnostic</span></td></tr>
       <tr><td><strong>3</strong></td><td><strong>The window.</strong> A reference piece on Swiss ownership transition, built only from named public sources.</td><td>Doc 01, two reasons this works right now</td><td>This is the UBS pattern at her scale. Benchmarking rather than instruction. Doc 07 rule three permits named public sources, so it is the only asset that can carry numbers.</td><td><span class="tag">Second asset, month two</span></td></tr>
       <tr><td><strong>4</strong></td><td><strong>The trust factors at this altitude.</strong> What an accomplished person actually uses to choose an advisor, distinct from credentials or price.</td><td>Doc 02, cross checked against executive coaching trust research</td><td>Every line of it is a writing instruction as much as a positioning note, which means it reads as craft rather than marketing.</td><td><span class="tag grey">Strong, hold in reserve</span></td></tr>
       <tr><td><strong>5</strong></td><td><strong>The tense test.</strong> Is this written from after the decision, or from inside it.</td><td>Doc 22, added to the fourteen point gate</td><td>The sharpest single idea in the recovered material, and the cleanest distinction from the adjacent category.</td><td><span class="tag grey">Too internal as a standalone. Use as a post.</span></td></tr>
@@ -749,7 +770,7 @@
       <div class="card"><span class="tag">01</span><p style="font-size:12.5px; margin-top:8px;"><strong>Success without fulfilment</strong><br><span style="color:var(--ink2);">The gap she would name if pressed.</span></p></div>
       <div class="card"><span class="tag">02</span><p style="font-size:12.5px; margin-top:8px;"><strong>Performance without feeling alive</strong><br><span style="color:var(--ink2);">The one she has never said out loud.</span></p></div>
       <div class="card"><span class="tag">03</span><p style="font-size:12.5px; margin-top:8px;"><strong>A role without an identity</strong><br><span style="color:var(--ink2);">The one the consequential decision forces.</span></p></div>
-      <div class="card"><span class="tag">04</span><p style="font-size:12.5px; margin-top:8px;"><strong>Hustle, safety and wealth without a calling</strong><br><span style="color:var(--ink2);">The one she suspects is sentimental.</span></p></div>
+      <div class="card"><span class="tag">04</span><p style="font-size:12.5px; margin-top:8px;"><strong>Safety and wealth, without the calling</strong><br><span style="color:var(--ink2);">The one she suspects is sentimental.</span></p></div>
       <div class="card"><span class="tag">05</span><p style="font-size:12.5px; margin-top:8px;"><strong>People all around her, and nobody who knows her</strong><br><span style="color:var(--ink2);">The one that is hardest to admit and easiest to score.</span></p></div>
     </div>
 
@@ -861,7 +882,7 @@
     </div>
   </div>
 </div>
-<!-- ================= 04 NEWSLETTER & LIST ================= -->
+<!-- section 04 -->
 <div class="section" id="s5">
   <div class="sec-head">
     <span class="kicker">Section 04</span>
@@ -983,7 +1004,7 @@
   </div>
 </div>
 
-<!-- ================= 05 GO HIGH LEVEL ================= -->
+<!-- section 05 -->
 <div class="section" id="s6">
   <div class="sec-head">
     <span class="kicker">Section 05</span>
@@ -1176,7 +1197,7 @@
     <p>A Swiss controller targeting EU data subjects may need a representative in the EU under GDPR article 27. Whether her workshop marketing constitutes targeting EU residents is a judgement call. Separately, Go High Level is a United States processor, so transfers of Swiss and EU personal data need a lawful mechanism recorded in her processing register. Both are flagged in section 14.</p>
   </div>
 </div>
-<!-- ================= 06 THE WORKSHOP ================= -->
+<!-- section 06 -->
 <div class="section" id="s7">
   <div class="sec-head">
     <span class="kicker">Section 06</span>
@@ -1190,8 +1211,8 @@
       <tr><td><strong>Cap supply</strong></td><td>How many could you comfortably onboard in a month without anything suffering. Set the first cap to prove the concept and have a sold out story.</td><td>Identical. The cap is set by her delivery capacity in a room and by the belief test in doc 02, not by a revenue target. It is a real number and it never moves upward mid campaign.</td><td><span class="tag">Unchanged</span></td></tr>
       <tr><td><strong>Set cadence</strong></td><td>A fixed campaign rhythm, so selling is a season rather than a constant state.</td><td>Identical, and it solves a problem doc 06 already has: zero Selling intent posts in the first thirty days, and a Selling post never without two Authority or Education posts ahead of it. A cadence is what makes that rule survivable.</td><td><span class="tag">Unchanged</span></td></tr>
       <tr><td><strong>Create demand</strong></td><td>Use the three quiet weeks between campaigns to build demand.</td><td>Her content already does this. The adaptation is that the demand phase runs longer and the selling phase runs shorter than the method prescribes, because her ninety day plan already allocates thirty six posts and only a handful of them may ever sell.</td><td><span class="tag">Adapted</span></td></tr>
-      <tr><td><strong>Scale scarcity</strong></td><td>Limited number plus limited time. Applications close Friday unless all fifteen spots sell out first, again.</td><td>The cap is stated once, as a fact, in the same sentence as the date. It is never counted down publicly, never re-announced as seats go, and the word <em>again</em> never appears. Doc 04 bans exclamation marks and doc 05 bans anything that reads as a template.</td><td><span class="tag red">Rewritten</span></td></tr>
-      <tr><td><strong>Honour boundaries</strong></td><td>Not in the source method.</td><td>Ours, and it outranks the other four. Doc 07 governs every asset in this campaign. A missed slot costs one day. A breach costs the position. Everything is amber until O2, nothing goes under her name without her yes, and no DM at all without a separate approval.</td><td><span class="tag ink">Added</span></td></tr>
+      <tr><td><strong>Raise the cap</strong></td><td>Limited number plus limited time. Applications close Friday unless all fifteen spots sell out first, again.</td><td>The cap is stated once, as a fact, in the same sentence as the date. It is never counted down publicly, never re-announced as seats go, and the word <em>again</em> never appears. Doc 04 bans exclamation marks and doc 05 bans anything that reads as a template.</td><td><span class="tag red">Rewritten</span></td></tr>
+      <tr><td><strong>Hold the line</strong></td><td>Not in the source method.</td><td>Ours, and it outranks the other four. Doc 07 governs every asset in this campaign. A missed slot costs one day. A breach costs the position. Everything is amber until O2, nothing goes under her name without her yes, and no DM at all without a separate approval.</td><td><span class="tag ink">Added</span></td></tr>
     </table>
   </div>
 
@@ -1276,7 +1297,7 @@
       <text x="255" y="48" text-anchor="middle" font-size="10.5" fill="#7A6F63">Four pillars from the method, one added</text>
       <text x="690" y="48" text-anchor="middle" font-size="10.5" fill="#7A6F63">Five offer parts, three her documents forbid</text>
       <line x1="494" y1="62" x2="494" y2="348" stroke="#E4D6C4"/>
-      <path d="M274.1 119.8 A100 100 0 0 1 342.5 169.5" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M354.3 205.8 A100 100 0 0 1 328.1 286.2" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M297.3 308.6 A100 100 0 0 1 212.7 308.6" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M181.9 286.2 A100 100 0 0 1 155.7 205.8" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M167.5 169.5 A100 100 0 0 1 235.9 119.8" stroke="#0B0B0B" stroke-width="3.4" fill="none" marker-end="url(#a8d)"/><circle cx="255.0" cy="118.0" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="255" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#8C5442">Cap supply</text><text x="255" y="106" text-anchor="middle" font-size="9.5" fill="#7A6F63">the number is real</text><circle cx="350.1" cy="187.1" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="364" y="184" text-anchor="start" font-size="13" font-weight="700" fill="#8C5442">Set cadence</text><text x="364" y="198" text-anchor="start" font-size="9.5" fill="#7A6F63">a season, not a state</text><circle cx="313.8" cy="298.9" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="324" y="324" text-anchor="start" font-size="13" font-weight="700" fill="#8C5442">Create demand</text><text x="324" y="338" text-anchor="start" font-size="9.5" fill="#7A6F63">the three quiet weeks</text><circle cx="196.2" cy="298.9" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="186" y="324" text-anchor="end" font-size="13" font-weight="700" fill="#8C5442">Scale scarcity</text><text x="186" y="338" text-anchor="end" font-size="9.5" fill="#7A6F63">stated once, as a fact</text><circle cx="159.9" cy="187.1" r="7" fill="#0B0B0B" stroke="#FCF9F4" stroke-width="2.5"/><text x="148" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#0B0B0B">Honour boundaries</text><text x="148" y="198" text-anchor="end" font-size="9.5" fill="#7A6F63">and it outranks the rest</text><text x="255" y="214" text-anchor="middle" font-size="12" font-weight="600" fill="#2B2521">One room,</text><text x="255" y="232" text-anchor="middle" font-size="12" font-weight="600" fill="#2B2521">then the next</text><polygon points="690,136 776,218 690,300 604,218" fill="#F8EFE9" stroke="#8C5442" stroke-width="1.4"/><text x="690" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C5442">Promise</text><text x="690" y="126" text-anchor="middle" font-size="9.5" fill="#7A6F63">the whole offer</text><text x="800" y="186" text-anchor="start" font-size="12.5" font-weight="700" fill="#B6ADA2">Bonuses</text><text x="800" y="200" text-anchor="start" font-size="9.5" fill="#7A6F63">reads as retail</text><line x1="800" y1="182" x2="851" y2="182" stroke="#B6ADA2" stroke-width="1.4"/><text x="800" y="242" text-anchor="start" font-size="12.5" font-weight="700" fill="#B6ADA2">Pay plan</text><text x="800" y="256" text-anchor="start" font-size="9.5" fill="#7A6F63">implies a stretch</text><line x1="800" y1="238" x2="858" y2="238" stroke="#B6ADA2" stroke-width="1.4"/><text x="580" y="186" text-anchor="end" font-size="12.5" font-weight="700" fill="#0B0B0B">Risk reversal</text><text x="580" y="200" text-anchor="end" font-size="9.5" fill="#7A6F63">swapped for a filter</text><text x="580" y="242" text-anchor="end" font-size="12.5" font-weight="700" fill="#8C5442">Urgency</text><text x="580" y="256" text-anchor="end" font-size="9.5" fill="#7A6F63">stated once</text><text x="690" y="324" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C5442">Scarcity</text><text x="690" y="338" text-anchor="middle" font-size="9.5" fill="#7A6F63">the cap and the date, one sentence</text><text x="690" y="214" text-anchor="middle" font-size="11.5" fill="#2B2521">Two kept.</text><text x="690" y="232" text-anchor="middle" font-size="11.5" fill="#2B2521">One swapped. Two cut.</text>
+      <path d="M274.1 119.8 A100 100 0 0 1 342.5 169.5" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M354.3 205.8 A100 100 0 0 1 328.1 286.2" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M297.3 308.6 A100 100 0 0 1 212.7 308.6" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M181.9 286.2 A100 100 0 0 1 155.7 205.8" stroke="#8C5442" stroke-width="2.3" fill="none" marker-end="url(#a8)"/><path d="M167.5 169.5 A100 100 0 0 1 235.9 119.8" stroke="#0B0B0B" stroke-width="3.4" fill="none" marker-end="url(#a8d)"/><circle cx="255.0" cy="118.0" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="255" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#8C5442">Cap supply</text><text x="255" y="106" text-anchor="middle" font-size="9.5" fill="#7A6F63">the number is real</text><circle cx="350.1" cy="187.1" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="364" y="184" text-anchor="start" font-size="13" font-weight="700" fill="#8C5442">Set cadence</text><text x="364" y="198" text-anchor="start" font-size="9.5" fill="#7A6F63">a season, not a state</text><circle cx="313.8" cy="298.9" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="324" y="324" text-anchor="start" font-size="13" font-weight="700" fill="#8C5442">Create demand</text><text x="324" y="338" text-anchor="start" font-size="9.5" fill="#7A6F63">the three quiet weeks</text><circle cx="196.2" cy="298.9" r="7" fill="#8C5442" stroke="#FCF9F4" stroke-width="2.5"/><text x="186" y="324" text-anchor="end" font-size="13" font-weight="700" fill="#8C5442">Raise the cap</text><text x="186" y="338" text-anchor="end" font-size="9.5" fill="#7A6F63">stated once, as a fact</text><circle cx="159.9" cy="187.1" r="7" fill="#0B0B0B" stroke="#FCF9F4" stroke-width="2.5"/><text x="148" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#0B0B0B">Hold the line</text><text x="148" y="198" text-anchor="end" font-size="9.5" fill="#7A6F63">and it outranks the rest</text><text x="255" y="214" text-anchor="middle" font-size="12" font-weight="600" fill="#2B2521">One room,</text><text x="255" y="232" text-anchor="middle" font-size="12" font-weight="600" fill="#2B2521">then the next</text><polygon points="690,136 776,218 690,300 604,218" fill="#F8EFE9" stroke="#8C5442" stroke-width="1.4"/><text x="690" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C5442">Promise</text><text x="690" y="126" text-anchor="middle" font-size="9.5" fill="#7A6F63">the whole offer</text><text x="800" y="186" text-anchor="start" font-size="12.5" font-weight="700" fill="#B6ADA2">Bonuses</text><text x="800" y="200" text-anchor="start" font-size="9.5" fill="#7A6F63">reads as retail</text><line x1="800" y1="182" x2="851" y2="182" stroke="#B6ADA2" stroke-width="1.4"/><text x="800" y="242" text-anchor="start" font-size="12.5" font-weight="700" fill="#B6ADA2">Pay plan</text><text x="800" y="256" text-anchor="start" font-size="9.5" fill="#7A6F63">implies a stretch</text><line x1="800" y1="238" x2="858" y2="238" stroke="#B6ADA2" stroke-width="1.4"/><text x="580" y="186" text-anchor="end" font-size="12.5" font-weight="700" fill="#0B0B0B">Risk reversal</text><text x="580" y="200" text-anchor="end" font-size="9.5" fill="#7A6F63">swapped for a filter</text><text x="580" y="242" text-anchor="end" font-size="12.5" font-weight="700" fill="#8C5442">Urgency</text><text x="580" y="256" text-anchor="end" font-size="9.5" fill="#7A6F63">stated once</text><text x="690" y="324" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C5442">Scarcity</text><text x="690" y="338" text-anchor="middle" font-size="9.5" fill="#7A6F63">the cap and the date, one sentence</text><text x="690" y="214" text-anchor="middle" font-size="11.5" fill="#2B2521">Two kept.</text><text x="690" y="232" text-anchor="middle" font-size="11.5" fill="#2B2521">One swapped. Two cut.</text>
       <text x="20" y="378" font-size="11" fill="#2B2521">The heavier black arrow closing the cycle is the added pillar, drawn heavier because doc 07 outranks the campaign.</text>
       <text x="20" y="393" font-size="11" fill="#7A6F63">A missed slot costs one day. A breach costs the position.</text>
     </svg>
@@ -1333,11 +1354,11 @@
     <p>Doc 06: what is downstream and not yet public includes the Academy, and none of it is referenced publicly until O6 is settled. A page that hints at cohorts, a programme or group work describes a business that does not exist yet. This is watchpoint 07 in doc 21 and it is the failure mode most likely to happen by accident, in a single enthusiastic sentence on a registration page. Every draft of that page gets read specifically for this before anything else.</p>
   </div>
 </div>
-<!-- ================= 07 EMAIL CAMPAIGN ================= -->
+<!-- section 07 -->
 <div class="section" id="s8">
   <div class="sec-head">
     <span class="kicker">Section 07</span>
-    <h2>The campaign: six letters that sell, five that fill the room</h2>
+    <h2>The campaign: six letters that make the case, four that close, five that fill the room</h2>
     <p>The source method uses a six email arc named PSA, Problem, Proof, Philosophy, Plan, Prize, run over five days with daily sends. The arc is good. The compression is wrong for this list, and two of the six labels describe things doc 07 forbids. Here is the arc rebuilt.</p>
   </div>
 
@@ -1532,7 +1553,7 @@
   </div>
 </div>
 
-<!-- ================= 08 ONE TO ONE ================= -->
+<!-- section 08 -->
 <div class="section" id="s9">
   <div class="sec-head">
     <span class="kicker">Section 08</span>
@@ -1617,16 +1638,480 @@
     <p>A batch. Named recipient, the post of theirs that prompted it, the draft at 150 to 300 characters, and one line on why now. Marked red, sent to her directly and outside the ordinary batch, per doc 07's escalation. Nothing is placed live, nothing is scheduled, and no message is written at all for a target she has not seen named first.</p>
   </div>
 </div>
-<!-- ================= 09 THE 45 DAYS ================= -->
+<!-- section 09 -->
+<div class="section" id="s13">
+  <div class="sec-head">
+    <span class="kicker">Section 09</span>
+    <h2>The platform: her own address, and the reason it exists</h2>
+    <p>Everything in the eight sections before this one is built on land somebody else owns. LinkedIn decides who sees a post. Go High Level holds the list but is a United States processor. The platform is the one part of the estate that answers to her, holds the record of what was approved and what went out, and survives a change of tool, a change of team, or a change of mind. It is called <em class="t">North Acts</em> in the specification we were handed, after the five acts of the method. The name is hers to confirm and it is cheaper to change this week than in month three.</p>
+  </div>
+
+  <figure class="flow wide">
+    <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The three systems and what each one owns">
+      <style>
+        .pbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
+        .pdk{fill:#0B0B0B;}
+        .ptt{fill:#F8EFE9; stroke:#8C5442; stroke-width:1.2;}
+        .plb{font-family:Inter,sans-serif; font-size:13px; fill:#2B2521; font-weight:600;}
+        .plw{font-family:Inter,sans-serif; font-size:13px; fill:#ffffff; font-weight:600;}
+        .psm{font-family:Inter,sans-serif; font-size:10.5px; fill:#7A6F63;}
+        .psw{font-family:Inter,sans-serif; font-size:10.5px; fill:#B6ADA2;}
+        .pkk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.11em;}
+        .pkw{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#D4A370; letter-spacing:.11em;}
+        .pln{stroke:#8C5442; stroke-width:1.3; fill:none;}
+        .plg{stroke:#C9BBA9; stroke-width:1.1; fill:none; stroke-dasharray:4 4;}
+      </style>
+      <defs>
+        <marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker>
+      </defs>
+
+      <text class="pkk" x="30" y="30">RENTED</text>
+      <rect class="pbx" x="30" y="42" width="250" height="150" rx="10"/>
+      <text class="plb" x="50" y="72">LinkedIn</text>
+      <text class="psm" x="50" y="94">Attention, and nothing else.</text>
+      <text class="psm" x="50" y="112">The feed decides reach. The</text>
+      <text class="psm" x="50" y="130">newsletter list stays inside it.</text>
+      <text class="psm" x="50" y="148">No export. No ownership.</text>
+      <text class="psm" x="50" y="172">Posts, comments, profile, DMs</text>
+
+      <text class="pkk" x="365" y="30">LEASED, UNITED STATES</text>
+      <rect class="pbx" x="365" y="42" width="250" height="150" rx="10"/>
+      <text class="plb" x="385" y="72">Go High Level</text>
+      <text class="psm" x="385" y="94">The list and the plumbing.</text>
+      <text class="psm" x="385" y="112">Email, forms, booking, the</text>
+      <text class="psm" x="385" y="130">registration page, payment.</text>
+      <text class="psm" x="385" y="148">Exportable at any time.</text>
+      <text class="psm" x="385" y="172">Contacts, tags, workflows, pages</text>
+
+      <text class="pkw" x="700" y="30">OWNED</text>
+      <rect class="pdk" x="700" y="42" width="250" height="150" rx="10"/>
+      <text class="plw" x="720" y="72">North Acts</text>
+      <text class="psw" x="720" y="94">The work and the record.</text>
+      <text class="psw" x="720" y="112">Members, sessions, notebooks,</text>
+      <text class="psw" x="720" y="130">approvals, money, audit trail.</text>
+      <text class="psw" x="720" y="148">Hers. Portable. Permanent.</text>
+      <text class="psw" x="720" y="172">Member area and admin</text>
+
+      <path class="pln" d="M280 117 L360 117" marker-end="url(#pa)"/>
+      <path class="pln" d="M615 117 L695 117" marker-end="url(#pa)"/>
+      <text class="psm" x="288" y="108">consent</text>
+      <text class="psm" x="624" y="108">seat, payment</text>
+
+      <rect class="ptt" x="30" y="240" width="920" height="120" rx="10"/>
+      <text class="pkk" x="50" y="266">THE RULE THAT DECIDES WHICH SYSTEM HOLDS WHAT</text>
+      <text class="plb" x="50" y="294">If losing the tool would lose the relationship, the relationship does not live in the tool.</text>
+      <text class="psm" x="50" y="318">A follower is LinkedIn's. A subscriber is Go High Level's, and exportable. A member, a seat, a signed engagement and a</text>
+      <text class="psm" x="50" y="336">recorded approval are hers, in the platform, in a database she owns, priced in Rappen and shown in Swiss francs.</text>
+
+      <path class="plg" d="M155 192 L155 240"/>
+      <path class="plg" d="M490 192 L490 240"/>
+      <path class="plg" d="M825 192 L825 240"/>
+
+      <text class="pkk" x="30" y="400">WHAT THIS BUYS HER</text>
+      <text class="psm" x="30" y="422">One place that answers the question a board member would ask. Who applied, what did we say, what did she approve,</text>
+      <text class="psm" x="30" y="440">what went out, what came back, and what is owed. No tool in the stack above can answer all six. The platform can.</text>
+    </svg>
+    <figcaption>Three systems, one rule. The estate is arranged so that nothing she cannot afford to lose is held by a company that can change its terms on a Tuesday.</figcaption>
+  </figure>
+
+  <h3 class="sub">The member side, which is what she will show people</h3>
+  <p>Two doors. A private notebook for the person doing the work, and a room for the group format when decision O6 opens it. Nothing in the member area is public, nothing a member writes is visible to another member, and nothing a member writes reaches the team unless she chooses to share it. That last rule is not a feature, it is the confidentiality charter expressed in a database.</p>
+
+  <div class="grid3">
+    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">The notebook</h4><p style="font-size:13px;">The exercises from the method, one at a time, private. Progress is visible to her as participation, never as content.</p></div>
+    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">Seats and sessions</h4><p style="font-size:13px;">Joining details, materials and the pre-reading for a day she has paid for. Visible only once a seat exists.</p></div>
+    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">Her letters</h4><p style="font-size:13px;">Consent held with the date it was given, shown back to the person who gave it. Withdrawable in one click.</p></div>
+  </div>
+
+  <h3 class="sub">The team side, in the order it gets used</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:15%">Screen</th><th style="width:43%">What it answers</th><th>Why it is in version one</th></tr>
+      <tr><td><strong>Today</strong></td><td>What needs attention right now. Next session and seats taken, unanswered enquiries, people who have gone quiet for a fortnight, recent payments and role changes.</td><td>It is the only screen a busy person opens every day. If it is right, the rest can wait.</td></tr>
+      <tr><td><strong>Enquiries</strong></td><td>Every request for a private conversation, on a board: new, in conversation, proposal, signed, closed. Owner, age, overdue marker, full history.</td><td>The funnel in section 00 ends here. Without it the Assess pipeline lives in an inbox.</td></tr>
+      <tr><td><strong>Queue</strong></td><td>Every post from draft to published, and her recorded approval of the exact text that went out.</td><td>Doc 07 rule four, enforced by the database rather than by a person remembering.</td></tr>
+      <tr><td><strong>Workshops</strong></td><td>The day itself. Title, date, venue, capacity, price, seat holders, joining details, materials, the room for questions beforehand.</td><td>Section 06 has no home without it. The cap lives here, and the cap is the offer.</td></tr>
+      <tr><td><strong>Lead magnets</strong></td><td>Each asset, who took it, when, from where, and the consent record with its date.</td><td>Section 03 produces the instrument. This is where it is given away lawfully.</td></tr>
+      <tr><td><strong>Payments</strong></td><td>Money collected by month, seat revenue per day, advisory instalments, what is overdue. Every change written to the audit log.</td><td>Because the alternative is a spreadsheet, and a spreadsheet is not a record.</td></tr>
+      <tr><td><strong>People</strong></td><td>One page per person: seats, memberships, payments, enquiries, participation, consent exactly as given.</td><td>It is the answer to the only question that matters on a call. Who is this, and what has passed between us.</td></tr>
+      <tr><td><strong>Insights</strong></td><td>The business on one page, in charts, with a table under every chart for anyone who prefers numbers.</td><td>Month two onwards. Charts of a month with nothing in it are theatre.</td></tr>
+      <tr><td><strong>Academy</strong></td><td>Cohorts, the six sessions, materials, and a read on who has gone quiet before she walks into a session.</td><td>Built, not opened. Blocked by decision O6 and by nothing else.</td></tr>
+      <tr><td><strong>Content studio</strong></td><td>One idea in, every format out: post text, image post, carousel, cheatsheet, a short video brief.</td><td>With one correction, below, that changes what it is for.</td></tr>
+      <tr><td><strong>Comment bank</strong></td><td>Lines she has approved for replies. Where each one was used, so nothing repeats.</td><td>The 30/30 window in section 01 runs on this and cannot run at speed without it.</td></tr>
+      <tr><td><strong>Post metrics</strong></td><td>What each post brought back: impressions, reactions, comments, enquiries, against the target.</td><td>Entered by hand for the first thirty days. Honest and cheap beats automated and wrong.</td></tr>
+      <tr><td><strong>System</strong></td><td>What is connected, and the audit log of everything that touched money, membership or publishing.</td><td>It is what makes the Swiss data protection register in section 05 a one hour job instead of a reconstruction.</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sub">The correction that matters most, and it is about the studio</h3>
+  <div class="redcall">
+    <span class="tag red">Reframe</span>
+    <h4 class="mini" style="margin-top:10px;">She writes. The studio proofs, formats and records. It does not draft in her voice.</h4>
+    <p>The specification describes a content studio built on a general model, producing the post text as well as the images. Doc 04 closes that door: she can hear machine writing and she says so, and every draft is supposed to be read aloud in her cadence before it moves. The studio earns its place doing the four things she is not going to do herself, and none of them is writing the post.</p>
+  </div>
+
+  <div class="grid4">
+    <div class="card"><span class="tag ink">01</span><h4 class="mini" style="margin-top:10px;">Format</h4><p style="font-size:13px;">Her text, turned into the image post, the carousel and the cheatsheet, in her colours, at the sizes LinkedIn accepts.</p></div>
+    <div class="card"><span class="tag ink">02</span><h4 class="mini" style="margin-top:10px;">Proof</h4><p style="font-size:13px;">The banned list, the dashes, the emoji, the hashtags, the list of three, the state words aimed at a reader. Caught before anything renders.</p></div>
+    <div class="card"><span class="tag ink">03</span><h4 class="mini" style="margin-top:10px;">Flag, never fix</h4><p style="font-size:13px;">Where her own draft repeats a structure, the studio marks it and shows the alternative. It never edits her sentence. She decides.</p></div>
+    <div class="card"><span class="tag ink">04</span><h4 class="mini" style="margin-top:10px;">Record</h4><p style="font-size:13px;">The exact approved text, the approval, the time it went out, the link, and what came back. The tracker stops being a manual habit.</p></div>
+  </div>
+
+  <h3 class="sub">The approval gate, which is the whole reason to build rather than buy</h3>
+  <figure class="flow wide">
+    <svg viewBox="0 0 980 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The approval gate from draft to published">
+      <style>
+        .gbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
+        .gtt{fill:#F8EFE9; stroke:#8C5442; stroke-width:1.4;}
+        .gdk{fill:#0B0B0B;}
+        .glb{font-family:Inter,sans-serif; font-size:12px; fill:#2B2521; font-weight:600;}
+        .glw{font-family:Inter,sans-serif; font-size:12px; fill:#ffffff; font-weight:600;}
+        .gsm{font-family:Inter,sans-serif; font-size:9.5px; fill:#7A6F63;}
+        .gsw{font-family:Inter,sans-serif; font-size:9.5px; fill:#B6ADA2;}
+        .gkk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.1em;}
+        .gln{stroke:#8C5442; stroke-width:1.3; fill:none;}
+        .grd{stroke:#8C5442; stroke-width:1.3; fill:none; stroke-dasharray:5 4;}
+      </style>
+      <defs><marker id="ga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker></defs>
+
+      <rect class="gbx" x="20" y="70" width="140" height="66" rx="9"/>
+      <text class="glb" x="38" y="98">Draft</text>
+      <text class="gsm" x="38" y="116">Her text, in the queue</text>
+
+      <rect class="gbx" x="196" y="70" width="140" height="66" rx="9"/>
+      <text class="glb" x="214" y="98">Proof</text>
+      <text class="gsm" x="214" y="116">Doc 04, automatic</text>
+
+      <rect class="gtt" x="372" y="52" width="170" height="102" rx="9"/>
+      <text class="gkk" x="390" y="76">RED, AMBER OR GREEN</text>
+      <text class="glb" x="390" y="98">With Nicole</text>
+      <text class="gsm" x="390" y="116">One link to her phone.</text>
+      <text class="gsm" x="390" y="132">Works once. Expires in</text>
+      <text class="gsm" x="390" y="148">seven days.</text>
+
+      <rect class="gbx" x="578" y="70" width="140" height="66" rx="9"/>
+      <text class="glb" x="596" y="98">Scheduled</text>
+      <text class="gsm" x="596" y="116">Mon, Tue, Thu</text>
+
+      <rect class="gdk" x="754" y="70" width="206" height="66" rx="9"/>
+      <text class="glw" x="772" y="98">Published, and logged</text>
+      <text class="gsw" x="772" y="116">Text, time, link, first comment</text>
+
+      <path class="gln" d="M160 103 L192 103" marker-end="url(#ga)"/>
+      <path class="gln" d="M336 103 L368 103" marker-end="url(#ga)"/>
+      <path class="gln" d="M542 103 L574 103" marker-end="url(#ga)"/>
+      <path class="gln" d="M718 103 L750 103" marker-end="url(#ga)"/>
+
+      <path class="grd" d="M266 136 L266 190 L94 190 L94 142" marker-end="url(#ga)"/>
+      <text class="gkk" x="292" y="196">PROOF FAILED, BACK TO DRAFT</text>
+      
+
+      <path class="grd" d="M648 136 L648 232 L130 232 L130 142" marker-end="url(#ga)"/>
+      <text class="gkk" x="300" y="248">IF THE TEXT CHANGES AFTER SHE APPROVED IT, THE APPROVAL NO LONGER COUNTS AND IT GOES BACK TO HER</text>
+
+      <rect class="gtt" x="20" y="268" width="940" height="46" rx="9"/>
+      <text class="glb" x="40" y="296">Enforced in the database, not on the screen. There is no route to publish that does not pass through her yes.</text>
+    </svg>
+    <figcaption>Doc 07 rule four, rendered as a mechanism. A rule that depends on somebody remembering is a rule that breaks on the first busy Thursday.</figcaption>
+  </figure>
+
+  <h3 class="sub">Three things in the specification that contradict her settled documents</h3>
+  <p>All three are small, all three are cheap to fix now and expensive to fix after the first client is in the system. None of them changes the build.</p>
+  <div class="tw">
+    <table>
+      <tr><th style="width:22%">In the platform spec</th><th style="width:26%">In her settled documents</th><th>What we do</th></tr>
+      <tr><td>Calendar set to three posts a week, Monday, Wednesday, Friday</td><td>Publishing days are Monday, Tuesday and Thursday, decided September, doc 17</td><td>Reconfigure the calendar before the first post is scheduled. The posting rhythm is settled and the platform follows it, not the reverse.</td></tr>
+      <tr><td>Advisory instalments created as 6,000 on signing, 4,000 within sixty days, 8,000 across the rest</td><td>CHF 18,000 paid as 6,000 to begin and four payments of 3,000, doc 06</td><td>Both total 18,000 and the schedules differ. Hold the doc 06 schedule until she rules. Flagged in section 14.</td></tr>
+      <tr><td>Content studio drafts the LinkedIn post text on a general model</td><td>She writes her own content. Doc 04 governs every published sentence</td><td>The studio formats, proofs, flags and records. Set out above, and it is the version being built.</td></tr>
+    </table>
+  </div>
+
+    <h3 class="sub">Four settings needed before version two holds anything real</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:24%">Setting</th><th style="width:40%">Why it cannot wait</th><th>What we build against until she rules</th></tr>
+      <tr><td><strong>The payment schedule</strong></td><td>Instalments are created the moment an engagement is signed. Doc 06 and the platform specification describe two different plans for the same CHF 18,000.</td><td>Doc 06, because it is the settled document. Six thousand to begin, then four payments of three thousand.</td></tr>
+      <tr><td><strong>Logins and roles</strong></td><td>Every action against money, membership or publishing is written to the audit log with a name attached, and the log is only worth having if the names are right.</td><td>Her as admin, two of our team, nobody else.</td></tr>
+      <tr><td><strong>Payment provider</strong></td><td>Seats cannot be sold without it, and the registration page cannot go live without seat sales. Prices are held in Rappen and shown in Swiss francs.</td><td>A single Swiss franc provider, with her account connected the day she gives it.</td></tr>
+      <tr><td><strong>The name</strong></td><td>It appears on her domain, in the member area and in every email footer. Cheap to change this week, expensive in month three.</td><td>North Acts, which is the name in the specification we were handed. Hers to keep or change.</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sub">What gets built, in what order</h3>
+  <div class="grid3">
+    <div class="card">
+      <span class="tag ink">Version 1</span>
+      <h4 class="mini" style="margin-top:10px;">By Monday 28 September</h4>
+      <p style="font-size:13px;">Something real, on her domain, that she can open. Today, Enquiries, People, Workshops as draft, the member shell, roles, and the audit log switched on from the first write.</p>
+      <ul class="checklist">
+        <li>Supabase project, schema, roles</li>
+        <li>Enquiry capture wired to the Go High Level form</li>
+        <li>One workshop object, still a draft, invisible publicly</li>
+        <li>Her login, and two team logins</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag ink">Version 2</span>
+      <h4 class="mini" style="margin-top:10px;">By day 45, before the room</h4>
+      <p style="font-size:13px;">Everything the workshop and the campaign touch. Seats, joining details, materials, payments and instalments, lead magnets with consent, the queue and the approval link.</p>
+      <ul class="checklist">
+        <li>Seat holders visible the moment payment clears</li>
+        <li>Consent record on every download, with its date</li>
+        <li>Approval link that works once and expires in seven days</li>
+        <li>Comment bank and the tracker, replacing the spreadsheet</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag ink">Version 3</span>
+      <h4 class="mini" style="margin-top:10px;">By day 90</h4>
+      <p style="font-size:13px;">The parts that only make sense once there is history to look at, and the parts that wait on her decisions.</p>
+      <ul class="checklist">
+        <li>Insights, with two months of real data behind it</li>
+        <li>Notebook tools, editable wording</li>
+        <li>Academy built and closed, pending O6</li>
+        <li>Shareable and tracked links, per channel and per person</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="kicker gold">The part of this to say out loud tonight</span>
+    <h4 style="margin-top:8px; font-size:21px;">She has been building a business that lives in other people's software for twenty five years' worth of relationships.</h4>
+    <p>The platform is not a nice addition to the funnel. It is the only reason the funnel compounds rather than resets each time a tool changes its terms. Every other section in this document produces something. This is the section that keeps it.</p>
+  </div>
+</div>
+
+<!-- section 10 -->
+<div class="section" id="s14">
+  <div class="sec-head">
+    <span class="kicker">Section 10</span>
+    <h2>Ninety days, three phases, and five dates she is asked to approve tonight</h2>
+    <p>The forty five day plan in section 11 fills one room. Ninety days is the shortest honest horizon for the thing underneath it: a room that fills, a room that fills again without starting from nothing, and a list that belongs to her at the end of it. Phase one builds the machine. Phase two runs it in public. Phase three proves it repeats, which is the only evidence that any of this is a system rather than a launch.</p>
+  </div>
+
+  <h3 class="sub">The five dates, which is the whole of what she needs to say yes to</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:8%">Day</th><th style="width:17%">Date</th><th style="width:30%">What is delivered</th><th>What it is blocked by, honestly</th></tr>
+      <tr><td><strong>4</strong></td><td>Friday 25 September</td><td><strong>Newsletter and list strategy.</strong> The architecture, the cadence, the consent wording, the first twelve months of topics against her four pillars.</td><td>Nothing. This is ours to deliver.</td></tr>
+      <tr><td><strong>7</strong></td><td>Monday 28 September</td><td><strong>Platform version one.</strong> On her domain, with her login. Today, Enquiries, People, the workshop object and the audit log.</td><td>Nothing. Version two needs her decisions on the room.</td></tr>
+      <tr><td><strong>9</strong></td><td>Wednesday 30 September</td><td><strong>Go High Level built, and the sending domain warming.</strong> Subdomain, authentication, tags, the seven workflows, the registration page skeleton.</td><td>Her sign off on the sending subdomain and access to the domain records. One hour of her time, and it is the thing that cannot be compressed later.</td></tr>
+      <tr><td><strong>18</strong></td><td>Friday 9 October</td><td><strong>The instrument live.</strong> The diagnostic from section 03, gated properly, consent recorded, first traffic from her own posts.</td><td>Her choice between the seven candidate assets in section 03, and her yes on the profile rewrite. Both have been open since week one.</td></tr>
+      <tr><td><strong>45</strong></td><td>Thursday 5 November</td><td><strong>The room.</strong> Capped, paid, and followed by the part everyone forgets, which is the day after.</td><td>Her yes on the date, the cap, the price, the language and the venue. Nothing else in this document moves until those five are settled.</td></tr>
+    </table>
+  </div>
+
+  <div class="redcall">
+    <span class="tag red">One honest disagreement to put in front of her</span>
+    <h4 class="mini" style="margin-top:10px;">A room in thirty days is possible. A room in thirty days on a cold sending domain is not.</h4>
+    <p>Warm up on a new sending domain runs two to six weeks depending on the receiving provider, and Microsoft tightened its requirements for bulk senders in May 2025. Swiss owner CEOs read mail at Outlook addresses more than at any other provider. A first campaign that lands in Junk at Outlook is not a slow start, it is a domain that takes months to recover. The fifth of November is the first date that lets the invitation arrive in an inbox. If she wants the room sooner, the route is a smaller invitation sent from her existing address to people she already knows, and the campaign machine follows behind it.</p>
+  </div>
+
+    <h3 class="sub">The room itself is five settings, and only she can set them</h3>
+  <p>None of these is a marketing decision. Each one changes the invitation, the page, the cap and the campaign, and none of them can be changed after the date is announced without the announcement looking like a rehearsal.</p>
+  <div class="grid5">
+    <div class="card"><span class="tag ink">01</span><h4 class="mini" style="margin-top:8px;">The date</h4><p style="font-size:12.5px;">Thursday 5 November is the first date a warmed sending domain allows. Hers to confirm or move.</p></div>
+    <div class="card"><span class="tag ink">02</span><h4 class="mini" style="margin-top:8px;">The cap</h4><p style="font-size:12.5px;">A number she can defend out loud, drawn from her own delivery hours rather than from a marketing instinct.</p></div>
+    <div class="card"><span class="tag ink">03</span><h4 class="mini" style="margin-top:8px;">The price</h4><p style="font-size:12.5px;">Stated plainly and once. It has to sit under the Assess at CHF 4,500 without undercutting it.</p></div>
+    <div class="card"><span class="tag ink">04</span><h4 class="mini" style="margin-top:8px;">The place</h4><p style="font-size:12.5px;">A room in Zurich, or online. It changes the cap, the price and the whole campaign.</p></div>
+    <div class="card"><span class="tag ink">05</span><h4 class="mini" style="margin-top:8px;">The name</h4><p style="font-size:12.5px;">One line she would say across a table, not a title we invent for her.</p></div>
+  </div>
+
+  <h3 class="sub">The ninety days, by workstream</h3>
+  <figure class="flow wide">
+    <svg viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ninety day plan by workstream, thirteen weeks">
+      <style>
+        .gg{stroke:#EADCCB; stroke-width:1;}
+        .gh{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#7A6F63; letter-spacing:.06em;}
+        .gr{font-family:Inter,sans-serif; font-size:11.5px; fill:#2B2521; font-weight:600;}
+        .gn{font-family:Inter,sans-serif; font-size:9.5px; fill:#7A6F63;}
+        .bar{fill:#F1E3DA; stroke:#8C5442; stroke-width:1;}
+        .bard{fill:#0B0B0B;}
+        .bart{fill:#8C5442;}
+        .barq{fill:#FCF9F4; stroke:#C9BBA9; stroke-width:1; stroke-dasharray:3 3;}
+        .bl{font-family:Inter,sans-serif; font-size:9.5px; fill:#2B2521; font-weight:600;}
+        .blw{font-family:Inter,sans-serif; font-size:9.5px; fill:#ffffff; font-weight:600;}
+        .ph{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.11em;}
+        .mk{stroke:#8C5442; stroke-width:1.2; stroke-dasharray:3 3;}
+      </style>
+
+      <text class="ph" x="230" y="20">PHASE ONE, BUILD AND FILL</text>
+      <text class="ph" x="600" y="20">PHASE TWO, RUN</text>
+      <text class="ph" x="812" y="20">PHASE THREE, REPEAT</text>
+      <rect x="230" y="28" width="330" height="3" fill="#8C5442"/>
+      <rect x="576" y="28" width="212" height="3" fill="#C9BBA9"/>
+      <rect x="804" y="28" width="156" height="3" fill="#E4D6C4"/>
+
+      <text class="gh" x="230" y="52">W1</text><text class="gh" x="286" y="52">W2</text><text class="gh" x="342" y="52">W3</text><text class="gh" x="398" y="52">W4</text><text class="gh" x="454" y="52">W5</text><text class="gh" x="510" y="52">W6</text><text class="gh" x="566" y="52">W7</text><text class="gh" x="622" y="52">W8</text><text class="gh" x="678" y="52">W9</text><text class="gh" x="734" y="52">W10</text><text class="gh" x="790" y="52">W11</text><text class="gh" x="846" y="52">W12</text><text class="gh" x="902" y="52">W13</text>
+      <text class="gh" x="222" y="68">22 SEP</text><text class="gh" x="548" y="68">3 NOV</text><text class="gh" x="906" y="68">20 DEC</text>
+
+      <line class="gg" x1="225" y1="74" x2="225" y2="500"/><line class="gg" x1="281" y1="74" x2="281" y2="500"/><line class="gg" x1="337" y1="74" x2="337" y2="500"/><line class="gg" x1="393" y1="74" x2="393" y2="500"/><line class="gg" x1="449" y1="74" x2="449" y2="500"/><line class="gg" x1="505" y1="74" x2="505" y2="500"/><line class="gg" x1="561" y1="74" x2="561" y2="500"/><line class="gg" x1="617" y1="74" x2="617" y2="500"/><line class="gg" x1="673" y1="74" x2="673" y2="500"/><line class="gg" x1="729" y1="74" x2="729" y2="500"/><line class="gg" x1="785" y1="74" x2="785" y2="500"/><line class="gg" x1="841" y1="74" x2="841" y2="500"/><line class="gg" x1="897" y1="74" x2="897" y2="500"/><line class="gg" x1="953" y1="74" x2="953" y2="500"/>
+
+      <text class="gr" x="20" y="96">Content and the window</text>
+      <text class="gn" x="20" y="110">3 posts, 30 in 30 out, daily</text>
+      <rect class="bar" x="225" y="84" width="728" height="30" rx="5"/>
+      <text class="bl" x="400" y="103">Unbroken. Nothing in this plan is allowed to interrupt it.</text>
+
+      <text class="gr" x="20" y="142">Profile rewrite</text>
+      <text class="gn" x="20" y="156">Doc 14, decision O4</text>
+      <rect class="bart" x="225" y="130" width="112" height="30" rx="5"/>
+      <text class="blw" x="240" y="149">Live by day 10</text>
+
+      <text class="gr" x="20" y="188">The instrument</text>
+      <text class="gn" x="20" y="202">Diagnostic, gated, consent</text>
+      <rect class="bar" x="281" y="176" width="112" height="30" rx="5"/>
+      <text class="bl" x="296" y="195">Built, tested, live day 18</text>
+
+      <text class="gr" x="20" y="234">Go High Level</text>
+      <text class="gn" x="20" y="248">Build, then warm up</text>
+      <rect class="bart" x="225" y="222" width="84" height="30" rx="5"/>
+      <text class="blw" x="236" y="241">Build</text>
+      <rect class="bar" x="309" y="222" width="196" height="30" rx="5"/>
+      <text class="bl" x="330" y="241">Warm up on real content, four weeks</text>
+
+      <text class="gr" x="20" y="280">Platform</text>
+      <text class="gn" x="20" y="294">North Acts</text>
+      <rect class="bard" x="225" y="268" width="56" height="30" rx="5"/>
+      <text class="blw" x="236" y="287">v1</text>
+      <rect class="bar" x="281" y="268" width="280" height="30" rx="5"/>
+      <text class="bl" x="300" y="287">v2, everything the room and the campaign touch</text>
+      <rect class="barq" x="561" y="268" width="392" height="30" rx="5"/>
+      <text class="bl" x="640" y="287">v3, insights, notebook, academy built and closed</text>
+
+      <text class="gr" x="20" y="326">Room one</text>
+      <text class="gn" x="20" y="340">Campaign, then the day</text>
+      <rect class="bar" x="337" y="314" width="224" height="30" rx="5"/>
+      <text class="bl" x="360" y="333">Six letters, then five reminders</text>
+      <rect class="bard" x="561" y="314" width="28" height="30" rx="5"/>
+      <text class="ph" x="548" y="308">5 NOV</text>
+
+      <text class="gr" x="20" y="372">The day after</text>
+      <text class="gn" x="20" y="386">Waitlist, presell, the story</text>
+      <rect class="bart" x="589" y="360" width="140" height="30" rx="5"/>
+      <text class="blw" x="600" y="379">72 hours, then Assess</text>
+
+      <text class="gr" x="20" y="418">Assess conversion</text>
+      <text class="gn" x="20" y="432">The paid front door</text>
+      <rect class="bar" x="589" y="406" width="364" height="30" rx="5"/>
+      <text class="bl" x="660" y="425">Applications worked one at a time, never in a batch</text>
+
+      <text class="gr" x="20" y="464">Room two</text>
+      <text class="gn" x="20" y="478">Presold, not relaunched</text>
+      <rect class="barq" x="785" y="452" width="168" height="30" rx="5"/>
+      <text class="bl" x="798" y="471">Named now, opens in January</text>
+
+      <line class="mk" x1="561" y1="74" x2="561" y2="500"/>
+      <line class="mk" x1="785" y1="74" x2="785" y2="500"/>
+
+      <text class="ph" x="20" y="524">SOLID BAR, COMMITTED. OUTLINED BAR, DEPENDS ON A DECISION IN SECTION 14. DARK BAR, A FIXED DATE.</text>
+      <text class="gn" x="20" y="544">Day 1 is Tuesday 22 September 2026. Day 90 is Sunday 20 December 2026. Weeks run Monday to Sunday.</text>
+    </svg>
+    <figcaption>Two vertical markers. The first is the room. The second is the review at day 70, which is where the second room is either named or postponed on evidence rather than on appetite.</figcaption>
+  </figure>
+
+  <h3 class="sub">Phase two, days 46 to 70. What happens after the room, which is the part that is usually improvised</h3>
+  <p>A workshop that ends without a designed next seventy two hours converts at a fraction of what it should, and the people most likely to apply are the ones who were quietest in the room. Phase two is written before the room runs, not after it.</p>
+  <div class="grid3">
+    <div class="card"><span class="tag">Hours 0 to 72</span><h4 class="mini" style="margin-top:10px;">Three branches, all pre built</h4><p style="font-size:13px;">Attended and moved. Attended and did not. Paid and did not attend. Three different letters, written in week five, sitting in the workflow before anybody walks into the room.</p></div>
+    <div class="card"><span class="tag">Week 8 to 10</span><h4 class="mini" style="margin-top:10px;">The Assess, one at a time</h4><p style="font-size:13px;">Every application read by her. No batch, no sequence, no automated booking link under her name. The paid front door is the belief test from doc 02 and it cannot be run by software.</p></div>
+    <div class="card"><span class="tag">Week 9</span><h4 class="mini" style="margin-top:10px;">The story, told once</h4><p style="font-size:13px;">What happened in the room, written as one post, with no seat count and no photograph of anyone who did not consent. Doc 07 rule two applies in the room exactly as it applies in a post.</p></div>
+  </div>
+
+  <h3 class="sub">Phase three, days 71 to 90. Repeat, on the only kind of scarcity that survives this buyer</h3>
+  <p>The method we use for capped rooms comes from the Sold Out cycle. It works, and it needs one translation before it touches her name. The research is unambiguous on the distinction: a limit that reflects a real constraint raises perceived value, and a limit that is visibly manufactured does not move it at all. Against an owner CEO at this altitude the downside is asymmetric. No upside, and a credibility cost she cannot get back.</p>
+
+  <figure class="flow wide">
+    <svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Sold Out cycle translated for this account">
+      <style>
+        .cbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
+        .cdk{fill:#0B0B0B;}
+        .clb{font-family:Inter,sans-serif; font-size:12.5px; fill:#2B2521; font-weight:600;}
+        .clw{font-family:Inter,sans-serif; font-size:12.5px; fill:#ffffff; font-weight:600;}
+        .csm{font-family:Inter,sans-serif; font-size:10px; fill:#7A6F63;}
+        .csw{font-family:Inter,sans-serif; font-size:10px; fill:#B6ADA2;}
+        .ckk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.1em;}
+        .cln{stroke:#8C5442; stroke-width:1.3; fill:none;}
+      </style>
+      <defs><marker id="ca" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker></defs>
+
+      <rect class="cbx" x="20" y="60" width="172" height="112" rx="10"/>
+      <text class="ckk" x="38" y="84">01</text>
+      <text class="clb" x="38" y="106">Cap supply</text>
+      <text class="csm" x="38" y="126">A number she can name</text>
+      <text class="csm" x="38" y="142">out loud and defend.</text>
+      <text class="csm" x="38" y="158">Her hours, not a widget.</text>
+
+      <rect class="cbx" x="212" y="60" width="172" height="112" rx="10"/>
+      <text class="ckk" x="230" y="84">02</text>
+      <text class="clb" x="230" y="106">Set cadence</text>
+      <text class="csm" x="230" y="126">One room a quarter, and</text>
+      <text class="csm" x="230" y="142">a date that exists before</text>
+      <text class="csm" x="230" y="158">the invitation does.</text>
+
+      <rect class="cbx" x="404" y="60" width="172" height="112" rx="10"/>
+      <text class="ckk" x="422" y="84">03</text>
+      <text class="clb" x="422" y="106">Create demand</text>
+      <text class="csm" x="422" y="126">The three posts a week</text>
+      <text class="csm" x="422" y="142">already running. The room</text>
+      <text class="csm" x="422" y="158">borrows the audience.</text>
+
+      <rect class="cbx" x="596" y="60" width="172" height="112" rx="10"/>
+      <text class="ckk" x="614" y="84">04</text>
+      <text class="clb" x="614" y="106">Raise the cap</text>
+      <text class="csm" x="614" y="126">The cap rises only when</text>
+      <text class="csm" x="614" y="142">the previous room filled.</text>
+      <text class="csm" x="614" y="158">Evidence, not appetite.</text>
+
+      <rect class="cdk" x="788" y="60" width="172" height="112" rx="10"/>
+      <text class="ckk" x="806" y="84" fill="#D4A370">05</text>
+      <text class="clw" x="806" y="106">Hold the line</text>
+      <text class="csw" x="806" y="126">Full is full. One extra</text>
+      <text class="csw" x="806" y="142">seat teaches the market</text>
+      <text class="csw" x="806" y="158">the cap was decorative.</text>
+
+      <path class="cln" d="M192 116 L208 116" marker-end="url(#ca)"/>
+      <path class="cln" d="M384 116 L400 116" marker-end="url(#ca)"/>
+      <path class="cln" d="M576 116 L592 116" marker-end="url(#ca)"/>
+      <path class="cln" d="M768 116 L784 116" marker-end="url(#ca)"/>
+      <path class="cln" d="M874 172 L874 210 L106 210 L106 176" marker-end="url(#ca)"/>
+      <text class="ckk" x="420" y="204">AND THE NEXT ROOM OPENS FROM A WAITING LIST, NOT FROM ZERO</text>
+
+      <rect class="cbx" x="20" y="238" width="940" height="46" rx="9"/>
+      <text class="clb" x="40" y="258">What is cut from the method, deliberately: countdown timers, seats remaining counters, and any cap that resets.</text>
+      <text class="csm" x="40" y="274">Natural rarity raises perceived value. Manufactured rarity measurably does not, and at CHF 4,500 it reads as a tell.</text>
+    </svg>
+    <figcaption>The cycle, kept. The theatre around it, removed. Her cap is real because her delivery capacity is real, and that is the only version of scarcity this buyer does not see through.</figcaption>
+  </figure>
+
+  <h3 class="sub">What ninety days is expected to produce, stated honestly</h3>
+  <div class="grid2">
+    <div class="card tint">
+      <h4 class="mini">What we can forecast</h4>
+      <ul>
+        <li><strong>36 posts published</strong> against her four pillars, every one approved by her, every one logged.</li>
+        <li><strong>An owned list</strong>, consented under Swiss law, on a warmed domain, exportable at any moment.</li>
+        <li><strong>One room delivered</strong> and a second named, with a waiting list behind it rather than a fresh start.</li>
+        <li><strong>A record</strong>, in her own platform, of who applied, what was approved, what went out and what is owed.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 class="mini">What nobody can forecast, and we will not pretend to</h4>
+      <p style="font-size:13.5px;">There is no credible published benchmark for how many attendees of a paid workshop go on to buy an engagement above CHF 4,500. The webinar industry's own 2026 data set concedes that the large majority of workshop influenced pipeline is invisible because it is never attributed. Anyone quoting a conversion rate at this price point is quoting folklore.</p>
+      <p style="font-size:13.5px;">Her first two rooms are the benchmark. That is why the tracker, the enquiry board and the post metrics are in version one of the platform rather than version three.</p>
+    </div>
+  </div>
+</div>
+
+<!-- section 11 -->
 <div class="section" id="s10">
   <div class="sec-head">
     <span class="kicker">Section 11</span>
     <h2>Phase one, day by day. The forty five days that end in the room</h2>
-    <p>Seven blocks. Each one closes with something she can see, because a build she cannot see is a build she has no reason to believe in. Day one is Monday 22 September. Day forty five is Thursday 5 November, which is one of her publishing days and therefore a room that does not disturb the rhythm.</p>
+    <p>Seven blocks. Each one closes with something she can see, because a build she cannot see is a build she has no reason to believe in. Day one is Tuesday 22 September. Day forty five is Thursday 5 November, which is one of her publishing days and therefore a room that does not disturb the rhythm.</p>
   </div>
 
   <div class="grid4" style="margin-bottom:26px;">
-    <div class="card"><span class="tag ink">21 posts</span><p style="font-size:12.5px; margin-top:8px;">Mon, Tue, Thu across seven weeks. Twelve of them fall inside the first thirty days, which matches doc 12 exactly.</p></div>
+    <div class="card"><span class="tag ink">19 posts</span><p style="font-size:12.5px; margin-top:8px;">Mon, Tue, Thu across seven weeks. The twelve settled ones run to Monday 19 October, which matches doc 12 exactly.</p></div>
     <div class="card"><span class="tag ink">0 selling posts</span><p style="font-size:12.5px; margin-top:8px;">Before 22 October. Doc 06: the first application facing line does not appear until month two.</p></div>
     <div class="card"><span class="tag ink">1 letter</span><p style="font-size:12.5px; margin-top:8px;">The monthly newsletter, published once the page it references is live. Never before.</p></div>
     <div class="card"><span class="tag ink">4 weeks</span><p style="font-size:12.5px; margin-top:8px;">Of email domain warm up, which is why the technical work starts before the creative work.</p></div>
@@ -1636,13 +2121,20 @@
   <figure class="flow wide">
     <svg viewBox="0 0 900 450" role="img" aria-label="Gantt of all eleven workstreams across the seven weeks, ending at the room on Thursday 5 November">
       <text x="20" y="22" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="1.4" fill="#8C5442">ELEVEN WORKSTREAMS, SEVEN WEEKS, ONE FIXED END DATE</text>
-      <rect x="138" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="190" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 1</text><text x="190" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">22-28 Sep</text><text x="293" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 2</text><text x="293" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">29 Sep-5 Oct</text><rect x="345" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="397" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 3</text><text x="397" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">6-12 Oct</text><text x="500" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 4</text><text x="500" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">13-19 Oct</text><rect x="552" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="603" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 5</text><text x="603" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">20-26 Oct</text><text x="707" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 6</text><text x="707" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">27 Oct-2 Nov</text><rect x="759" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="810" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 7</text><text x="810" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">3-5 Nov</text><text x="126" y="86" text-anchor="end" font-size="11" fill="#2B2521">Infrastructure, from day one</text><rect x="140" y="74" width="99" height="17" rx="4" fill="#8C5442"/><rect x="243" y="74" width="99" height="17" rx="4" fill="#D0A997"/><rect x="347" y="74" width="99" height="17" rx="4" fill="#D0A997"/><text x="126" y="116" text-anchor="end" font-size="11" fill="#2B2521">Profile and doors</text><rect x="140" y="104" width="203" height="17" rx="4" fill="#D0A997"/><text x="353" y="117" text-anchor="start" font-size="9.5" fill="#8C5442">O4 signed</text><text x="126" y="146" text-anchor="end" font-size="11" fill="#2B2521">The diagnostic</text><rect x="243" y="134" width="141" height="17" rx="4" fill="#8C5442"/><text x="126" y="176" text-anchor="end" font-size="11" fill="#2B2521">Registration funnel</text><rect x="347" y="164" width="99" height="17" rx="4" fill="#D0A997"/><text x="126" y="206" text-anchor="end" font-size="11" fill="#2B2521">Follow up workflows</text><rect x="554" y="194" width="99" height="17" rx="4" fill="#D0A997"/><text x="663" y="207" text-anchor="start" font-size="9.5" fill="#8C5442">before the room</text><text x="126" y="236" text-anchor="end" font-size="11" fill="#2B2521">Posts, Mon Tue Thu, 21 of them</text><rect x="140" y="224" width="720" height="17" rx="4" fill="#E3C9BA"/><text x="126" y="266" text-anchor="end" font-size="11" fill="#2B2521">The monthly letter</text><rect x="347" y="254" width="32" height="17" rx="4" fill="#8C5442"/><text x="389" y="267" text-anchor="start" font-size="9.5" fill="#8C5442">one issue</text><text x="126" y="296" text-anchor="end" font-size="11" fill="#2B2521">Phase A and B</text><rect x="140" y="284" width="306" height="17" rx="4" fill="#E3C9BA"/><text x="456" y="297" text-anchor="start" font-size="9.5" fill="#8C5442">waiting list opens</text><text x="126" y="326" text-anchor="end" font-size="11" fill="#2B2521">Phase C, open</text><rect x="450" y="314" width="218" height="17" rx="4" fill="#BA8875"/><text x="126" y="356" text-anchor="end" font-size="11" fill="#2B2521">Phase D, close</text><rect x="657" y="344" width="60" height="17" rx="4" fill="#0B0B0B"/><text x="727" y="357" text-anchor="start" font-size="9.5" fill="#8C5442">cart shuts 31 Oct</text><text x="126" y="386" text-anchor="end" font-size="11" fill="#2B2521">Phase E, reminders</text><rect x="761" y="374" width="70" height="17" rx="4" fill="#8C5442"/><line x1="862" y1="66" x2="862" y2="408" stroke="#0B0B0B" stroke-width="2.4"/><circle cx="862" cy="408" r="5" fill="#0B0B0B"/><text x="862" y="428" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B0B0B">Thursday 5 November, the room</text>
+      <rect x="138" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="190" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 1</text><text x="190" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">22-27 Sep</text><text x="293" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 2</text><text x="293" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">28 Sep-4 Oct</text><rect x="345" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="397" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 3</text><text x="397" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">5-11 Oct</text><text x="500" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 4</text><text x="500" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">12-18 Oct</text><rect x="552" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="603" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 5</text><text x="603" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">19-25 Oct</text><text x="707" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 6</text><text x="707" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">26 Oct-1 Nov</text><rect x="759" y="66" width="103" height="338" fill="#F8EFE9" opacity="0.55"/><text x="810" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#2B2521">Week 7</text><text x="810" y="58" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="#7A6F63">2-5 Nov</text><text x="126" y="86" text-anchor="end" font-size="11" fill="#2B2521">Infrastructure, from day one</text><rect x="140" y="74" width="99" height="17" rx="4" fill="#8C5442"/><rect x="243" y="74" width="99" height="17" rx="4" fill="#D0A997"/><rect x="347" y="74" width="99" height="17" rx="4" fill="#D0A997"/><text x="126" y="116" text-anchor="end" font-size="11" fill="#2B2521">Profile and doors</text><rect x="140" y="104" width="203" height="17" rx="4" fill="#D0A997"/><text x="353" y="117" text-anchor="start" font-size="9.5" fill="#8C5442">O4 signed</text><text x="126" y="146" text-anchor="end" font-size="11" fill="#2B2521">The diagnostic</text><rect x="243" y="134" width="141" height="17" rx="4" fill="#8C5442"/><text x="126" y="176" text-anchor="end" font-size="11" fill="#2B2521">Registration funnel</text><rect x="347" y="164" width="99" height="17" rx="4" fill="#D0A997"/><text x="126" y="206" text-anchor="end" font-size="11" fill="#2B2521">Follow up workflows</text><rect x="554" y="194" width="99" height="17" rx="4" fill="#D0A997"/><text x="663" y="207" text-anchor="start" font-size="9.5" fill="#8C5442">before the room</text><text x="126" y="236" text-anchor="end" font-size="11" fill="#2B2521">Posts, Mon Tue Thu, 19 of them</text><rect x="140" y="224" width="720" height="17" rx="4" fill="#E3C9BA"/><text x="126" y="266" text-anchor="end" font-size="11" fill="#2B2521">The monthly letter</text><rect x="347" y="254" width="32" height="17" rx="4" fill="#8C5442"/><text x="389" y="267" text-anchor="start" font-size="9.5" fill="#8C5442">one issue</text><text x="126" y="296" text-anchor="end" font-size="11" fill="#2B2521">Phase A and B</text><rect x="140" y="284" width="306" height="17" rx="4" fill="#E3C9BA"/><text x="456" y="297" text-anchor="start" font-size="9.5" fill="#8C5442">waiting list opens</text><text x="126" y="326" text-anchor="end" font-size="11" fill="#2B2521">Phase C, open</text><rect x="450" y="314" width="218" height="17" rx="4" fill="#BA8875"/><text x="126" y="356" text-anchor="end" font-size="11" fill="#2B2521">Phase D, close</text><rect x="657" y="344" width="60" height="17" rx="4" fill="#0B0B0B"/><text x="727" y="357" text-anchor="start" font-size="9.5" fill="#8C5442">cart shuts 30 Oct</text><text x="126" y="386" text-anchor="end" font-size="11" fill="#2B2521">Phase E, reminders</text><rect x="761" y="374" width="70" height="17" rx="4" fill="#8C5442"/><line x1="862" y1="66" x2="862" y2="408" stroke="#0B0B0B" stroke-width="2.4"/><circle cx="862" cy="408" r="5" fill="#0B0B0B"/><text x="862" y="428" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B0B0B">Thursday 5 November, the room</text>
     </svg>
     <figcaption>The technical bars start before the creative ones, which is counterintuitive and non negotiable. Read down any week column to see what is running at once; read across any row to see what it depends on finishing.</figcaption>
   </figure>
 
+    <div class="redcall">
+    <span class="tag red">Corrected in version two</span>
+    <h4 class="mini" style="margin-top:10px;">The calendar was anchored on a Monday that is a Tuesday, and two rules were quietly in conflict.</h4>
+    <p>Day one is Tuesday 22 September 2026. Version one labelled it a Monday, which pushed every weekday in this section out by one and put a cart close on a Saturday. The day numbers were right and the room was right. The weekday names were wrong, and they are corrected throughout. Weeks now run Monday to Sunday, which makes week one short, six days rather than seven.</p>
+    <p>The second correction matters more. The settled plan is twelve posts in the first thirty days, all image led, with zero selling. Version one named the date and the cap of the room publicly in week three, which is inside those twelve. Corrected: the twelve settled posts run to <strong>Monday 19 October, day 28</strong>. A thirteenth slot falls on Tuesday 20 October, still inside the thirty days, and it goes to one of the four pillars rather than to the room. No post carries the room, its date, its cap or its price before <strong>Thursday 22 October, day 31</strong>, which is the first day of month two and a publishing day. The email campaign is not affected, because the thirty day rule governs posts, and the letters go to a list that asked for them.</p>
+  </div>
+
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 1</span> The foundation, and the thing that cannot wait <span class="datepill">Mon 22 to Sun 28 September &middot; days 1 to 7</span></h4>
+    <h4><span class="weekpill">WEEK 1</span> The foundation, and the thing that cannot wait <span class="datepill">Tue 22 to Sun 27 September &middot; days 1 to 6</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">We build</p>
@@ -1658,7 +2150,7 @@
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 22, Tue 23, Thu 25. All image led, zero selling.</li>
+          <li>Two posts, Tue 22 and Thu 24. All image led, zero selling.</li>
           <li>The profile rewrite, for sign off</li>
           <li>The cap worksheet, ready for the call</li>
         </ul>
@@ -1676,7 +2168,7 @@
   </div>
 
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 2</span> The instrument <span class="datepill">Mon 29 September to Sun 5 October &middot; days 8 to 14</span></h4>
+    <h4><span class="weekpill">WEEK 2</span> The instrument <span class="datepill">Mon 28 September to Sun 4 October &middot; days 7 to 13</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">We build</p>
@@ -1691,7 +2183,7 @@
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 29, Tue 30, Thu 1 Oct</li>
+          <li>Three posts, Mon 28, Tue 29, Thu 1 Oct</li>
           <li>The diagnostic, end to end, before anybody else</li>
           <li>Three of her own lines, from doc 11 and doc 22, to choose a title from</li>
         </ul>
@@ -1708,7 +2200,7 @@
   </div>
 
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 3</span> The list starts, and the date is named <span class="datepill">Mon 6 to Sun 12 October &middot; days 15 to 21 &middot; Phase B</span></h4>
+    <h4><span class="weekpill">WEEK 3</span> The list starts, and the date is named <span class="datepill">Mon 5 to Sun 11 October &middot; days 14 to 20 &middot; Phase B</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">We build</p>
@@ -1723,7 +2215,7 @@
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 6, Tue 7, Thu 9</li>
+          <li>Three posts, Mon 5, Tue 6, Thu 8</li>
           <li><strong>The first issue of the letter.</strong> Its launch notification goes to her whole network and can only be played once, which is why it waits until the page exists</li>
           <li>The registration page, for approval</li>
           <li>The first diagnostic completions coming in</li>
@@ -1741,7 +2233,7 @@
   </div>
 
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 4</span> Open <span class="datepill">Mon 13 to Sun 19 October &middot; days 22 to 28 &middot; Phase C begins</span></h4>
+    <h4><span class="weekpill">WEEK 4</span> Open <span class="datepill">Mon 12 to Sun 18 October &middot; days 21 to 27 &middot; Phase C begins</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">Sends</p>
@@ -1754,7 +2246,7 @@
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 13, Tue 14, Thu 16</li>
+          <li>Three posts, Mon 12, Tue 13, Thu 15</li>
           <li>The first registrations, in the pipeline, by name</li>
           <li>Her 30/30 window running at full speed if O2 landed in week 1</li>
         </ul>
@@ -1770,7 +2262,7 @@
   </div>
 
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 5</span> The case, made properly <span class="datepill">Mon 20 to Sun 26 October &middot; days 29 to 35</span></h4>
+    <h4><span class="weekpill">WEEK 5</span> The case, made properly <span class="datepill">Mon 19 to Sun 25 October &middot; days 28 to 34</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">Sends</p>
@@ -1783,7 +2275,7 @@
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 20, Tue 21, Thu 23</li>
+          <li>Three posts, Mon 19, Tue 20, Thu 22</li>
           <li><strong>From 22 October, month two begins.</strong> The first application facing line is now permitted, and only with two Authority or Education posts directly ahead of it.</li>
           <li>Phase F workflows built and tested, ten days before the room</li>
         </ul>
@@ -1799,21 +2291,21 @@
   </div>
 
   <div class="weekblock">
-    <h4><span class="weekpill">WEEK 6</span> Close <span class="datepill">Mon 27 October to Sun 2 November &middot; days 36 to 42 &middot; Phase D</span></h4>
+    <h4><span class="weekpill">WEEK 6</span> Close <span class="datepill">Mon 26 October to Sun 1 November &middot; days 35 to 41 &middot; Phase D</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">Sends</p>
         <ul class="checklist">
-          <li>D1 Tue 28, 72 hours</li>
-          <li>D2 Thu 30, 24 hours, the last objection and the direct ask</li>
-          <li>D3 Fri 31 morning, closing today</li>
-          <li>D4 Fri 31, roughly two hours before close. Short. One link.</li>
+          <li>D1 Tue 27, 72 hours</li>
+          <li>D2 Thu 29, 24 hours, the last objection and the direct ask</li>
+          <li>D3 Fri 30 morning, closing today</li>
+          <li>D4 Fri 30, roughly two hours before close. Short. One link.</li>
         </ul>
       </div>
       <div>
         <p class="kicker">She sees</p>
         <ul class="checklist">
-          <li>Three posts, Mon 27, Tue 28, Thu 30</li>
+          <li>Three posts, Mon 26, Tue 27, Thu 29</li>
           <li>The room, filled or not, five days before it opens</li>
           <li>Reminder run R1 to R5 armed and scheduled</li>
         </ul>
@@ -1822,14 +2314,14 @@
         <p class="kicker">The honest note</p>
         <ul class="checklist">
           <li>D3 and D4 are the two emails most likely to be cut in review and most likely to be doing the work. If they are cut, we say so plainly and accept the outcome rather than arguing.</li>
-          <li>Cart closes Friday 31 October. Not at the door.</li>
+          <li>Cart closes Friday 30 October. Not at the door.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="weekblock" style="border-color:var(--terracotta); background:var(--twhisper);">
-    <h4><span class="weekpill">WEEK 7</span> The room <span class="datepill">Mon 3 to Thu 5 November &middot; days 43 to 45 &middot; Phase E and F</span></h4>
+    <h4><span class="weekpill">WEEK 7</span> The room <span class="datepill">Mon 2 to Thu 5 November &middot; days 42 to 45 &middot; Phase E and F</span></h4>
     <div class="grid3" style="margin-top:14px;">
       <div>
         <p class="kicker">Reminders</p>
@@ -1842,7 +2334,7 @@
       <div>
         <p class="kicker">The day</p>
         <ul class="checklist">
-          <li>Posts Mon 3 and Tue 4. Nothing on Thursday but the room.</li>
+          <li>Posts Mon 2 and Tue 3. Nothing on Thursday but the room.</li>
           <li>The Assess link live in the session, not only afterwards</li>
           <li>F1 sends two hours after, while the room is still warm</li>
         </ul>
@@ -1863,7 +2355,7 @@
     <p>One message, same shape every time. What went live, what she needs to decide, what closes next week. Not a status report and not a list of tasks completed. The account runs on her trust and her trust is built by her seeing the thing exist, in order, on the day it was promised.</p>
   </div>
 </div>
-<!-- ================= 10 NUMBERS ================= -->
+<!-- section 12 -->
 <div class="section" id="s11">
   <div class="sec-head">
     <span class="kicker">Section 12</span>
@@ -1938,6 +2430,19 @@
     <figcaption>Darker and further right means better sourced. The value of this chart is the left hand column, because knowing which four numbers do not exist is what stops a plan being built on one of them.</figcaption>
   </figure>
 
+    <h3 class="sub">Planning figures, which are not publishable and must never leak into a post</h3>
+  <p>Several numbers below are used to design the machine and cannot meet her sourcing rule. They are listed here so nobody lifts one into a draft on a Thursday afternoon. Each is either industry lore, a vendor claim, or a figure we could not trace to a primary source.</p>
+  <div class="tw">
+    <table>
+      <tr><th style="width:38%">The figure, as it appears in this plan</th><th style="width:26%">Status</th><th>What we do with it</th></tr>
+      <tr><td>The first sixty to ninety minutes determine roughly seventy percent of a post’s reach</td><td>Widely repeated, no primary source found</td><td>Keep the behaviour, which is that the window after publishing is the one half hour that cannot move. Drop the number.</td></tr>
+      <tr><td>Reply rates peak at around thirty percent for messages of 150 to 300 characters</td><td>Vendor data, not independently verified</td><td>Keep the length rule, which is sound on its own. Never state the rate to her or to anyone else.</td></tr>
+      <tr><td>Monthly is the most common declared cadence among the fifty largest newsletters on the platform</td><td>Observed by us, not published anywhere</td><td>Say it as an observation of ours if it is said at all, never as a statistic.</td></tr>
+      <tr><td>Any conversion rate from a workshop seat to a paid engagement above CHF 4,500</td><td>Does not exist in any credible published form</td><td>Her first two rooms are the benchmark. Nothing else is quoted.</td></tr>
+      <tr><td>Saves worth roughly five times a like, comments roughly twice</td><td>Sourced, Hootsuite September 2026 on LinkedIn’s engineering posts</td><td>Usable internally. If it ever appears publicly the source goes in her first comment, never in the post body.</td></tr>
+    </table>
+  </div>
+
   <h3 class="sub">Two widely circulated statistics that must never appear in her material</h3>
   <div class="grid2">
     <div class="redcall" style="margin:0;">
@@ -1999,7 +2504,107 @@
   </p>
 </div>
 
-<!-- ================= 11 RED ITEMS ================= -->
+<!-- section 13 -->
+<div class="section" id="s15">
+  <div class="sec-head">
+    <span class="kicker">Section 13</span>
+    <h2>The questionnaire, written to Nicole, exactly as it goes out</h2>
+    <p>Thirteen questions for Nicole. One on the writing, nine on engagement, three on messages. Everything else that needs a ruling already sits somewhere else in this document, on the dates page, with the platform, and in the register, so nothing is put to Nicole twice. Every question carries the answer we proceed on if nothing comes back, which means silence costs a default rather than a delay. This page also goes out as a separate sheet, printable and written to Nicole directly.</p>
+  </div>
+
+  <div class="callout">
+    <span class="kicker gold">For the desk, before it goes out</span>
+    <h4 style="margin-top:8px; font-size:20px;">Three of the thirteen change what happens this week. The rest can wait.</h4>
+    <p>Those three are marked. Nothing on this page argues, nothing explains itself twice, and no question is asked that we could answer ourselves by looking. If the answer already sits in the settled documents, the question does not belong here.</p>
+  </div>
+
+  <h3 class="sub">Your writing</h3>
+  <p class="qintro">One question only.</p>
+    <div class="q key">
+    <div class="qh"><span class="qid">01</span><span class="qt">Some sentence shapes repeat across your posts. Do you want them flagged, with one alternative shown, and your own version left beside it?</span></div>
+    <p class="why">We change nothing either way. You would simply see what a sharp reader sees.</p>
+    <p class="def"><b>If you say nothing</b>We flag on the first post of each week. You ignore us as often as you like.</p>
+    <div class="ans"></div>
+  </div>
+  <h3 class="sub">Engagement</h3>
+  <p class="qintro">Four lists have been built so far. Of seventy accounts on the first, ten or twelve post more than once a week. Your buyers are owners. Owners do not post much. So the list needs your hand on it.</p>
+    <div class="q key">
+    <div class="qh"><span class="qid">02</span><span class="qt">Who do you want us engaging with? Names are worth more than categories. Twenty is enough to start.</span></div>
+    <p class="why">You know this field. We are reading it from outside.</p>
+    <p class="def"><b>If you say nothing</b>We keep building from sector and title. The list stays thinner than it should be.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">03</span><span class="qt">What makes someone worth our time? Owner, successor, chair, board member, something else.</span></div>
+    <p class="why">This sets who we watch every morning.</p>
+    <p class="def"><b>If you say nothing</b>Owners and successors first. Nobody else on the main list.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">04</span><span class="qt">Which countries? Australia came off the list already.</span></div>
+    <p class="why">The list should not be wider than the work.</p>
+    <p class="def"><b>If you say nothing</b>Switzerland first. Germany and Austria second. Nothing further out.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">05</span><span class="qt">The advisers around your buyer. In or out? Lawyers, fiduciaries and bankers post far more than owners do.</span></div>
+    <p class="why">They are not the buyer. They do refer.</p>
+    <p class="def"><b>If you say nothing</b>A separate, smaller list. Engaged less often. Counted apart, so we can see what it is worth.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">06</span><span class="qt">How much engagement a day? Thirty minutes is one shape. An hour is another.</span></div>
+    <p class="why">It sets how many accounts we can hold warm at once.</p>
+    <p class="def"><b>If you say nothing</b>Thirty minutes each morning. Ten to fifteen accounts a day.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">07</span><span class="qt">How many comments a week under your name, at most?</span></div>
+    <p class="why">Too few and nobody notices. Too many and it reads as a campaign.</p>
+    <p class="def"><b>If you say nothing</b>Fifteen a week. Never twice under the same person in the same week.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">08</span><span class="qt">A post arrives in German. Do we reply in German, or send it to you?</span></div>
+    <p class="why">We can draft in either language. We would rather not guess at your tone in the second one.</p>
+    <p class="def"><b>If you say nothing</b>We draft the German reply and send it to you first. Nothing in German goes out unread.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">09</span><span class="qt">Anyone we should never comment under?</span></div>
+    <p class="why">A comment in the wrong place cannot be taken back.</p>
+    <p class="def"><b>If you say nothing</b>The three names from your positioning work, and anyone who reads as adjacent to them.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q key">
+    <div class="qh"><span class="qid">10</span><span class="qt">What may go out under your name today? Likes. Approved comment lines. Nothing at all.</span></div>
+    <p class="why">Everything is currently drafted and held. That is slow, and it is the safe version.</p>
+    <p class="def"><b>If you say nothing</b>Nothing goes out. We keep drafting and holding.</p>
+    <div class="ans"></div>
+  </div>
+  <h3 class="sub">Messages</h3>
+  <p class="qintro">No message has gone out under your name and none will without your word. These three set the boundary in writing.</p>
+    <div class="q">
+    <div class="qh"><span class="qid">11</span><span class="qt">Connection requests and follows under your name. Yes or no?</span></div>
+    <p class="why">A request with no reason behind it is the cheapest way to look ordinary.</p>
+    <p class="def"><b>If you say nothing</b>Neither. We follow nobody and request nobody.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">12</span><span class="qt">Someone asks you something personal or commercial in a comment. Who answers?</span></div>
+    <p class="why">This is already happening on your live posts.</p>
+    <p class="def"><b>If you say nothing</b>Daniel, the same day. Nothing under your name, not even a holding line.</p>
+    <div class="ans"></div>
+  </div>
+    <div class="q">
+    <div class="qh"><span class="qid">13</span><span class="qt">When outreach does begin, what is off limits? Your list, in your words.</span></div>
+    <p class="why">Twenty minutes from you will beat a week of drafting from us.</p>
+    <p class="def"><b>If you say nothing</b>Outreach stays off the table for the next ninety days.</p>
+    <div class="ans"></div>
+  </div>
+</div>
+
+<!-- section 14 -->
 <div class="section" id="s12">
   <div class="sec-head">
     <span class="kicker">Section 14</span>
@@ -2099,591 +2704,9 @@
     <figcaption>Read left to right: her decision, what it is currently holding, and when it has to be asked. The bottom row is the paradox worth naming on the call, because the risk that blocks nothing is the risk that costs the position.</figcaption>
   </figure>
 
-  <h3 class="sub">Her open decisions that this plan depends on</h3>
-  <div class="tw">
-    <table>
-      <tr><th style="width:8%">Doc 02</th><th style="width:40%">The decision</th><th style="width:52%">What it does to this build</th></tr>
-      <tr><td><strong>O2</strong></td><td>Standing green lane approval for engagement comments</td><td><strong>The throttle on the entire inbound engine.</strong> Until it is granted, everything is amber, every comment is drafted, batched and held, and the 30/30 window runs at a fraction of speed. Ask first on the next call.</td></tr>
-      <tr><td><strong>O4</strong></td><td>Sign off on the profile rewrite</td><td>Every door in section 02 is on the profile. Without this the funnel drives traffic to a page that has not been rebuilt. Week 1, no later.</td></tr>
-      <tr><td><strong>O3</strong></td><td>Her ruling on comments under a post about a death, illness or loss</td><td>One of the likeliest live situations, and the 30/30 window makes it likelier. Currently defaults to under fifteen words and a flag.</td></tr>
-      <tr><td><strong>O5</strong></td><td>Three or four of her own physical objects</td><td>The diagnostic may need one. Doc 04: if a piece needs an object she has not given us, we ask her rather than inventing it.</td></tr>
-      <tr><td><strong>O6</strong></td><td>Whether the Academy may be referenced publicly yet</td><td><strong>The single largest accident risk in this plan.</strong> A registration page for a capped room is exactly where a sentence about cohorts or group work appears by mistake. Every draft is read for this first.</td></tr>
-      <tr><td><strong>O7</strong></td><td>Which anonymised client moments she will clear</td><td>The proof letter in Phase C and F3 in the follow up. Composite only until she rules.</td></tr>
-      <tr><td><strong>O1</strong></td><td>Six month price: hold CHF 18,000 or move toward CHF 24,000</td><td>Does not block this build. The room anchors against the Assess at CHF 4,500, which is settled. If O1 moves, nothing on the registration page changes because no page states the six month price.</td></tr>
-    </table>
-  </div>
-
-    <h3 class="sub">Added in version two, on the September evidence check</h3>
-  <div class="tw">
-    <table>
-      <tr><th style="width:18%">Item</th><th style="width:42%">What is uncertain</th><th>What we do about it</th></tr>
-      <tr><td><span class="tag red">Red</span> <strong>Proof floor</strong></td><td>The thirty percent second generation survival figure sits on her cleared proof floor in doc 03 and cannot be traced to a real study. Publishing it would breach doc 07 rule three in her own name.</td><td>Struck from the bank today. No post drafted against it. A replacement line is offered in section 12, sourced to UBS and St Gallen, and needs her written yes before it enters the proof floor.</td></tr>
-      <tr><td><span class="tag red">Red</span> <strong>Data transfer</strong></td><td>The Swiss to United States data privacy framework has been relied on since September 2024. A United States Supreme Court ruling in June 2026 removed one of the pillars it rests on, and a challenge is expected.</td><td>Standard contractual clauses are documented as the fallback before the first send, and Go High Level's live certification is checked on the day it is connected. This is for counsel, not for us.</td></tr>
-      <tr><td><span class="tag">Amber</span> <strong>GDPR reach</strong></td><td>Whether her marketing triggers EU law at all. The common assumption is that German language marketing does. It does not on its own, because German is an official Swiss language and Recital 23 excludes exactly that case.</td><td>What would trigger it: pricing in euros, naming German or Austrian clients, or targeting EU residents in advertising. Each is avoidable, and avoiding them is cheaper than an article 27 representative.</td></tr>
-      <tr><td><span class="tag">Amber</span> <strong>Deliverability</strong></td><td>Go High Level's own current guidance on dedicated versus shared sending domains could not be verified from outside the account.</td><td>Read from inside the account before the domain is chosen, in week one. It is one hour and it decides whether the first campaign arrives.</td></tr>
-      <tr><td><span class="tag">Amber</span> <strong>Newsletter export</strong></td><td>It is widely asserted that a LinkedIn newsletter subscriber list cannot be exported, and section 04 is built on that assumption. It could not be confirmed against a primary source.</td><td>Checked inside her account in week one. If export exists, the architecture does not change, because a rented list is still rented. If it does not, the case for the owned list is simply stronger.</td></tr>
-      <tr><td><span class="tag">Amber</span> <strong>Payment schedule</strong></td><td>Doc 06 and the platform specification describe two different instalment plans for the same CHF 18,000.</td><td>Doc 06 governs until she rules. Question G1 in section 13.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">For counsel, not for us</h3>
-  <div class="grid3">
-    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Final consent wording and the data protection declaration, confirmed by Swiss counsel before the first send.</p></div>
-    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Whether she needs an EU representative under GDPR article 27. A judgement call about whether her marketing targets EU residents.</p></div>
-    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Go High Level is a United States processor. The transfer mechanism for Swiss and EU personal data needs confirming and recording in her processing register before go live.</p></div>
-  </div>
-
-  <div class="callout">
-    <span class="kicker gold">And one thing that is not negotiable at all</span>
-    <h4 style="margin-top:8px; font-size:22px;">No message goes out under her name before her approval.</h4>
-    <p style="margin-top:12px;">Decided 15 September. Not covered by any standing approval that may later be granted for comments. Section 08 is written as a specification for what we bring her, not as a sequence that runs, and that is the only form it can take. If the campaign ever feels short of a channel, this is not the one that opens.</p>
-  </div>
-</div>
-
-<!-- ================= 09 THE PLATFORM ================= -->
-<div class="section" id="s13">
-  <div class="sec-head">
-    <span class="kicker">Section 09</span>
-    <h2>The platform: her own address, and the reason it exists</h2>
-    <p>Everything in the eight sections before this one is built on land somebody else owns. LinkedIn decides who sees a post. Go High Level holds the list but is a United States processor. The platform is the one part of the estate that answers to her, holds the record of what was approved and what went out, and survives a change of tool, a change of team, or a change of mind. It is called <em class="t">North Acts</em>, after the five acts of the method.</p>
-  </div>
-
-  <figure class="flow wide">
-    <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The three systems and what each one owns">
-      <style>
-        .pbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
-        .pdk{fill:#0B0B0B;}
-        .ptt{fill:#F8EFE9; stroke:#8C5442; stroke-width:1.2;}
-        .plb{font-family:Inter,sans-serif; font-size:13px; fill:#2B2521; font-weight:600;}
-        .plw{font-family:Inter,sans-serif; font-size:13px; fill:#ffffff; font-weight:600;}
-        .psm{font-family:Inter,sans-serif; font-size:10.5px; fill:#7A6F63;}
-        .psw{font-family:Inter,sans-serif; font-size:10.5px; fill:#B6ADA2;}
-        .pkk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.11em;}
-        .pkw{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#D4A370; letter-spacing:.11em;}
-        .pln{stroke:#8C5442; stroke-width:1.3; fill:none;}
-        .plg{stroke:#C9BBA9; stroke-width:1.1; fill:none; stroke-dasharray:4 4;}
-      </style>
-      <defs>
-        <marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker>
-      </defs>
-
-      <text class="pkk" x="30" y="30">RENTED</text>
-      <rect class="pbx" x="30" y="42" width="250" height="150" rx="10"/>
-      <text class="plb" x="50" y="72">LinkedIn</text>
-      <text class="psm" x="50" y="94">Attention, and nothing else.</text>
-      <text class="psm" x="50" y="112">The feed decides reach. The</text>
-      <text class="psm" x="50" y="130">newsletter list stays inside it.</text>
-      <text class="psm" x="50" y="148">No export. No ownership.</text>
-      <text class="psm" x="50" y="172">Posts, comments, profile, DMs</text>
-
-      <text class="pkk" x="365" y="30">LEASED, UNITED STATES</text>
-      <rect class="pbx" x="365" y="42" width="250" height="150" rx="10"/>
-      <text class="plb" x="385" y="72">Go High Level</text>
-      <text class="psm" x="385" y="94">The list and the plumbing.</text>
-      <text class="psm" x="385" y="112">Email, forms, booking, the</text>
-      <text class="psm" x="385" y="130">registration page, payment.</text>
-      <text class="psm" x="385" y="148">Exportable at any time.</text>
-      <text class="psm" x="385" y="172">Contacts, tags, workflows, pages</text>
-
-      <text class="pkw" x="700" y="30">OWNED</text>
-      <rect class="pdk" x="700" y="42" width="250" height="150" rx="10"/>
-      <text class="plw" x="720" y="72">North Acts</text>
-      <text class="psw" x="720" y="94">The work and the record.</text>
-      <text class="psw" x="720" y="112">Members, sessions, notebooks,</text>
-      <text class="psw" x="720" y="130">approvals, money, audit trail.</text>
-      <text class="psw" x="720" y="148">Hers. Portable. Permanent.</text>
-      <text class="psw" x="720" y="172">Member area and admin</text>
-
-      <path class="pln" d="M280 117 L360 117" marker-end="url(#pa)"/>
-      <path class="pln" d="M615 117 L695 117" marker-end="url(#pa)"/>
-      <text class="psm" x="288" y="108">consent</text>
-      <text class="psm" x="624" y="108">seat, payment</text>
-
-      <rect class="ptt" x="30" y="240" width="920" height="120" rx="10"/>
-      <text class="pkk" x="50" y="266">THE RULE THAT DECIDES WHICH SYSTEM HOLDS WHAT</text>
-      <text class="plb" x="50" y="294">If losing the tool would lose the relationship, the relationship does not live in the tool.</text>
-      <text class="psm" x="50" y="318">A follower is LinkedIn's. A subscriber is Go High Level's, and exportable. A member, a seat, a signed engagement and a</text>
-      <text class="psm" x="50" y="336">recorded approval are hers, in the platform, in a database she owns, priced in Rappen and shown in Swiss francs.</text>
-
-      <path class="plg" d="M155 192 L155 240"/>
-      <path class="plg" d="M490 192 L490 240"/>
-      <path class="plg" d="M825 192 L825 240"/>
-
-      <text class="pkk" x="30" y="400">WHAT THIS BUYS HER</text>
-      <text class="psm" x="30" y="422">One place that answers the question a board member would ask. Who applied, what did we say, what did she approve,</text>
-      <text class="psm" x="30" y="440">what went out, what came back, and what is owed. No tool in the stack above can answer all six. The platform can.</text>
-    </svg>
-    <figcaption>Three systems, one rule. The estate is arranged so that nothing she cannot afford to lose is held by a company that can change its terms on a Tuesday.</figcaption>
-  </figure>
-
-  <h3 class="sub">The member side, which is what she will show people</h3>
-  <p>Two doors. A private notebook for the person doing the work, and a room for the group format when decision O6 opens it. Nothing in the member area is public, nothing a member writes is visible to another member, and nothing a member writes reaches the team unless she chooses to share it. That last rule is not a feature, it is the confidentiality charter expressed in a database.</p>
-
-  <div class="grid3">
-    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">The notebook</h4><p style="font-size:13px;">The exercises from the method, one at a time, private. Progress is visible to her as participation, never as content.</p></div>
-    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">Seats and sessions</h4><p style="font-size:13px;">Joining details, materials and the pre-reading for a day she has paid for. Visible only once a seat exists.</p></div>
-    <div class="card"><span class="tag">Member</span><h4 class="mini" style="margin-top:10px;">Her letters</h4><p style="font-size:13px;">Consent held with the date it was given, shown back to the person who gave it. Withdrawable in one click.</p></div>
-  </div>
-
-  <h3 class="sub">The team side, in the order it gets used</h3>
-  <div class="tw">
-    <table>
-      <tr><th style="width:15%">Screen</th><th style="width:43%">What it answers</th><th>Why it is in version one</th></tr>
-      <tr><td><strong>Today</strong></td><td>What needs attention right now. Next session and seats taken, unanswered enquiries, people who have gone quiet for a fortnight, recent payments and role changes.</td><td>It is the only screen a busy person opens every day. If it is right, the rest can wait.</td></tr>
-      <tr><td><strong>Enquiries</strong></td><td>Every request for a private conversation, on a board: new, in conversation, proposal, signed, closed. Owner, age, overdue marker, full history.</td><td>The funnel in section 00 ends here. Without it the Assess pipeline lives in an inbox.</td></tr>
-      <tr><td><strong>Queue</strong></td><td>Every post from draft to published, and her recorded approval of the exact text that went out.</td><td>Doc 07 rule four, enforced by the database rather than by a person remembering.</td></tr>
-      <tr><td><strong>Workshops</strong></td><td>The day itself. Title, date, venue, capacity, price, seat holders, joining details, materials, the room for questions beforehand.</td><td>Section 06 has no home without it. The cap lives here, and the cap is the offer.</td></tr>
-      <tr><td><strong>Lead magnets</strong></td><td>Each asset, who took it, when, from where, and the consent record with its date.</td><td>Section 03 produces the instrument. This is where it is given away lawfully.</td></tr>
-      <tr><td><strong>Payments</strong></td><td>Money collected by month, seat revenue per day, advisory instalments, what is overdue. Every change written to the audit log.</td><td>Because the alternative is a spreadsheet, and a spreadsheet is not a record.</td></tr>
-      <tr><td><strong>People</strong></td><td>One page per person: seats, memberships, payments, enquiries, participation, consent exactly as given.</td><td>It is the answer to the only question that matters on a call. Who is this, and what has passed between us.</td></tr>
-      <tr><td><strong>Insights</strong></td><td>The business on one page, in charts, with a table under every chart for anyone who prefers numbers.</td><td>Month two onwards. Charts of an empty month are theatre.</td></tr>
-      <tr><td><strong>Academy</strong></td><td>Cohorts, the six sessions, materials, and a read on who has gone quiet before she walks into a session.</td><td>Built, not opened. Blocked by decision O6 and by nothing else.</td></tr>
-      <tr><td><strong>Content studio</strong></td><td>One idea in, every format out: post text, image post, carousel, cheatsheet, a short video brief.</td><td>With one correction, below, that changes what it is for.</td></tr>
-      <tr><td><strong>Comment bank</strong></td><td>Lines she has approved for replies. Where each one was used, so nothing repeats.</td><td>The 30/30 window in section 01 runs on this and cannot run at speed without it.</td></tr>
-      <tr><td><strong>Post metrics</strong></td><td>What each post brought back: impressions, reactions, comments, enquiries, against the target.</td><td>Entered by hand for the first thirty days. Honest and cheap beats automated and wrong.</td></tr>
-      <tr><td><strong>System</strong></td><td>What is connected, and the audit log of everything that touched money, membership or publishing.</td><td>It is what makes the Swiss data protection register in section 05 a one hour job instead of a reconstruction.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">The correction that matters most, and it is about the studio</h3>
-  <div class="redcall">
-    <span class="tag red">Reframe</span>
-    <h4 class="mini" style="margin-top:10px;">She writes. The studio proofs, formats and records. It does not draft in her voice.</h4>
-    <p>The specification describes a content studio built on a general model, producing the post text as well as the images. Doc 04 closes that door: she can hear machine writing and she says so, and every draft is supposed to be read aloud in her cadence before it moves. The studio earns its place doing the four things she is not going to do herself, and none of them is writing the post.</p>
-  </div>
-
-  <div class="grid4">
-    <div class="card"><span class="tag ink">01</span><h4 class="mini" style="margin-top:10px;">Format</h4><p style="font-size:13px;">Her text, turned into the image post, the carousel and the cheatsheet, in her colours, at the sizes LinkedIn accepts.</p></div>
-    <div class="card"><span class="tag ink">02</span><h4 class="mini" style="margin-top:10px;">Proof</h4><p style="font-size:13px;">The banned list, the dashes, the emoji, the hashtags, the list of three, the state words aimed at a reader. Caught before anything renders.</p></div>
-    <div class="card"><span class="tag ink">03</span><h4 class="mini" style="margin-top:10px;">Flag, never fix</h4><p style="font-size:13px;">Where her own draft repeats a structure, the studio marks it and shows the alternative. It never edits her sentence. She decides.</p></div>
-    <div class="card"><span class="tag ink">04</span><h4 class="mini" style="margin-top:10px;">Record</h4><p style="font-size:13px;">The exact approved text, the approval, the time it went out, the link, and what came back. The tracker stops being a manual habit.</p></div>
-  </div>
-
-  <h3 class="sub">The approval gate, which is the whole reason to build rather than buy</h3>
-  <figure class="flow wide">
-    <svg viewBox="0 0 980 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The approval gate from draft to published">
-      <style>
-        .gbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
-        .gtt{fill:#F8EFE9; stroke:#8C5442; stroke-width:1.4;}
-        .gdk{fill:#0B0B0B;}
-        .glb{font-family:Inter,sans-serif; font-size:12px; fill:#2B2521; font-weight:600;}
-        .glw{font-family:Inter,sans-serif; font-size:12px; fill:#ffffff; font-weight:600;}
-        .gsm{font-family:Inter,sans-serif; font-size:9.5px; fill:#7A6F63;}
-        .gsw{font-family:Inter,sans-serif; font-size:9.5px; fill:#B6ADA2;}
-        .gkk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.1em;}
-        .gln{stroke:#8C5442; stroke-width:1.3; fill:none;}
-        .grd{stroke:#8C5442; stroke-width:1.3; fill:none; stroke-dasharray:5 4;}
-      </style>
-      <defs><marker id="ga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker></defs>
-
-      <rect class="gbx" x="20" y="70" width="140" height="66" rx="9"/>
-      <text class="glb" x="38" y="98">Draft</text>
-      <text class="gsm" x="38" y="116">Her text, in the queue</text>
-
-      <rect class="gbx" x="196" y="70" width="140" height="66" rx="9"/>
-      <text class="glb" x="214" y="98">Proof</text>
-      <text class="gsm" x="214" y="116">Doc 04, automatic</text>
-
-      <rect class="gtt" x="372" y="52" width="170" height="102" rx="9"/>
-      <text class="gkk" x="390" y="76">RED, AMBER OR GREEN</text>
-      <text class="glb" x="390" y="98">With Nicole</text>
-      <text class="gsm" x="390" y="116">One link to her phone.</text>
-      <text class="gsm" x="390" y="132">Works once. Expires in</text>
-      <text class="gsm" x="390" y="148">seven days.</text>
-
-      <rect class="gbx" x="578" y="70" width="140" height="66" rx="9"/>
-      <text class="glb" x="596" y="98">Scheduled</text>
-      <text class="gsm" x="596" y="116">Mon, Tue, Thu</text>
-
-      <rect class="gdk" x="754" y="70" width="206" height="66" rx="9"/>
-      <text class="glw" x="772" y="98">Published, and logged</text>
-      <text class="gsw" x="772" y="116">Text, time, link, first comment</text>
-
-      <path class="gln" d="M160 103 L192 103" marker-end="url(#ga)"/>
-      <path class="gln" d="M336 103 L368 103" marker-end="url(#ga)"/>
-      <path class="gln" d="M542 103 L574 103" marker-end="url(#ga)"/>
-      <path class="gln" d="M718 103 L750 103" marker-end="url(#ga)"/>
-
-      <path class="grd" d="M266 136 L266 190 L94 190 L94 142" marker-end="url(#ga)"/>
-      <text class="gkk" x="292" y="196">PROOF FAILED, BACK TO DRAFT</text>
-      
-
-      <path class="grd" d="M648 136 L648 232 L130 232 L130 142" marker-end="url(#ga)"/>
-      <text class="gkk" x="300" y="248">IF THE TEXT CHANGES AFTER SHE APPROVED IT, THE APPROVAL NO LONGER COUNTS AND IT GOES BACK TO HER</text>
-
-      <rect class="gtt" x="20" y="268" width="940" height="46" rx="9"/>
-      <text class="glb" x="40" y="296">Enforced in the database, not on the screen. There is no route to publish that does not pass through her yes.</text>
-    </svg>
-    <figcaption>Doc 07 rule four, rendered as a mechanism. A rule that depends on somebody remembering is a rule that breaks on the first busy Thursday.</figcaption>
-  </figure>
-
-  <h3 class="sub">Three things in the specification that contradict her settled documents</h3>
-  <p>All three are small, all three are cheap to fix now and expensive to fix after the first client is in the system. None of them changes the build.</p>
-  <div class="tw">
-    <table>
-      <tr><th style="width:22%">In the platform spec</th><th style="width:26%">In her settled documents</th><th>What we do</th></tr>
-      <tr><td>Calendar set to three posts a week, Monday, Wednesday, Friday</td><td>Publishing days are Monday, Tuesday and Thursday, decided September, doc 17</td><td>Reconfigure the calendar before the first post is scheduled. The posting rhythm is settled and the platform follows it, not the reverse.</td></tr>
-      <tr><td>Advisory instalments created as 6,000 on signing, 4,000 within sixty days, 8,000 across the rest</td><td>CHF 18,000 paid as 6,000 to begin and four payments of 3,000, doc 06</td><td>Both total 18,000 and the schedules differ. Hold the doc 06 schedule until she rules. Flagged in section 14.</td></tr>
-      <tr><td>Content studio drafts the LinkedIn post text on a general model</td><td>She writes her own content. Doc 04 governs every published sentence</td><td>The studio formats, proofs, flags and records. Set out above, and it is the version being built.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">What gets built, in what order</h3>
-  <div class="grid3">
-    <div class="card">
-      <span class="tag ink">Version 1</span>
-      <h4 class="mini" style="margin-top:10px;">By Monday 28 September</h4>
-      <p style="font-size:13px;">Something real, on her domain, that she can open. Today, Enquiries, People, Workshops as draft, the member shell, roles, and the audit log switched on from the first write.</p>
-      <ul class="checklist">
-        <li>Supabase project, schema, roles</li>
-        <li>Enquiry capture wired to the Go High Level form</li>
-        <li>One workshop object, still a draft, invisible publicly</li>
-        <li>Her login, and two team logins</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="tag ink">Version 2</span>
-      <h4 class="mini" style="margin-top:10px;">By day 45, before the room</h4>
-      <p style="font-size:13px;">Everything the workshop and the campaign touch. Seats, joining details, materials, payments and instalments, lead magnets with consent, the queue and the approval link.</p>
-      <ul class="checklist">
-        <li>Seat holders visible the moment payment clears</li>
-        <li>Consent record on every download, with its date</li>
-        <li>Approval link that works once and expires in seven days</li>
-        <li>Comment bank and the tracker, replacing the spreadsheet</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="tag ink">Version 3</span>
-      <h4 class="mini" style="margin-top:10px;">By day 90</h4>
-      <p style="font-size:13px;">The parts that only make sense once there is history to look at, and the parts that wait on her decisions.</p>
-      <ul class="checklist">
-        <li>Insights, with two months of real data behind it</li>
-        <li>Notebook tools, editable wording</li>
-        <li>Academy built and closed, pending O6</li>
-        <li>Shareable and tracked links, per channel and per person</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="callout">
-    <span class="kicker gold">The part of this to say out loud tonight</span>
-    <h4 style="margin-top:8px; font-size:21px;">She has been building a business that lives in other people's software for twenty five years' worth of relationships.</h4>
-    <p>The platform is not a nice addition to the funnel. It is the only reason the funnel compounds rather than resets each time a tool changes its terms. Every other section in this document produces something. This is the section that keeps it.</p>
-  </div>
-</div>
-
-<!-- ================= 10 THE NINETY DAYS ================= -->
-<div class="section" id="s14">
-  <div class="sec-head">
-    <span class="kicker">Section 10</span>
-    <h2>Ninety days, three phases, and five dates she is asked to approve tonight</h2>
-    <p>The forty five day plan in section 11 fills one room. Ninety days is the shortest honest horizon for the thing underneath it: a room that fills, a room that fills again without starting from nothing, and a list that belongs to her at the end of it. Phase one builds the machine. Phase two runs it in public. Phase three proves it repeats, which is the only evidence that any of this is a system rather than a launch.</p>
-  </div>
-
-  <h3 class="sub">The five dates, which is the whole of what she needs to say yes to</h3>
-  <div class="tw">
-    <table>
-      <tr><th style="width:8%">Day</th><th style="width:17%">Date</th><th style="width:30%">What is delivered</th><th>What it is blocked by, honestly</th></tr>
-      <tr><td><strong>4</strong></td><td>Friday 25 September</td><td><strong>Newsletter and list strategy.</strong> The architecture, the cadence, the consent wording, the first twelve months of topics against her four pillars.</td><td>Nothing. This is ours to deliver.</td></tr>
-      <tr><td><strong>7</strong></td><td>Monday 28 September</td><td><strong>Platform version one.</strong> On her domain, with her login. Today, Enquiries, People, the workshop object and the audit log.</td><td>Nothing. Version two needs her decisions on the room.</td></tr>
-      <tr><td><strong>9</strong></td><td>Wednesday 30 September</td><td><strong>Go High Level built, and the sending domain warming.</strong> Subdomain, authentication, tags, the seven workflows, the registration page skeleton.</td><td>Her sign off on the sending subdomain and access to the domain records. One hour of her time, and it is the thing that cannot be compressed later.</td></tr>
-      <tr><td><strong>18</strong></td><td>Friday 9 October</td><td><strong>The instrument live.</strong> The diagnostic from section 03, gated properly, consent recorded, first traffic from her own posts.</td><td>Her choice between the seven candidate assets, and her yes on the profile rewrite. Both in section 13.</td></tr>
-      <tr><td><strong>45</strong></td><td>Thursday 5 November</td><td><strong>The room.</strong> Capped, paid, and followed by the part everyone forgets, which is the day after.</td><td>Her yes on the date, the cap, the price, the language and the venue. Nothing else in this document moves until those five are settled.</td></tr>
-    </table>
-  </div>
-
-  <div class="redcall">
-    <span class="tag red">One honest disagreement to put in front of her</span>
-    <h4 class="mini" style="margin-top:10px;">A room in thirty days is possible. A room in thirty days on a cold sending domain is not.</h4>
-    <p>Warm up on a new sending domain runs two to six weeks depending on the receiving provider, and Microsoft tightened its requirements for bulk senders in May 2025. Swiss owner CEOs read mail at Outlook addresses more than at any other provider. A first campaign that lands in Junk at Outlook is not a slow start, it is a domain that takes months to recover. The fifth of November is the first date that lets the invitation arrive in an inbox. If she wants the room sooner, the route is a smaller invitation sent from her existing address to people she already knows, and the campaign machine follows behind it.</p>
-  </div>
-
-  <h3 class="sub">The ninety days, by workstream</h3>
-  <figure class="flow wide">
-    <svg viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ninety day plan by workstream, thirteen weeks">
-      <style>
-        .gg{stroke:#EADCCB; stroke-width:1;}
-        .gh{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#7A6F63; letter-spacing:.06em;}
-        .gr{font-family:Inter,sans-serif; font-size:11.5px; fill:#2B2521; font-weight:600;}
-        .gn{font-family:Inter,sans-serif; font-size:9.5px; fill:#7A6F63;}
-        .bar{fill:#F1E3DA; stroke:#8C5442; stroke-width:1;}
-        .bard{fill:#0B0B0B;}
-        .bart{fill:#8C5442;}
-        .barq{fill:#FCF9F4; stroke:#C9BBA9; stroke-width:1; stroke-dasharray:3 3;}
-        .bl{font-family:Inter,sans-serif; font-size:9.5px; fill:#2B2521; font-weight:600;}
-        .blw{font-family:Inter,sans-serif; font-size:9.5px; fill:#ffffff; font-weight:600;}
-        .ph{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.11em;}
-        .mk{stroke:#8C5442; stroke-width:1.2; stroke-dasharray:3 3;}
-      </style>
-
-      <text class="ph" x="230" y="20">PHASE ONE, BUILD AND FILL</text>
-      <text class="ph" x="600" y="20">PHASE TWO, RUN</text>
-      <text class="ph" x="812" y="20">PHASE THREE, REPEAT</text>
-      <rect x="230" y="28" width="330" height="3" fill="#8C5442"/>
-      <rect x="576" y="28" width="212" height="3" fill="#C9BBA9"/>
-      <rect x="804" y="28" width="156" height="3" fill="#E4D6C4"/>
-
-      <text class="gh" x="230" y="52">W1</text><text class="gh" x="286" y="52">W2</text><text class="gh" x="342" y="52">W3</text><text class="gh" x="398" y="52">W4</text><text class="gh" x="454" y="52">W5</text><text class="gh" x="510" y="52">W6</text><text class="gh" x="566" y="52">W7</text><text class="gh" x="622" y="52">W8</text><text class="gh" x="678" y="52">W9</text><text class="gh" x="734" y="52">W10</text><text class="gh" x="790" y="52">W11</text><text class="gh" x="846" y="52">W12</text><text class="gh" x="902" y="52">W13</text>
-      <text class="gh" x="222" y="68">22 SEP</text><text class="gh" x="548" y="68">3 NOV</text><text class="gh" x="906" y="68">20 DEC</text>
-
-      <line class="gg" x1="225" y1="74" x2="225" y2="500"/><line class="gg" x1="281" y1="74" x2="281" y2="500"/><line class="gg" x1="337" y1="74" x2="337" y2="500"/><line class="gg" x1="393" y1="74" x2="393" y2="500"/><line class="gg" x1="449" y1="74" x2="449" y2="500"/><line class="gg" x1="505" y1="74" x2="505" y2="500"/><line class="gg" x1="561" y1="74" x2="561" y2="500"/><line class="gg" x1="617" y1="74" x2="617" y2="500"/><line class="gg" x1="673" y1="74" x2="673" y2="500"/><line class="gg" x1="729" y1="74" x2="729" y2="500"/><line class="gg" x1="785" y1="74" x2="785" y2="500"/><line class="gg" x1="841" y1="74" x2="841" y2="500"/><line class="gg" x1="897" y1="74" x2="897" y2="500"/><line class="gg" x1="953" y1="74" x2="953" y2="500"/>
-
-      <text class="gr" x="20" y="96">Content and the window</text>
-      <text class="gn" x="20" y="110">3 posts, 30 in 30 out, daily</text>
-      <rect class="bar" x="225" y="84" width="728" height="30" rx="5"/>
-      <text class="bl" x="400" y="103">Unbroken. Nothing in this plan is allowed to interrupt it.</text>
-
-      <text class="gr" x="20" y="142">Profile rewrite</text>
-      <text class="gn" x="20" y="156">Doc 14, decision O4</text>
-      <rect class="bart" x="225" y="130" width="112" height="30" rx="5"/>
-      <text class="blw" x="240" y="149">Live by day 10</text>
-
-      <text class="gr" x="20" y="188">The instrument</text>
-      <text class="gn" x="20" y="202">Diagnostic, gated, consent</text>
-      <rect class="bar" x="281" y="176" width="112" height="30" rx="5"/>
-      <text class="bl" x="296" y="195">Built, tested, live day 18</text>
-
-      <text class="gr" x="20" y="234">Go High Level</text>
-      <text class="gn" x="20" y="248">Build, then warm up</text>
-      <rect class="bart" x="225" y="222" width="84" height="30" rx="5"/>
-      <text class="blw" x="236" y="241">Build</text>
-      <rect class="bar" x="309" y="222" width="196" height="30" rx="5"/>
-      <text class="bl" x="330" y="241">Warm up on real content, four weeks</text>
-
-      <text class="gr" x="20" y="280">Platform</text>
-      <text class="gn" x="20" y="294">North Acts</text>
-      <rect class="bard" x="225" y="268" width="56" height="30" rx="5"/>
-      <text class="blw" x="236" y="287">v1</text>
-      <rect class="bar" x="281" y="268" width="280" height="30" rx="5"/>
-      <text class="bl" x="300" y="287">v2, everything the room and the campaign touch</text>
-      <rect class="barq" x="561" y="268" width="392" height="30" rx="5"/>
-      <text class="bl" x="640" y="287">v3, insights, notebook, academy built and closed</text>
-
-      <text class="gr" x="20" y="326">Room one</text>
-      <text class="gn" x="20" y="340">Campaign, then the day</text>
-      <rect class="bar" x="337" y="314" width="224" height="30" rx="5"/>
-      <text class="bl" x="360" y="333">Six letters, then five reminders</text>
-      <rect class="bard" x="561" y="314" width="28" height="30" rx="5"/>
-      <text class="ph" x="548" y="308">5 NOV</text>
-
-      <text class="gr" x="20" y="372">The day after</text>
-      <text class="gn" x="20" y="386">Waitlist, presell, the story</text>
-      <rect class="bart" x="589" y="360" width="140" height="30" rx="5"/>
-      <text class="blw" x="600" y="379">72 hours, then Assess</text>
-
-      <text class="gr" x="20" y="418">Assess conversion</text>
-      <text class="gn" x="20" y="432">The paid front door</text>
-      <rect class="bar" x="589" y="406" width="364" height="30" rx="5"/>
-      <text class="bl" x="660" y="425">Applications worked one at a time, never in a batch</text>
-
-      <text class="gr" x="20" y="464">Room two</text>
-      <text class="gn" x="20" y="478">Presold, not relaunched</text>
-      <rect class="barq" x="785" y="452" width="168" height="30" rx="5"/>
-      <text class="bl" x="798" y="471">Named now, opens in January</text>
-
-      <line class="mk" x1="561" y1="74" x2="561" y2="500"/>
-      <line class="mk" x1="785" y1="74" x2="785" y2="500"/>
-
-      <text class="ph" x="20" y="524">SOLID BAR, COMMITTED. OUTLINED BAR, DEPENDS ON A DECISION IN SECTION 13. DARK BAR, A FIXED DATE.</text>
-      <text class="gn" x="20" y="544">Week 1 begins Monday 22 September 2026. Week 13 ends Sunday 20 December 2026.</text>
-    </svg>
-    <figcaption>Two vertical markers. The first is the room. The second is the review at day 70, which is where the second room is either named or postponed on evidence rather than on appetite.</figcaption>
-  </figure>
-
-  <h3 class="sub">Phase two, days 46 to 70. What happens after the room, which is the part that is usually improvised</h3>
-  <p>A workshop that ends without a designed next seventy two hours converts at a fraction of what it should, and the people most likely to apply are the ones who were quietest in the room. Phase two is written before the room runs, not after it.</p>
-  <div class="grid3">
-    <div class="card"><span class="tag">Hours 0 to 72</span><h4 class="mini" style="margin-top:10px;">Three branches, all pre built</h4><p style="font-size:13px;">Attended and moved. Attended and did not. Paid and did not attend. Three different letters, written in week five, sitting in the workflow before anybody walks into the room.</p></div>
-    <div class="card"><span class="tag">Week 8 to 10</span><h4 class="mini" style="margin-top:10px;">The Assess, one at a time</h4><p style="font-size:13px;">Every application read by her. No batch, no sequence, no automated booking link under her name. The paid front door is the belief test from doc 02 and it cannot be run by software.</p></div>
-    <div class="card"><span class="tag">Week 9</span><h4 class="mini" style="margin-top:10px;">The story, told once</h4><p style="font-size:13px;">What happened in the room, written as one post, with no seat count and no photograph of anyone who did not consent. Doc 07 rule two applies in the room exactly as it applies in a post.</p></div>
-  </div>
-
-  <h3 class="sub">Phase three, days 71 to 90. Repeat, on the only kind of scarcity that survives this buyer</h3>
-  <p>The method we use for capped rooms comes from the Sold Out cycle. It works, and it needs one translation before it touches her name. The research is unambiguous on the distinction: a limit that reflects a real constraint raises perceived value, and a limit that is visibly manufactured does not move it at all. Against an owner CEO at this altitude the downside is asymmetric. No upside, and a credibility cost she cannot get back.</p>
-
-  <figure class="flow wide">
-    <svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Sold Out cycle translated for this account">
-      <style>
-        .cbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
-        .cdk{fill:#0B0B0B;}
-        .clb{font-family:Inter,sans-serif; font-size:12.5px; fill:#2B2521; font-weight:600;}
-        .clw{font-family:Inter,sans-serif; font-size:12.5px; fill:#ffffff; font-weight:600;}
-        .csm{font-family:Inter,sans-serif; font-size:10px; fill:#7A6F63;}
-        .csw{font-family:Inter,sans-serif; font-size:10px; fill:#B6ADA2;}
-        .ckk{font-family:'IBM Plex Mono',monospace; font-size:9px; fill:#8C5442; letter-spacing:.1em;}
-        .cln{stroke:#8C5442; stroke-width:1.3; fill:none;}
-      </style>
-      <defs><marker id="ca" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8C5442"/></marker></defs>
-
-      <rect class="cbx" x="20" y="60" width="172" height="112" rx="10"/>
-      <text class="ckk" x="38" y="84">01</text>
-      <text class="clb" x="38" y="106">Cap supply</text>
-      <text class="csm" x="38" y="126">A number she can name</text>
-      <text class="csm" x="38" y="142">out loud and defend.</text>
-      <text class="csm" x="38" y="158">Her hours, not a widget.</text>
-
-      <rect class="cbx" x="212" y="60" width="172" height="112" rx="10"/>
-      <text class="ckk" x="230" y="84">02</text>
-      <text class="clb" x="230" y="106">Set cadence</text>
-      <text class="csm" x="230" y="126">One room a quarter, and</text>
-      <text class="csm" x="230" y="142">a date that exists before</text>
-      <text class="csm" x="230" y="158">the invitation does.</text>
-
-      <rect class="cbx" x="404" y="60" width="172" height="112" rx="10"/>
-      <text class="ckk" x="422" y="84">03</text>
-      <text class="clb" x="422" y="106">Create demand</text>
-      <text class="csm" x="422" y="126">The three posts a week</text>
-      <text class="csm" x="422" y="142">already running. The room</text>
-      <text class="csm" x="422" y="158">borrows the audience.</text>
-
-      <rect class="cbx" x="596" y="60" width="172" height="112" rx="10"/>
-      <text class="ckk" x="614" y="84">04</text>
-      <text class="clb" x="614" y="106">Scale scarcity</text>
-      <text class="csm" x="614" y="126">The cap rises only when</text>
-      <text class="csm" x="614" y="142">the previous room filled.</text>
-      <text class="csm" x="614" y="158">Evidence, not appetite.</text>
-
-      <rect class="cdk" x="788" y="60" width="172" height="112" rx="10"/>
-      <text class="ckk" x="806" y="84" fill="#D4A370">05</text>
-      <text class="clw" x="806" y="106">Honour boundaries</text>
-      <text class="csw" x="806" y="126">Full is full. One extra</text>
-      <text class="csw" x="806" y="142">seat teaches the market</text>
-      <text class="csw" x="806" y="158">the cap was decorative.</text>
-
-      <path class="cln" d="M192 116 L208 116" marker-end="url(#ca)"/>
-      <path class="cln" d="M384 116 L400 116" marker-end="url(#ca)"/>
-      <path class="cln" d="M576 116 L592 116" marker-end="url(#ca)"/>
-      <path class="cln" d="M768 116 L784 116" marker-end="url(#ca)"/>
-      <path class="cln" d="M874 172 L874 210 L106 210 L106 176" marker-end="url(#ca)"/>
-      <text class="ckk" x="420" y="204">AND THE NEXT ROOM OPENS FROM A WAITING LIST, NOT FROM ZERO</text>
-
-      <rect class="cbx" x="20" y="238" width="940" height="46" rx="9"/>
-      <text class="clb" x="40" y="258">What is cut from the method, deliberately: countdown timers, seats remaining counters, and any cap that resets.</text>
-      <text class="csm" x="40" y="274">Natural rarity raises perceived value. Manufactured rarity measurably does not, and at CHF 4,500 it reads as a tell.</text>
-    </svg>
-    <figcaption>The cycle, kept. The theatre around it, removed. Her cap is real because her delivery capacity is real, and that is the only version of scarcity this buyer does not see through.</figcaption>
-  </figure>
-
-  <h3 class="sub">What ninety days is expected to produce, stated honestly</h3>
-  <div class="grid2">
-    <div class="card tint">
-      <h4 class="mini">What we can forecast</h4>
-      <ul>
-        <li><strong>36 posts published</strong> against her four pillars, every one approved by her, every one logged.</li>
-        <li><strong>An owned list</strong>, consented under Swiss law, on a warmed domain, exportable at any moment.</li>
-        <li><strong>One room delivered</strong> and a second named, with a waiting list behind it rather than a fresh start.</li>
-        <li><strong>A record</strong>, in her own platform, of who applied, what was approved, what went out and what is owed.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4 class="mini">What nobody can forecast, and we will not pretend to</h4>
-      <p style="font-size:13.5px;">There is no credible published benchmark for how many attendees of a paid workshop go on to buy an engagement above CHF 4,500. The webinar industry's own 2026 data set concedes that the large majority of workshop influenced pipeline is invisible because it is never attributed. Anyone quoting a conversion rate at this price point is quoting folklore.</p>
-      <p style="font-size:13.5px;">Her first two rooms are the benchmark. That is why the tracker, the enquiry board and the post metrics are in version one of the platform rather than version three.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ================= 13 WHAT WE NEED FROM HER ================= -->
-<div class="section" id="s15">
-  <div class="sec-head">
-    <span class="kicker">Section 13</span>
-    <h2>What we need from her, and what we will do if she says nothing</h2>
-    <p>Thirty two questions, grouped by the workstream they unblock. Every one carries a default, which is what we proceed on if it is not ruled by the date shown. This is deliberate. A question with no default is a question that stops the build, and there are only four of those here. The rest are questions where we would rather be corrected than wait. The same list, laid out for her to answer in her own time, is the companion sheet that goes to her with this.</p>
-  </div>
-
-  <div class="callout">
-    <span class="kicker gold">How to run this page on the call</span>
-    <h4 style="margin-top:8px; font-size:20px;">Four answers move the plan. Everything else can be corrected later at no cost.</h4>
-    <p>The four: the date and cap of the room, the sending subdomain, the profile rewrite, and which of the seven assets becomes the instrument. If the call produces only those four, it was a good call. The rest can be answered in writing, in her own time, and several of them she will answer faster by reacting to a draft than by describing what she wants.</p>
-  </div>
-
-  <h3 class="sub">A · The six designed posts, which is the question that started this</h3>
-  <p>The brief asks for seven images across the first twelve posts, of four kinds: an editorial concept, an object photograph, a reworked artefact and an editorial data visual. Those four terms are hers, and we are not confident we are reading them the way she means them. Describing them back to her will not settle it. Showing her will.</p>
-  <div class="tw">
-    <table>
-      <tr><th style="width:4%">#</th><th style="width:38%">The question</th><th style="width:32%">Why it is being asked</th><th>Our default if she does not rule</th></tr>
-      <tr><td><strong>A1</strong></td><td>Can she point at one image, anywhere, that is the right register? It does not need to be hers or even from this field.</td><td>Four words describing a visual style will produce four different pictures in four heads. One reference settles it in a second.</td><td>We draft one of each of the four kinds against post 3, and she reacts. Feedback on something concrete is faster and she is more likely to be right.</td></tr>
-      <tr><td><strong>A2</strong></td><td>Does the image carry a word at all, or is the image purely the image and the text stays in the post?</td><td>The brief says the image should add a word rather than repeat the sentence. That is a rule about restraint and we want to be sure how far it goes.</td><td>No text on the image. Doc 04 bans the visual tricks that usually carry text, and a clean photograph never breaches the voice laws.</td></tr>
-      <tr><td><strong>A3</strong></td><td>Her India sky photograph, and any other image from her own archive that we may use. Which folder, and what is off limits.</td><td>It is blocking a post dated 5 October and it is not in the folder we have. We will not substitute something from the live folder.</td><td>The post moves to the next slot rather than going out with the wrong picture. Text and image together, or it does not go.</td></tr>
-      <tr><td><strong>A4</strong></td><td>Portraits. Are we right that it is head and frame, natural colour, no campaign grading, on every one?</td><td>It is written in the brief and we want it confirmed rather than assumed, because it is the easiest thing for a designer to drift on.</td><td>As written. No grading, no crop past the frame, no filter.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">B · Engagement, and a target list that is thinner than it should be</h3>
-  <p>Four lists have been built. Of roughly seventy accounts on the first, between ten and twelve post more than once a week. The second list behaved the same way. This is not a research failure, it is what her field looks like: the people she wants are owners, and owners do not post. The window still works, but it needs her to point at the right rooms.</p>
-  <div class="tw">
-    <table>
-      <tr><th style="width:4%">#</th><th style="width:38%">The question</th><th style="width:32%">Why it is being asked</th><th>Our default if she does not rule</th></tr>
-      <tr><td><strong>B1</strong></td><td>Which countries. She has said remove Australia. Is it Switzerland and Germany only, or Switzerland, Germany, Austria and Liechtenstein.</td><td>Doc 02 puts the buyer in Swiss and German speaking Europe. The list should not be wider than the offer.</td><td>Switzerland first, Germany and Austria second, nothing outside German speaking Europe unless she names it.</td></tr>
-      <tr><td><strong>B2</strong></td><td>Which job titles count. Owner, owner CEO, successor, second generation, chair, board member. Do we include the advisers around them, the lawyers and the fiduciaries.</td><td>The advisers post far more than the owners do, and they refer. They are also not the buyer, and engaging them dilutes the signal.</td><td>Owners and successors as the first list. A separate, smaller adviser list, engaged at a lower frequency, tracked separately so the effect is visible.</td></tr>
-      <tr><td><strong>B3</strong></td><td>Twenty accounts she would like engaged with by name, and any she wants left alone.</td><td>She knows the field. Twenty names from her are worth more than four hundred from a search.</td><td>We continue building from sector and title, and we accept a thinner list. It is the single biggest constraint on the window.</td></tr>
-      <tr><td><strong>B4</strong></td><td>Anyone in her field she would never be seen commenting under. Doc 07 rule seven already bans competitors, and we would rather have her list than infer it.</td><td>A comment under the wrong post is not recoverable and no approval process catches it after the fact.</td><td>The three named in doc 22, plus anyone whose content reads as adjacent to them.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">C · Language, which is the strategic question hiding inside an operational one</h3>
-  <div class="redcall">
-    <span class="tag red">Raise this properly, it is bigger than it looks</span>
-    <h4 class="mini" style="margin-top:10px;">Her buyer is Swiss and German speaking. Every word we publish is in English.</h4>
-    <p>That may be exactly right. Senior Swiss business audiences read English professionally all day, LinkedIn membership in Switzerland stands at roughly 5.3 million people, which is close to seventy two percent of adults, and English keeps one voice rather than two. It may also be quietly costing her the reader who would have recognised herself in German. We found no credible public data either way, so this is a judgement only she can make, and it is worth ten minutes tonight rather than a decision by drift.</p>
-  </div>
-  <div class="tw">
-    <table>
-      <tr><th style="width:4%">#</th><th style="width:38%">The question</th><th style="width:32%">Why it is being asked</th><th>Our default if she does not rule</th></tr>
-      <tr><td><strong>C1</strong></td><td>Posts stay in English, or a German edition of the strongest ones runs alongside.</td><td>Her voice laws are written in English and the cadence does not translate mechanically. A German edition needs her hand, not a translator.</td><td>English continues. We mark the three posts per month whose subject is most Swiss, and hold them as candidates if she ever wants a German edition.</td></tr>
-      <tr><td><strong>C2</strong></td><td>Comments arriving in German. Reply in German, or flag them to her.</td><td>They are already arriving. We can draft in either language. What we cannot do is guess which one sounds like her.</td><td>Flagged to her, with a drafted German reply attached for her yes. Nothing in German goes out unread, because tone in a second language is exactly where a voice slips.</td></tr>
-      <tr><td><strong>C3</strong></td><td>The workshop itself. German or English, and does that change who is in the room.</td><td>It changes the invitation, the registration page, the materials and the cap. It cannot be decided after the date is announced.</td><td>English, matching the content that fills the room. Flagged as the assumption most likely to be wrong.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">D · Her own writing, and the patterns in it</h3>
-  <p>She writes her content. We publish it, and we have changed nothing. Reading the first twelve posts as a set, some structures repeat in a way that reads as machine written to a reader who is looking for it, which her buyer increasingly is. We are not proposing to touch a sentence. We are proposing she sees what we see.</p>
-  <div class="grid2">
-    <div class="card">
-      <span class="tag">What we will not do</span>
-      <h4 class="mini" style="margin-top:10px;">Rewrite her, quietly or otherwise</h4>
-      <p style="font-size:13.5px;">The repetition is load bearing. Her rhythm is long, short, and the short line carries the meaning. Break the pattern and the post loses its shape. Anyone who edits her sentences to remove a structure will also remove the thing that makes it hers.</p>
-    </div>
-    <div class="card tint">
-      <span class="tag">What we propose instead</span>
-      <h4 class="mini" style="margin-top:10px;">A flag, an alternative, and her decision</h4>
-      <p style="font-size:13.5px;">Each post arrives with a short note: here is the structure that repeats, here is one alternative, and here is the post exactly as she wrote it. She takes the alternative or she does not. The record shows she was told. That is question <strong>D1</strong>, and it needs a yes or a no tonight.</p>
-    </div>
-  </div>
-
-  <h3 class="sub">E · One to one, where the rule is already absolute</h3>
-  <p>No message goes out under her name before her approval. Decided 15 September, not covered by any standing approval that may later be granted for comments, and section 08 is written as a specification for what we bring her rather than a sequence that runs. Outreach is not being proposed and will not be until the offer is finalised and her permissions are explicit.</p>
-  <div class="tw">
-    <table>
-      <tr><th style="width:4%">#</th><th style="width:38%">The question</th><th style="width:32%">Why it is being asked</th><th>Our default if she does not rule</th></tr>
-      <tr><td><strong>E1</strong></td><td>What may we do under her name at all. Likes, comments on approved accounts, follows, connection requests with no note, nothing.</td><td>Open decision O2. Until it is granted every item is amber and the window runs at a fraction of its speed.</td><td>Likes and approved comment lines only, drawn from the comment bank. No connection requests, no follows initiated under her name.</td></tr>
-      <tr><td><strong>E2</strong></td><td>When outreach does begin, what is permanently off limits. She works quickly and a written list from her will be better than anything we would draft.</td><td>The rules at this altitude are hers, not the platform's, and getting them in writing once is cheaper than asking per message.</td><td>Nothing begins. Outreach stays out of the ninety days entirely.</td></tr>
-      <tr><td><strong>E3</strong></td><td>Anything personal or commercial arriving in a comment or a message. Straight to Dani, or does she want sight of it.</td><td>It is already happening on live posts and the desk needs a standing instruction rather than a judgement call each time.</td><td>Straight to Dani, unanswered, same day. No holding reply under her name.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">F · The room, which is five settings and nothing else</h3>
-  <div class="grid5">
-    <div class="card"><span class="tag ink">F1</span><h4 class="mini" style="margin-top:8px;">The date</h4><p style="font-size:12.5px;">Thursday 5 November is the first date a warmed domain allows. Hers to confirm or move.</p></div>
-    <div class="card"><span class="tag ink">F2</span><h4 class="mini" style="margin-top:8px;">The cap</h4><p style="font-size:12.5px;">A number she can defend out loud. Her hours, not a marketing figure.</p></div>
-    <div class="card"><span class="tag ink">F3</span><h4 class="mini" style="margin-top:8px;">The price</h4><p style="font-size:12.5px;">Stated plainly and once, and it has to sit under the Assess at CHF 4,500 without undercutting it.</p></div>
-    <div class="card"><span class="tag ink">F4</span><h4 class="mini" style="margin-top:8px;">The place</h4><p style="font-size:12.5px;">A room in Zurich, or online. It changes the cap, the price and the campaign.</p></div>
-    <div class="card"><span class="tag ink">F5</span><h4 class="mini" style="margin-top:8px;">The name</h4><p style="font-size:12.5px;">One line she would say across a table. Not a title we invent for her.</p></div>
-  </div>
-
-  <h3 class="sub">G · The platform</h3>
-  <div class="tw">
-    <table>
-      <tr><th style="width:4%">#</th><th style="width:38%">The question</th><th style="width:32%">Why it is being asked</th><th>Our default if she does not rule</th></tr>
-      <tr><td><strong>G1</strong></td><td>The payment schedule for the six month engagement. Doc 06 says 6,000 then four payments of 3,000. The platform specification says 6,000, then 4,000 within sixty days, then 8,000 across the rest.</td><td>Both total CHF 18,000 and they are different agreements. The instalments are created in the database the moment an enquiry is signed, so this has to be right before the first one.</td><td>Doc 06 stands, because it is the settled document. The platform is configured to it.</td></tr>
-      <tr><td><strong>G2</strong></td><td>Who on her side gets a team login, and who gets admin.</td><td>Every action against money, membership or publishing is written to the audit log with a name attached, and the log is only useful if the names are right.</td><td>Her as admin, two of our team, nobody else.</td></tr>
-      <tr><td><strong>G3</strong></td><td>Payment provider and the account the money lands in. Prices are held in Rappen and shown in Swiss francs.</td><td>Seat sales cannot be taken without it and the registration page cannot go live without seat sales.</td><td>We build against a single Swiss franc provider and connect her account when she gives it.</td></tr>
-      <tr><td><strong>G4</strong></td><td>The name. North Acts, after the five acts, or something of her own.</td><td>It appears on her domain, in the member area and in every email footer. It is easier to change this week than in month three.</td><td>North Acts.</td></tr>
-    </table>
-  </div>
-
-  <h3 class="sub">H · The eight open decisions, and what each one is holding up</h3>
-  <figure class="flow wide">
+    <h3 class="sub">The eight, sorted by what they actually hold up</h3>
+  <p>The decision log numbers them. This sorts them by consequence, which is the more useful order when four are open at once and only one person can close any of them.</p>
+<figure class="flow wide">
     <svg viewBox="0 0 980 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Which open decisions block which workstreams">
       <style>
         .dbx{fill:#FCF9F4; stroke:#E4D6C4; stroke-width:1.2;}
@@ -2763,17 +2786,60 @@
     <figcaption>The eight from doc 02, sorted by what they actually hold up rather than by their number. Only one of them stops the machine, and it has been open the longest.</figcaption>
   </figure>
 
-  <div class="redcall">
-    <span class="tag red">Say this plainly</span>
-    <h4 class="mini" style="margin-top:10px;">Two months in, one post has gone out.</h4>
-    <p>Not because the work is not done. The first twelve posts are written, the briefs exist, the desk is ready, and the profile rewrite is drafted and waiting on decision O4. The constraint is approval, and it is the only constraint. The platform, the funnel and the room all assume a standing green lane exists by the end of week two. If it does not, every date in section 10 moves, and it moves for a reason that has nothing to do with capacity.</p>
+  <h3 class="sub">Her open decisions that this plan depends on</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:8%">Doc 02</th><th style="width:40%">The decision</th><th style="width:52%">What it does to this build</th></tr>
+      <tr><td><strong>O2</strong></td><td>Standing green lane approval for engagement comments</td><td><strong>The throttle on the entire inbound engine.</strong> Until it is granted, everything is amber, every comment is drafted, batched and held, and the 30/30 window runs at a fraction of speed. Ask first on the next call.</td></tr>
+      <tr><td><strong>O4</strong></td><td>Sign off on the profile rewrite</td><td>Every door in section 02 is on the profile. Without this the funnel drives traffic to a page that has not been rebuilt. Week 1, no later.</td></tr>
+      <tr><td><strong>O3</strong></td><td>Her ruling on comments under a post about a death, illness or loss</td><td>One of the likeliest live situations, and the 30/30 window makes it likelier. Currently defaults to under fifteen words and a flag.</td></tr>
+      <tr><td><strong>O5</strong></td><td>Three or four of her own physical objects</td><td>The diagnostic may need one. Doc 04: if a piece needs an object she has not given us, we ask her rather than inventing it.</td></tr>
+      <tr><td><strong>O6</strong></td><td>Whether the Academy may be referenced publicly yet</td><td><strong>The single largest accident risk in this plan.</strong> A registration page for a capped room is exactly where a sentence about cohorts or group work appears by mistake. Every draft is read for this first.</td></tr>
+      <tr><td><strong>O7</strong></td><td>Which anonymised client moments she will clear</td><td>The proof letter in Phase C and F3 in the follow up. Composite only until she rules.</td></tr>
+      <tr><td><strong>O1</strong></td><td>Six month price: hold CHF 18,000 or move toward CHF 24,000</td><td>Does not block this build. The room anchors against the Assess at CHF 4,500, which is settled. If O1 moves, nothing on the registration page changes because no page states the six month price.</td></tr>
+    </table>
+  </div>
+
+      <h3 class="sub">Three conflicts found on the second pass, all of them structural</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:16%">Item</th><th style="width:42%">The conflict</th><th>What we propose</th></tr>
+      <tr><td><span class="tag red">Red</span> <strong>The room is group work</strong></td><td>Doc 06 lists group programmes under what we do not sell, until decision O6 is settled. A paid capped room of eight or twelve people is group work by any reading, and the whole of sections 06 to 11 is built on it. It has been treated as a pricing question and it is a positioning question.</td><td>Her explicit ruling, in writing, that a one day room is not what O6 covers. Our reading is that O6 is about the Academy, which is cohorts and continuity, and a single day is closer to a keynote than to a programme. That reading is ours and it is not a decision we can make. Until she rules, the room is red.</td></tr>
+      <tr><td><span class="tag red">Red</span> <strong>The offer in a fourth place</strong></td><td>Doc 06 puts the offer in exactly three places: Featured, the bio link, and her own first comment on an earned selling post. The plan carries the Assess link into the letter and into the follow up that goes to people who attended the room.</td><td>Either she extends doc 06 in writing to cover mail sent to a consented list and to people who have paid to be in a room, or those sends point at her profile and the link stays where doc 06 put it. We recommend the extension and we will not assume it.</td></tr>
+      <tr><td><span class="tag">Amber</span> <strong>Selling inside the first thirty days</strong></td><td>Version one named the room publicly in week three, inside the twelve settled posts that carry zero selling.</td><td>Corrected in section 11. No post carries the room before Thursday 22 October, day 31, the first day of month two. If she would rather hold the line harder than that, the room moves to Thursday 26 November, which also gives the sending domain a longer warm up and costs nothing except three weeks.</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sub">Added in version two, on the September evidence check</h3>
+  <div class="tw">
+    <table>
+      <tr><th style="width:18%">Item</th><th style="width:42%">What is uncertain</th><th>What we do about it</th></tr>
+      <tr><td><span class="tag red">Red</span> <strong>Proof floor</strong></td><td>The thirty percent second generation survival figure sits on her cleared proof floor in doc 03 and cannot be traced to a real study. Publishing it would breach doc 07 rule three in her own name.</td><td>Struck from the bank today. No post drafted against it. A replacement line is offered in section 12, sourced to UBS and St Gallen, and needs her written yes before it enters the proof floor.</td></tr>
+      <tr><td><span class="tag red">Red</span> <strong>Data transfer</strong></td><td>The Swiss to United States data privacy framework has been relied on since September 2024. A United States Supreme Court ruling in June 2026 on the removability of Federal Trade Commission commissioners removed one of the enforcement pillars it rests on, as reported by swissprivacy.law in July 2026, and a challenge is expected.</td><td>Standard contractual clauses are documented as the fallback before the first send, and Go High Level's live certification is checked on the day it is connected. This is for counsel, not for us.</td></tr>
+      <tr><td><span class="tag">Amber</span> <strong>GDPR reach</strong></td><td>Whether her marketing triggers EU law at all. The common assumption is that German language marketing does. It does not on its own, because German is an official Swiss language and Recital 23 excludes exactly that case.</td><td>What would trigger it: pricing in euros, naming German or Austrian clients, or targeting EU residents in advertising. Each is avoidable, and avoiding them is cheaper than an article 27 representative.</td></tr>
+      <tr><td><span class="tag">Amber</span> <strong>Deliverability</strong></td><td>Go High Level's own current guidance on dedicated versus shared sending domains could not be verified from outside the account.</td><td>Read from inside the account before the domain is chosen, in week one. It is one hour and it decides whether the first campaign arrives.</td></tr>
+      <tr><td><span class="tag">Amber</span> <strong>Newsletter export</strong></td><td>It is widely asserted that a LinkedIn newsletter subscriber list cannot be exported, and section 04 is built on that assumption. It could not be confirmed against a primary source.</td><td>Checked inside her account in week one. If export exists, the architecture does not change, because a rented list is still rented. If it does not, the case for the owned list is simply stronger.</td></tr>
+      <tr><td><span class="tag">Amber</span> <strong>Payment schedule</strong></td><td>Doc 06 and the platform specification describe two different instalment plans for the same CHF 18,000.</td><td>Doc 06 governs until she rules. The four platform settings are set out in section 09.</td></tr>
+    </table>
+  </div>
+
+  <h3 class="sub">For counsel, not for us</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Final consent wording and the data protection declaration, confirmed by Swiss counsel before the first send.</p></div>
+    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Whether she needs an EU representative under GDPR article 27. A judgement call about whether her marketing targets EU residents.</p></div>
+    <div class="card"><span class="tag red">Legal</span><p style="font-size:13px; margin-top:10px;">Go High Level is a United States processor. The transfer mechanism for Swiss and EU personal data needs confirming and recording in her processing register before go live.</p></div>
+  </div>
+
+  <div class="callout">
+    <span class="kicker gold">And one thing that is not negotiable at all</span>
+    <h4 style="margin-top:8px; font-size:22px;">No message goes out under her name before her approval.</h4>
+    <p style="margin-top:12px;">Decided 15 September. Not covered by any standing approval that may later be granted for comments. Section 08 is written as a specification for what we bring her, not as a sequence that runs, and that is the only form it can take. If the campaign ever feels short of a channel, this is not the one that opens.</p>
   </div>
 </div>
 
-
 <div class="footer-note">
   Prepared for Nicole Brandes &middot; Purely Personal &middot; 21 September 2026 &middot; Internal<br>
-  Built from docs 01, 02, 03, 04, 06, 07 and 22, the platform specification, and the desk call of 21 September.<br>Every claim traceable to her material or to a named public source. Evidence re-checked 21 September 2026.
+  Built from docs 01, 02, 03, 04, 06, 07 and 22, the platform specification, and the desk call of 21 September. Section 13 also ships as a separate sheet, written to Nicole.<br>Every claim traceable to her material or to a named public source. Evidence re-checked 21 September 2026.
 </div>
 
 <script>
